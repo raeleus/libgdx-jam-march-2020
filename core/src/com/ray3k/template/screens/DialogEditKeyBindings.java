@@ -118,17 +118,17 @@ public class DialogEditKeyBindings extends Dialog {
         refreshTable(table);
         
         getButtonTable().pad(5);
-        getButtonTable().defaults().uniform().fill().space(10);
-        TextButton textButton = new TextButton("OK", skin);
-        button(textButton);
-        focusables.add(textButton);
-        textButton.addListener(mouseEnterListener);
+        getButtonTable().defaults().uniform().space(10);
+        Button button = new Button(skin, "back");
+        button(button);
+        focusables.add(button);
+        button.addListener(mouseEnterListener);
         
-        textButton = new TextButton("Defaults", skin);
-        getButtonTable().add(textButton);
-        focusables.add(textButton);
-        textButton.addListener(mouseEnterListener);
-        textButton.addListener(new ChangeListener() {
+        button = new Button(skin, "defaults");
+        getButtonTable().add(button);
+        focusables.add(button);
+        button.addListener(mouseEnterListener);
+        button.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 core.setDefaultBindings();
