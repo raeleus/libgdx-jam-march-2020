@@ -50,6 +50,7 @@ public class GameScreen extends JamScreen {
     
         final Music music = core.assetManager.get("bgm/game.mp3");
         music.setPosition(0);
+        music.setVolume(core.bgm);
         music.play();
         
         stage = new Stage(new ScreenViewport(), core.batch);
