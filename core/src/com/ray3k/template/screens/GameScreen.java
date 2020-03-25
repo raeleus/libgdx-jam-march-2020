@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -46,6 +47,10 @@ public class GameScreen extends JamScreen {
         BG_COLOR.set(Color.PINK);
     
         paused = false;
+    
+        final Music music = core.assetManager.get("bgm/game.mp3");
+        music.setPosition(0);
+        music.play();
         
         stage = new Stage(new ScreenViewport(), core.batch);
         stage.addListener(new InputListener() {
@@ -65,6 +70,7 @@ public class GameScreen extends JamScreen {
                         @Override
                         public void quit() {
                             core.transition(new MenuScreen(), Transitions.slide(270, Interpolation.bounceOut), 1f);
+                            music.pause();
                         }
                     });
                 }
