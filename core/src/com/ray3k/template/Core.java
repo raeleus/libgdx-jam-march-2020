@@ -61,7 +61,7 @@ public class Core extends JamGame {
             }
         };
         
-        setScreen(new LoadScreen(() -> core.skin = core.assetManager.get("skin/shimmer-ui.json")));
+        setScreen(new LoadScreen(() -> core.skin = core.assetManager.get("skin/skin.json")));
         defaultTransition = Transitions.colorFade(Color.BLACK);
         defaultTransitionDuration = .5f;
     }
@@ -77,6 +77,7 @@ public class Core extends JamGame {
     @Override
     public void loadAssets() {
         assetManager.setLoader(SkeletonData.class, new SkeletonDataLoader(assetManager.getFileHandleResolver()));
+        assetManager.setLoader(Skin.class, new SkinFreeTypeLoader(assetManager.getFileHandleResolver()));
         
         FileHandle fileHandle = Gdx.files.internal("skin.txt");
         if (fileHandle.exists()) for (String path : fileHandle.readString().split("\\n")) {

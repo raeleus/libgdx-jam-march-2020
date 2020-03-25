@@ -35,7 +35,7 @@ public class MenuScreen extends JamScreen {
         
         core = Core.core;
         skin = core.skin;
-    
+        
         final Music bgm = core.assetManager.get("bgm/music-test.mp3");
         if (!bgm.isPlaying()) {
             bgm.play();
@@ -78,31 +78,31 @@ public class MenuScreen extends JamScreen {
             }
             
             public void next() {
-                Actor focussed = stage.getKeyboardFocus();
-                if (focussed == null) {
+                Actor focused = stage.getKeyboardFocus();
+                if (focused == null) {
                     stage.setKeyboardFocus(focusables.first());
                 } else {
-                    int index = focusables.indexOf(focussed, true) + 1;
+                    int index = focusables.indexOf(focused, true) + 1;
                     if (index >= focusables.size) index = 0;
                     stage.setKeyboardFocus(focusables.get(index));
                 }
             }
             
             public void previous() {
-                Actor focussed = stage.getKeyboardFocus();
-                if (focussed == null) {
+                Actor focused = stage.getKeyboardFocus();
+                if (focused == null) {
                     stage.setKeyboardFocus(focusables.first());
                 } else {
-                    int index = focusables.indexOf(focussed, true) - 1;
+                    int index = focusables.indexOf(focused, true) - 1;
                     if (index < 0) index = focusables.size - 1;
                     stage.setKeyboardFocus(focusables.get(index));
                 }
             }
             
             public void activate() {
-                Actor focussed = stage.getKeyboardFocus();
-                if (focussed != null) {
-                    focussed.fire(new ChangeEvent());
+                Actor focused = stage.getKeyboardFocus();
+                if (focused != null) {
+                    focused.fire(new ChangeEvent());
                 } else {
                     stage.setKeyboardFocus(focusables.first());
                 }
@@ -115,53 +115,54 @@ public class MenuScreen extends JamScreen {
                 stage.setKeyboardFocus(null);
             }
         };
-    
+        
         Table root = new Table();
         root.setFillParent(true);
+        root.setBackground(skin.getDrawable("bg-10"));
+        root.pad(20);
         stage.addActor(root);
-    
-        Image image = new Image(skin, "libgdx-animation");
-        image.setScaling(Scaling.none);
-        root.add(image);
+        
+        Image image = new Image(skin, "logo");
+        image.setScaling(Scaling.fit);
+        root.add(image).minSize(0);
         
         root.row();
         Table table = new Table();
-        root.add(table);
+        table.setBackground(skin.getDrawable("window-10"));
+        root.add(table).space(10);
         
-        table.pad(30);
-        table.defaults().uniform().space(10);
-        TextButton textButton = new TextButton("Play", skin);
-        table.add(textButton);
-        focusables.add(textButton);
-        textButton.addListener(core.sndChangeListener);
-        textButton.addListener(mouseEnterListener);
-        textButton.addListener(new ChangeListener() {
+        Button button = new Button(skin, "start");
+        table.add(button);
+        focusables.add(button);
+        button.addListener(core.sndChangeListener);
+        button.addListener(mouseEnterListener);
+        button.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 Gdx.input.setInputProcessor(null);
                 core.transition(new GameScreen());
             }
         });
-    
-        textButton = new TextButton("Options", skin);
-        table.add(textButton);
-        focusables.add(textButton);
-        textButton.addListener(core.sndChangeListener);
-        textButton.addListener(mouseEnterListener);
-        textButton.addListener(new ChangeListener() {
+        
+        button = new Button(skin, "options");
+        table.add(button);
+        focusables.add(button);
+        button.addListener(core.sndChangeListener);
+        button.addListener(mouseEnterListener);
+        button.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 Gdx.input.setInputProcessor(null);
                 core.transition(new OptionsScreen());
             }
         });
-    
-        textButton = new TextButton("Credits", skin);
-        table.add(textButton);
-        focusables.add(textButton);
-        textButton.addListener(core.sndChangeListener);
-        textButton.addListener(mouseEnterListener);
-        textButton.addListener(new ChangeListener() {
+        
+        button = new Button(skin, "credits");
+        table.add(button);
+        focusables.add(button);
+        button.addListener(core.sndChangeListener);
+        button.addListener(mouseEnterListener);
+        button.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 Gdx.input.setInputProcessor(null);
