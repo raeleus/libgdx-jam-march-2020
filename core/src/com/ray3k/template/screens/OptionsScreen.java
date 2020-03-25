@@ -179,12 +179,12 @@ public class OptionsScreen extends JamScreen {
         });
         
         root.row();
-        TextButton textButton = new TextButton("Edit Key Bindings", skin);
-        root.add(textButton);
-        focusables.add(textButton);
-        textButton.addListener(core.sndChangeListener);
-        textButton.addListener(mouseEnterListener);
-        textButton.addListener(new ChangeListener() {
+        Button button = new Button(skin, "key-binds");
+        root.add(button);
+        focusables.add(button);
+        button.addListener(core.sndChangeListener);
+        button.addListener(mouseEnterListener);
+        button.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 stage.removeListener(keysListener);
@@ -204,12 +204,12 @@ public class OptionsScreen extends JamScreen {
         });
 
         root.row();
-        textButton = new TextButton("OK", skin);
-        root.add(textButton);
-        focusables.add(textButton);
-        textButton.addListener(core.sndChangeListener);
-        textButton.addListener(mouseEnterListener);
-        textButton.addListener(new ChangeListener() {
+        button = new Button(skin, "back");
+        root.add(button);
+        focusables.add(button);
+        button.addListener(core.sndChangeListener);
+        button.addListener(mouseEnterListener);
+        button.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 Gdx.input.setInputProcessor(null);
