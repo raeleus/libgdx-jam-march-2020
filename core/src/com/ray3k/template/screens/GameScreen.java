@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.controllers.Controllers;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -100,7 +99,7 @@ public class GameScreen extends JamScreen {
         batch.begin();
         viewport.apply();
         batch.setProjectionMatrix(camera.combined);
-        shapeDrawer.setColor(isBindingPressed(Binding.LEFT) ? Color.ORANGE : Color.GREEN);
+        shapeDrawer.setColor(isBindingPressed(Binding.ROTATE_LEFT) ? Color.ORANGE : Color.GREEN);
         shapeDrawer.filledRectangle(0, 0, viewport.getWorldWidth(), viewport.getWorldHeight());
         shapeDrawer.setColor(Color.BLUE);
         shapeDrawer.setDefaultLineWidth(10);

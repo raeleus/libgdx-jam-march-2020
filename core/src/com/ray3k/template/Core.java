@@ -5,8 +5,6 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
-import com.badlogic.gdx.controllers.Controller;
-import com.badlogic.gdx.controllers.Controllers;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
@@ -29,7 +27,7 @@ public class Core extends JamGame {
     public VfxManager vfxManager;
     public CrossPlatformWorker crossPlatformWorker;
     public static enum Binding {
-        LEFT, RIGHT, UP, DOWN, SHOOT, SPECIAL, SHIELD;
+        ROTATE_LEFT, ROTATE_RIGHT, THRUST, DOWN, CLAW_SHOOT, SPECIAL, SHIELD;
     }
     public float bgm;
     public float sfx;
@@ -106,12 +104,9 @@ public class Core extends JamGame {
     }
     
     public void setDefaultBindings() {
-        JamScreen.addKeyBinding(Binding.LEFT, Input.Keys.LEFT);
-        JamScreen.addKeyBinding(Binding.RIGHT, Input.Keys.RIGHT);
-        JamScreen.addKeyBinding(Binding.UP, Input.Keys.UP);
-        JamScreen.addKeyBinding(Binding.DOWN, Input.Keys.DOWN);
-        JamScreen.addKeyBinding(Binding.SHOOT, Input.Keys.Z);
-        JamScreen.addKeyBinding(Binding.SHIELD, Input.Keys.X);
-        JamScreen.addKeyBinding(Binding.SPECIAL, Input.Keys.C);
+        JamScreen.addKeyBinding(Binding.ROTATE_LEFT, Input.Keys.LEFT);
+        JamScreen.addKeyBinding(Binding.ROTATE_RIGHT, Input.Keys.RIGHT);
+        JamScreen.addKeyBinding(Binding.THRUST, Input.Keys.UP);
+        JamScreen.addKeyBinding(Binding.CLAW_SHOOT, Input.Keys.Z);
     }
 }
