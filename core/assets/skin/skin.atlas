@@ -186,6 +186,13 @@ vertical-scroll-knob
   orig: 12, 71
   offset: 0, 0
   index: -1
+white
+  rotate: false
+  xy: 1524, 1810
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
 window
   rotate: false
   xy: 1, 946

@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -20,7 +19,6 @@ import com.crashinvaders.vfx.effects.EarthquakeEffect;
 import com.ray3k.template.Core;
 import com.ray3k.template.Core.Binding;
 import com.ray3k.template.JamScreen;
-import com.ray3k.template.entities.BallTestEntity;
 import com.ray3k.template.entities.EntityController;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
@@ -35,7 +33,6 @@ public class GameScreen extends JamScreen {
     public ShapeDrawer shapeDrawer;
     public EntityController entityController;
     private VfxManager vfxManager;
-    private EarthquakeEffect vfxEffect;
     
     public GameScreen() {
         gameScreen = this;
@@ -43,7 +40,6 @@ public class GameScreen extends JamScreen {
         assetManager = core.assetManager;
         batch = core.batch;
         vfxManager = core.vfxManager;
-        vfxEffect = new EarthquakeEffect();
         
         BG_COLOR.set(Color.PINK);
         
@@ -58,7 +54,7 @@ public class GameScreen extends JamScreen {
             }
         });
         
-        skin = assetManager.get("skin/shimmer-ui.json");
+        skin = assetManager.get("skin/skin.json");
         shapeDrawer = new ShapeDrawer(core.batch, skin.getRegion("white"));
         shapeDrawer.setPixelSize(.5f);
         
@@ -69,24 +65,12 @@ public class GameScreen extends JamScreen {
         viewport = new FitViewport(1024, 576, camera);
         
         entityController = new EntityController();
-        BallTestEntity ballTestEntity = new BallTestEntity();
-        ballTestEntity.moveCamera = true;
-        entityController.add(ballTestEntity);
-        
-        for (int i = 0; i < 10; i++) {
-            ballTestEntity = new BallTestEntity();
-            ballTestEntity.setPosition(MathUtils.random(viewport.getWorldWidth()), MathUtils.random(viewport.getWorldHeight()));
-            entityController.add(ballTestEntity);
-        }
-        
-        vfxManager.addEffect(vfxEffect);
     }
     
     @Override
     public void act(float delta) {
         entityController.act(delta);
         stage.act(delta);
-        vfxEffect.update(delta);
     }
     
     @Override
@@ -99,11 +83,6 @@ public class GameScreen extends JamScreen {
         batch.begin();
         viewport.apply();
         batch.setProjectionMatrix(camera.combined);
-        shapeDrawer.setColor(isBindingPressed(Binding.ROTATE_LEFT) ? Color.ORANGE : Color.GREEN);
-        shapeDrawer.filledRectangle(0, 0, viewport.getWorldWidth(), viewport.getWorldHeight());
-        shapeDrawer.setColor(Color.BLUE);
-        shapeDrawer.setDefaultLineWidth(10);
-        shapeDrawer.rectangle(0, 0, viewport.getWorldWidth(), viewport.getWorldHeight());
         entityController.draw(delta);
         batch.end();
         vfxManager.endCapture();
@@ -114,6 +93,7 @@ public class GameScreen extends JamScreen {
     
     @Override
     public void resize(int width, int height) {
+        super.resize(width, height);
         vfxManager.resize(width, height);
         viewport.update(width, height);
         
@@ -122,12 +102,11 @@ public class GameScreen extends JamScreen {
     
     @Override
     public void dispose() {
-        vfxEffect.dispose();
+        super.dispose();
     }
     
     @Override
     public void hide() {
         super.hide();
-        vfxEffect.dispose();
     }
 }
