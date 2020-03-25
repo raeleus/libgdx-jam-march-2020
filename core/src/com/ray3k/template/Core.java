@@ -27,7 +27,7 @@ public class Core extends JamGame {
     public VfxManager vfxManager;
     public CrossPlatformWorker crossPlatformWorker;
     public static enum Binding {
-        ROTATE_LEFT, ROTATE_RIGHT, THRUST, DOWN, CLAW_SHOOT, SPECIAL, SHIELD;
+        ROTATE_LEFT, ROTATE_RIGHT, THRUST, CLAW_SHOOT;
     }
     public float bgm;
     public float sfx;
