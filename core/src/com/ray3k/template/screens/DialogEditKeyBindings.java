@@ -136,7 +136,6 @@ public class DialogEditKeyBindings extends Dialog {
                 refreshTable(table);
             }
         });
-    
     }
     
     private void refreshTable(Table table) {
@@ -167,6 +166,7 @@ public class DialogEditKeyBindings extends Dialog {
             table.add(textButton);
             table.row();
             focusables.add(textButton);
+            textButton.addListener(core.sndChangeListener);
             textButton.addListener(mouseEnterListener);
             textButton.addListener(new ChangeListener() {
                 @Override
