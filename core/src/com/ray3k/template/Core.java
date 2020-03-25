@@ -21,7 +21,7 @@ import com.ray3k.template.screens.LoadScreen;
 import com.ray3k.template.transitions.Transitions;
 
 public class Core extends JamGame {
-    public static final String PROJECT_NAME = "Template Game";
+    public static final String PROJECT_NAME = "VTOL Vertical Take-Off and Landing";
     public static Core core;
     public Skin skin;
     public SkeletonRenderer skeletonRenderer;
