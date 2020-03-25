@@ -1,0 +1,31 @@
+{
+"skeleton": {
+	"hash": "Ls3IZUl9spGFj2h4UVj5N7iLgno",
+	"spine": "3.8.79",
+	"x": -47.03,
+	"y": -71.01,
+	"width": 91,
+	"height": 191,
+	"images": "../output/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "nuke", "bone": "root", "attachment": "nuke" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"nuke": {
+				"nuke": { "x": -1.53, "y": 24.49, "width": 91, "height": 191 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

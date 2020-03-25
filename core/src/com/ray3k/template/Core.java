@@ -103,26 +103,6 @@ public class Core extends JamGame {
             }
             break;
         }
-    
-        fileHandle = Gdx.files.internal("spine-libgdx-atlas.txt");
-        if (fileHandle.exists()) for (String path : fileHandle.readString().split("\\n")) {
-            assetManager.load(path, TextureAtlas.class);
-            fileHandle = Gdx.files.internal("spine-libgdx.txt");
-            if (fileHandle.exists()) for (String path2 : fileHandle.readString().split("\\n")) {
-                assetManager.load(path2, SkeletonData.class, new SkeletonDataLoader.SkeletonDataLoaderParameter(path));
-            }
-            break;
-        }
-    
-        fileHandle = Gdx.files.internal("spine-ray3k-atlas.txt");
-        if (fileHandle.exists()) for (String path : fileHandle.readString().split("\\n")) {
-            assetManager.load(path, TextureAtlas.class);
-            fileHandle = Gdx.files.internal("spine-ray3k.txt");
-            if (fileHandle.exists()) for (String path2 : fileHandle.readString().split("\\n")) {
-                assetManager.load(path2, SkeletonData.class, new SkeletonDataLoader.SkeletonDataLoaderParameter(path));
-            }
-            break;
-        }
     }
     
     public void setDefaultBindings() {

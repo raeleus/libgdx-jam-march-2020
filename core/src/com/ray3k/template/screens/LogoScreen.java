@@ -15,6 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectSet;
 import com.badlogic.gdx.utils.Scaling;
+import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.esotericsoftware.spine.*;
 import com.esotericsoftware.spine.utils.SkeletonDrawable;
@@ -40,15 +41,15 @@ public class LogoScreen extends JamScreen {
         skeletonDrawables = new Array<>();
         sounds = new ObjectSet<>();
         
-        SkeletonData skeletonData = assetManager.get("spine-ray3k/ray3k.json");
+        SkeletonData skeletonData = assetManager.get("spine/ray3k.json");
         SkeletonDrawable skeletonDrawable = new SkeletonDrawable(core.skeletonRenderer, new Skeleton(skeletonData), new AnimationState(new AnimationStateData(skeletonData)));
-        skeletonDrawable.setMinWidth(525);
-        skeletonDrawable.setMinHeight(150);
-        skeletonDrawable.getAnimationState().setAnimation(0, "stand", false);
+        skeletonDrawable.setMinWidth(1024);
+        skeletonDrawable.setMinHeight(576);
+        skeletonDrawable.getAnimationState().setAnimation(0, "animation", false);
         skeletonDrawable.getAnimationState().apply(skeletonDrawable.getSkeleton());
         skeletonDrawables.add(skeletonDrawable);
         
-        stage = new Stage(new ScreenViewport(), core.batch);
+        stage = new Stage(new FillViewport(1024, 576), core.batch);
         Gdx.input.setInputProcessor(stage);
         
         Table root = new Table();
@@ -58,8 +59,6 @@ public class LogoScreen extends JamScreen {
         Image image = new Image(skeletonDrawable);
         image.setScaling(Scaling.none);
         root.add(image);
-    
-        skeletonDrawable.getAnimationState().setAnimation(0, "animation", false);
         
         skeletonDrawable.getAnimationState().addListener(new AnimationState.AnimationStateAdapter() {
             @Override

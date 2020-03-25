@@ -1,0 +1,40 @@
+{
+"skeleton": {
+	"hash": "1VW+xJ50vBRj9QOGqRvtJyRfA+o",
+	"spine": "3.8.79",
+	"x": -162.09,
+	"y": -7.65,
+	"width": 318,
+	"height": 494,
+	"images": "../output/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "city", "bone": "root", "attachment": "city" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"city": {
+				"city": { "x": -3.09, "y": 239.35, "width": 318, "height": 494 },
+				"city-wreck": { "x": -3.09, "y": 141.26, "width": 310, "height": 302 }
+			}
+		}
+	}
+],
+"animations": {
+	"wreck": {
+		"slots": {
+			"city": {
+				"attachment": [
+					{ "name": "city-wreck" }
+				]
+			}
+		}
+	}
+}
+}

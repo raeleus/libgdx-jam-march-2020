@@ -1,0 +1,31 @@
+{
+"skeleton": {
+	"hash": "38CNzXW9B115Ir/u22cifNt+yT0",
+	"spine": "3.8.79",
+	"x": -29.52,
+	"y": -3.94,
+	"width": 84,
+	"height": 88,
+	"images": "../output/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "fuel-can", "bone": "root", "attachment": "fuel-can" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"fuel-can": {
+				"fuel-can": { "x": 12.48, "y": 40.06, "width": 84, "height": 88 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

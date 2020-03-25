@@ -1,7 +1,14 @@
-sfx/ahh.mp3
 sfx/click.mp3
+sfx/explosion.mp3
+sfx/libgdx-scream.mp3
+sfx/libgdx-squish.mp3
+sfx/libgdx-stomp.mp3
 sfx/libgdx.mp3
-sfx/please don't kill me.mp3
-sfx/shot.mp3
-sfx/swoosh.mp3
-sfx/tv.mp3
+sfx/logo-alarm.mp3
+sfx/logo-huh.mp3
+sfx/logo-jamtime.mp3
+sfx/logo-keyboard.mp3
+sfx/logo-snore.mp3
+sfx/minigun.mp3
+sfx/nuke.mp3
+sfx/sam-site.mp3

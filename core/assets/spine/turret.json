@@ -1,0 +1,105 @@
+{
+"skeleton": {
+	"hash": "7dZ6B+CS0xqPTAYcHjnOMLhdDJs",
+	"spine": "3.8.79",
+	"x": -37.53,
+	"y": -87.2,
+	"width": 119.66,
+	"height": 101.08,
+	"images": "../output/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "turret-body", "parent": "root", "length": 59.23, "rotation": -89.14, "x": -2.27, "y": -10.22 },
+	{ "name": "rotator", "parent": "turret-body", "length": 82.65, "rotation": 89.14, "x": 58.38, "y": 2.22 },
+	{ "name": "turret-barrel", "parent": "rotator", "length": 61.88, "rotation": 0.41, "x": 31.38, "y": -2.65 },
+	{ "name": "turret-barrel2", "parent": "rotator", "length": 61.88, "rotation": 0.41, "x": 26.52, "y": 3.09 },
+	{ "name": "turret-barrel3", "parent": "rotator", "length": 61.88, "rotation": 0.41, "x": 26.52, "y": -9.72 },
+	{ "name": "turret-barrel4", "parent": "rotator", "length": 61.88, "rotation": 0.41, "x": 26.52, "y": -9.72 }
+],
+"slots": [
+	{ "name": "turret-body", "bone": "turret-body", "attachment": "turret-body" },
+	{ "name": "turret-barrel4", "bone": "turret-barrel4" },
+	{ "name": "turret-barrel2", "bone": "turret-barrel2", "attachment": "turret-barrel" },
+	{ "name": "turret-barrel3", "bone": "turret-barrel3", "attachment": "turret-barrel" },
+	{ "name": "turret-barrel", "bone": "turret-barrel", "attachment": "turret-barrel" },
+	{ "name": "turret", "bone": "rotator", "attachment": "turret" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"turret": {
+				"turret": { "x": 3.91, "y": -2.14, "width": 54, "height": 33 }
+			},
+			"turret-barrel": {
+				"turret-barrel": { "x": 23.43, "y": 0.27, "rotation": -0.41, "width": 53, "height": 10 }
+			},
+			"turret-barrel2": {
+				"turret-barrel": { "x": 23.43, "y": 0.27, "rotation": -0.41, "width": 53, "height": 10 }
+			},
+			"turret-barrel3": {
+				"turret-barrel": { "x": 23.43, "y": 0.27, "rotation": -0.41, "width": 53, "height": 10 }
+			},
+			"turret-barrel4": {
+				"turret-barrel": { "x": 23.43, "y": 0.27, "rotation": -0.41, "width": 53, "height": 10 }
+			},
+			"turret-body": {
+				"turret-body": { "x": 20.91, "y": 0.43, "rotation": 89.14, "width": 72, "height": 90 }
+			}
+		}
+	}
+],
+"animations": {
+	"cease-fire": {},
+	"fire": {
+		"slots": {
+			"turret-barrel2": {
+				"attachment": [
+					{ "time": 0.0667, "name": null }
+				]
+			},
+			"turret-barrel4": {
+				"attachment": [
+					{ "name": "turret-barrel" }
+				]
+			}
+		},
+		"bones": {
+			"turret-barrel3": {
+				"translate": [
+					{},
+					{ "time": 0.1333, "x": 4.86, "y": 7.07 }
+				]
+			},
+			"turret-barrel": {
+				"translate": [
+					{},
+					{ "time": 0.1333, "x": -4.86, "y": 5.75 }
+				]
+			},
+			"turret-barrel2": {
+				"translate": [
+					{},
+					{ "time": 0.1333, "y": -12.82 }
+				]
+			},
+			"turret-barrel4": {
+				"translate": [
+					{ "y": 2.53 },
+					{ "time": 0.1333 }
+				]
+			}
+		},
+		"drawOrder": [
+			{
+				"time": 0.0667,
+				"offsets": [
+					{ "slot": "turret-barrel3", "offset": 1 }
+				]
+			}
+		]
+	}
+}
+}

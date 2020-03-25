@@ -1,0 +1,75 @@
+{
+"skeleton": {
+	"hash": "UKpuOyzZVC0UrXm+Xy9Kd6OYNts",
+	"spine": "3.8.79",
+	"x": -44.65,
+	"y": -36.87,
+	"width": 80,
+	"height": 76,
+	"images": "../output/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "nuke-explosion-0", "parent": "root", "length": 359.7, "rotation": -0.74, "x": -1.53, "y": 7.36 }
+],
+"slots": [
+	{ "name": "nuke-explosion-0", "bone": "nuke-explosion-0", "attachment": "nuke-explosion-0" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"nuke-explosion-0": {
+				"nuke-explosion-0": { "x": -3.03, "y": -6.27, "rotation": 0.74, "width": 80, "height": 76 },
+				"nuke-explosion-1": { "x": 1.62, "y": -6.84, "rotation": 0.74, "width": 208, "height": 199 },
+				"nuke-explosion-2": { "x": 1.63, "y": -7.34, "rotation": 0.74, "width": 272, "height": 260 },
+				"nuke-explosion-3": { "x": 1.63, "y": -7.34, "rotation": 0.74, "width": 300, "height": 286 },
+				"nuke-explosion-4": { "x": 2.13, "y": -7.33, "rotation": 0.74, "width": 353, "height": 336 },
+				"nuke-explosion-5": { "x": 1.63, "y": -7.34, "rotation": 0.74, "width": 388, "height": 370 },
+				"nuke-explosion-6": { "x": 1.63, "y": -7.34, "rotation": 0.74, "width": 388, "height": 308 },
+				"nuke-explosion-7": { "x": 0.78, "y": 58.05, "rotation": 0.74, "width": 388, "height": 366 },
+				"nuke-explosion-8": { "x": 0.31, "y": 93.86, "rotation": 0.74, "width": 388, "height": 356 },
+				"nuke-explosion-9": { "x": 0.09, "y": 110.98, "rotation": 0.74, "width": 388, "height": 344 },
+				"nuke-explosion-10": { "x": -0.44, "y": 151.96, "rotation": 0.74, "width": 388, "height": 409 },
+				"nuke-explosion-11": { "x": 0.27, "y": 96.97, "rotation": 0.74, "width": 422, "height": 262 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"nuke-explosion-0": {
+				"color": [
+					{ "time": 0.4, "color": "ffffffff" },
+					{ "time": 0.6, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0.0667, "name": "nuke-explosion-1" },
+					{ "time": 0.1, "name": "nuke-explosion-2" },
+					{ "time": 0.1333, "name": "nuke-explosion-3" },
+					{ "time": 0.1667, "name": "nuke-explosion-4" },
+					{ "time": 0.2, "name": "nuke-explosion-5" },
+					{ "time": 0.2333, "name": "nuke-explosion-6" },
+					{ "time": 0.2667, "name": "nuke-explosion-7" },
+					{ "time": 0.3, "name": "nuke-explosion-8" },
+					{ "time": 0.3333, "name": "nuke-explosion-9" },
+					{ "time": 0.3667, "name": "nuke-explosion-10" },
+					{ "time": 0.4, "name": "nuke-explosion-11" }
+				]
+			}
+		},
+		"bones": {
+			"nuke-explosion-0": {
+				"scale": [
+					{ "x": 0, "y": 0 },
+					{ "time": 0.0333, "curve": "stepped" },
+					{ "time": 0.4 },
+					{ "time": 0.6, "x": 1.5, "y": 1.5 }
+				]
+			}
+		}
+	}
+}
+}

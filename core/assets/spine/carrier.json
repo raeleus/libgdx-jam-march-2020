@@ -1,0 +1,111 @@
+{
+"skeleton": {
+	"hash": "g1DP8Zx2EoqwEDuUkBi1OCyp4PI",
+	"spine": "3.8.79",
+	"x": -87.31,
+	"y": -171.16,
+	"width": 184,
+	"height": 192,
+	"images": "../output/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "person", "parent": "root", "length": 52.96, "rotation": -1.68, "x": 141.71, "y": -124.99 }
+],
+"slots": [
+	{ "name": "carrier-0", "bone": "root", "attachment": "carrier-0" },
+	{ "name": "person", "bone": "person" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"carrier-0": {
+				"carrier-0": { "x": 4.69, "y": -75.16, "width": 184, "height": 192 },
+				"carrier-1": { "x": 4.69, "y": -75.16, "width": 184, "height": 192 },
+				"carrier-2": { "x": 4.69, "y": -75.16, "width": 184, "height": 192 },
+				"carrier-3": { "x": 4.69, "y": -75.16, "width": 184, "height": 192 },
+				"carrier-4": { "x": 4.69, "y": -75.16, "width": 184, "height": 192 }
+			},
+			"person": {
+				"person": { "x": 3.07, "y": 1.65, "rotation": 1.68, "width": 49, "height": 83 }
+			}
+		}
+	}
+],
+"animations": {
+	"empty": {},
+	"fill1": {
+		"slots": {
+			"carrier-0": {
+				"attachment": [
+					{ "name": "carrier-1" }
+				]
+			}
+		}
+	},
+	"fill2": {
+		"slots": {
+			"carrier-0": {
+				"attachment": [
+					{ "name": "carrier-2" }
+				]
+			}
+		}
+	},
+	"fill3": {
+		"slots": {
+			"carrier-0": {
+				"attachment": [
+					{ "name": "carrier-3" }
+				]
+			}
+		}
+	},
+	"loading": {
+		"slots": {
+			"person": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.1, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.7, "color": "ffffffff" },
+					{ "time": 1, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "name": "person" }
+				]
+			}
+		},
+		"bones": {
+			"person": {
+				"rotate": [
+					{ "time": 0.1 },
+					{ "time": 0.2, "angle": 11.02 },
+					{ "time": 0.3, "angle": -7.11 },
+					{ "time": 0.4, "angle": 18.98 },
+					{ "time": 0.5, "angle": -11.19 },
+					{ "time": 0.6, "angle": 14.68 },
+					{ "time": 0.7, "angle": -14.23 },
+					{ "time": 0.8, "angle": 13.4 },
+					{ "time": 0.9, "angle": -13.59 },
+					{ "time": 1, "angle": -0.58 }
+				],
+				"translate": [
+					{ "time": 0.1 },
+					{ "time": 1, "x": -140.13 }
+				]
+			}
+		}
+	},
+	"wreck": {
+		"slots": {
+			"carrier-0": {
+				"attachment": [
+					{ "name": "carrier-4" }
+				]
+			}
+		}
+	}
+}
+}
