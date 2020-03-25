@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -126,12 +127,12 @@ public class CreditsScreen extends JamScreen {
         root.add(typingLabel);
         
         root.row();
-        TextButton textButton = new TextButton("OK", skin);
-        root.add(textButton);
-        focusables.add(textButton);
-        textButton.addListener(core.sndChangeListener);
-        textButton.addListener(mouseEnterListener);
-        textButton.addListener(new ChangeListener() {
+        Button button = new Button(skin, "back");
+        root.add(button);
+        focusables.add(button);
+        button.addListener(core.sndChangeListener);
+        button.addListener(mouseEnterListener);
+        button.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 Gdx.input.setInputProcessor(null);
