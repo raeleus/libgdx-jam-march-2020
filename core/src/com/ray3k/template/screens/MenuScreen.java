@@ -36,7 +36,7 @@ public class MenuScreen extends JamScreen {
         core = Core.core;
         skin = core.skin;
         
-        final Music bgm = core.assetManager.get("bgm/music-test.mp3");
+        final Music bgm = core.assetManager.get("bgm/menu.mp3");
         if (!bgm.isPlaying()) {
             bgm.play();
             bgm.setVolume(core.bgm);

@@ -126,7 +126,7 @@ public class OptionsScreen extends JamScreen {
         label = new Label("BGM", skin);
         table.add(label).right();
 
-        final Music bgm = core.assetManager.get("bgm/music-test.mp3");
+        final Music bgm = core.assetManager.get("bgm/menu.mp3");
         
         Slider slider = new Slider(0, 1, .01f, false, skin);
         slider.setValue(core.bgm);
