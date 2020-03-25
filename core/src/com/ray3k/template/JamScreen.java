@@ -16,8 +16,6 @@ import com.badlogic.gdx.utils.ObjectSet;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.ray3k.template.Core.Binding;
 
-import java.util.Arrays;
-
 public abstract class JamScreen extends ScreenAdapter implements InputProcessor, ControllerListener {
     public Viewport viewport;
     public OrthographicCamera camera;
@@ -352,6 +350,33 @@ public abstract class JamScreen extends ScreenAdapter implements InputProcessor,
         }
     }
     
+    public boolean isAnyBindingJustPressed() {
+        for (Core.Binding binding : bindings) {
+            if (isBindingJustPressed(binding)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean isAnyBindingJustPressed(Core.Binding... bindings) {
+        for (Core.Binding binding : bindings) {
+            if (isBindingJustPressed(binding)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean isAnyBindingPressed() {
+        for (Core.Binding binding : bindings) {
+            if (isBindingPressed(binding)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public boolean isAnyBindingPressed(Core.Binding... bindings) {
         for (Core.Binding binding : bindings) {
             if (isBindingPressed(binding)) {
@@ -626,7 +651,7 @@ public abstract class JamScreen extends ScreenAdapter implements InputProcessor,
             pref.remove("controllerpov:" + binding.key.toString());
             pref.remove("unbound:" + binding.key.toString());
         }
-    
+        
         for (Entry<Binding> binding : controllerAxisBindings) {
             pref.putInteger("controlleraxis:" + binding.key.toString(), binding.value);
             pref.remove("key:" + binding.key.toString());
@@ -636,7 +661,7 @@ public abstract class JamScreen extends ScreenAdapter implements InputProcessor,
             pref.remove("controllerpov:" + binding.key.toString());
             pref.remove("unbound:" + binding.key.toString());
         }
-    
+        
         for (Entry<Binding> binding : controllerPovBindings) {
             pref.putInteger("controllerpov:" + binding.key.toString(), binding.value);
             pref.remove("key:" + binding.key.toString());
@@ -666,12 +691,12 @@ public abstract class JamScreen extends ScreenAdapter implements InputProcessor,
             if (pref.contains(key)) {
                 JamScreen.addKeyBinding(binding, pref.getInteger(key));
             }
-    
+            
             key = "button:" + binding.toString();
             if (pref.contains(key)) {
                 JamScreen.addButtonBinding(binding, pref.getInteger(key));
             }
-    
+            
             key = "scroll:" + binding.toString();
             if (pref.contains(key)) {
                 JamScreen.addScrollBinding(binding, pref.getInteger(key));
@@ -681,17 +706,17 @@ public abstract class JamScreen extends ScreenAdapter implements InputProcessor,
             if (pref.contains(key)) {
                 JamScreen.addControllerButtonBinding(binding, pref.getInteger(key));
             }
-    
+            
             key = "controlleraxis:" + binding.toString();
             if (pref.contains(key)) {
                 JamScreen.addControllerAxisBinding(binding, pref.getInteger(key));
             }
-    
+            
             key = "controllerpov:" + binding.toString();
             if (pref.contains(key)) {
                 JamScreen.addControllerPovBinding(binding, pref.getInteger(key));
             }
-    
+            
             key = "unbound:" + binding.toString();
             if (pref.contains(key)) {
                 JamScreen.addUnboundBinding(binding);

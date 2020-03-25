@@ -15,11 +15,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.crashinvaders.vfx.VfxManager;
-import com.crashinvaders.vfx.effects.EarthquakeEffect;
 import com.ray3k.template.Core;
-import com.ray3k.template.Core.Binding;
 import com.ray3k.template.JamScreen;
 import com.ray3k.template.entities.EntityController;
+import com.ray3k.template.screens.DialogPause.PauseListener;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
 public class GameScreen extends JamScreen {
@@ -33,6 +32,7 @@ public class GameScreen extends JamScreen {
     public ShapeDrawer shapeDrawer;
     public EntityController entityController;
     private VfxManager vfxManager;
+    public boolean paused;
     
     public GameScreen() {
         gameScreen = this;
@@ -42,13 +42,29 @@ public class GameScreen extends JamScreen {
         vfxManager = core.vfxManager;
         
         BG_COLOR.set(Color.PINK);
+    
+        paused = false;
         
         stage = new Stage(new ScreenViewport(), core.batch);
         stage.addListener(new InputListener() {
             @Override
             public boolean keyDown(InputEvent event, int keycode) {
-                if (keycode == Keys.ESCAPE) {
-                    core.transition(new MenuScreen());
+                if (!paused && keycode == Keys.ESCAPE) {
+                    paused = true;
+    
+                    DialogPause dialogPause = new DialogPause(GameScreen.this);
+                    dialogPause.show(stage);
+                    dialogPause.addListener(new PauseListener() {
+                        @Override
+                        public void resume() {
+                            paused = false;
+                        }
+        
+                        @Override
+                        public void quit() {
+                            core.transition(new MenuScreen());
+                        }
+                    });
                 }
                 return super.keyDown(event, keycode);
             }
@@ -69,7 +85,9 @@ public class GameScreen extends JamScreen {
     
     @Override
     public void act(float delta) {
-        entityController.act(delta);
+        if (!paused) {
+            entityController.act(delta);
+        }
         stage.act(delta);
     }
     
@@ -83,7 +101,7 @@ public class GameScreen extends JamScreen {
         batch.begin();
         viewport.apply();
         batch.setProjectionMatrix(camera.combined);
-        entityController.draw(delta);
+        entityController.draw(paused ? 0 : delta);
         batch.end();
         vfxManager.endCapture();
         vfxManager.applyEffects();
