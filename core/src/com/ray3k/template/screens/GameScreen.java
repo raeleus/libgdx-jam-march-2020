@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -19,6 +20,7 @@ import com.ray3k.template.Core;
 import com.ray3k.template.JamScreen;
 import com.ray3k.template.entities.EntityController;
 import com.ray3k.template.screens.DialogPause.PauseListener;
+import com.ray3k.template.transitions.Transitions;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
 public class GameScreen extends JamScreen {
@@ -62,7 +64,7 @@ public class GameScreen extends JamScreen {
         
                         @Override
                         public void quit() {
-                            core.transition(new MenuScreen());
+                            core.transition(new MenuScreen(), Transitions.slide(270, Interpolation.bounceOut), 1f);
                         }
                     });
                 }
