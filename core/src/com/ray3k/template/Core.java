@@ -19,6 +19,7 @@ import com.esotericsoftware.spine.SkeletonRenderer;
 import com.ray3k.template.AnimationStateDataLoader.AnimationStateDataParameter;
 import com.ray3k.template.screens.LoadScreen;
 import com.ray3k.template.transitions.Transitions;
+import space.earlygrey.shapedrawer.ShapeDrawer;
 
 public class Core extends JamGame {
     public static final String PROJECT_NAME = "VTOL Vertical Take-Off and Landing";
@@ -34,6 +35,7 @@ public class Core extends JamGame {
     public float bgm;
     public float sfx;
     public Preferences preferences;
+    public ShapeDrawer shapeDrawer;
     
     @Override
     public void create() {
@@ -63,7 +65,7 @@ public class Core extends JamGame {
         
         setScreen(new LoadScreen(() -> {
             core.skin = core.assetManager.get("skin/skin.json");
-            System.out.println(assetManager.getAssetNames());
+            shapeDrawer = new ShapeDrawer(batch, skin.getRegion("white"));
         }));
         defaultTransition = Transitions.wipe(45);
         defaultTransitionDuration = .5f;

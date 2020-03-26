@@ -104,6 +104,7 @@ public class GameScreen extends JamScreen {
     
     @Override
     public void draw(float delta) {
+        System.out.println("game screen draw");
         batch.setBlendFunction(GL20.GL_ONE, GL20.GL_ONE_MINUS_SRC_ALPHA);
         
         vfxManager.cleanUpBuffers();
