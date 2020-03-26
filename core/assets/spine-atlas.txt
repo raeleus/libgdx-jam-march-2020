@@ -1,1 +1,1 @@
-spine/libgdx jam march.atlas
+spine/libGDX Jam March 2020.atlas

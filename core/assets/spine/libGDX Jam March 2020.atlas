@@ -1,0 +1,839 @@
+
+libGDX Jam March 2020.png
+size: 4096,4096
+format: RGBA8888
+filter: MipMapLinearLinear,MipMapLinearLinear
+repeat: none
+arrow
+  rotate: true
+  xy: 3510, 2665
+  size: 634, 453
+  orig: 634, 453
+  offset: 0, 0
+  index: -1
+bg
+  rotate: false
+  xy: 723, 2582
+  size: 79, 96
+  orig: 79, 96
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: true
+  xy: 4084, 3832
+  size: 134, 7
+  orig: 134, 7
+  offset: 0, 0
+  index: -1
+bush
+  rotate: true
+  xy: 806, 2541
+  size: 107, 60
+  orig: 107, 60
+  offset: 0, 0
+  index: -1
+button-back-normal
+  rotate: true
+  xy: 1424, 2525
+  size: 161, 58
+  orig: 161, 58
+  offset: 0, 0
+  index: -1
+button-back-over
+  rotate: true
+  xy: 1424, 2688
+  size: 161, 58
+  orig: 161, 58
+  offset: 0, 0
+  index: -1
+button-back-pressed
+  rotate: false
+  xy: 723, 2767
+  size: 161, 58
+  orig: 161, 58
+  offset: 0, 0
+  index: -1
+button-credits-normal
+  rotate: true
+  xy: 1629, 2693
+  size: 279, 72
+  orig: 279, 72
+  offset: 0, 0
+  index: -1
+button-credits-over
+  rotate: true
+  xy: 1522, 2632
+  size: 279, 72
+  orig: 279, 72
+  offset: 0, 0
+  index: -1
+button-credits-pressed
+  rotate: true
+  xy: 1629, 2974
+  size: 279, 72
+  orig: 279, 72
+  offset: 0, 0
+  index: -1
+button-defaults-normal
+  rotate: true
+  xy: 2066, 2384
+  size: 222, 59
+  orig: 222, 59
+  offset: 0, 0
+  index: -1
+button-defaults-over
+  rotate: true
+  xy: 2129, 2384
+  size: 222, 59
+  orig: 222, 59
+  offset: 0, 0
+  index: -1
+button-defaults-pressed
+  rotate: false
+  xy: 1130, 2790
+  size: 222, 59
+  orig: 222, 59
+  offset: 0, 0
+  index: -1
+button-key-binds-normal
+  rotate: true
+  xy: 2369, 2557
+  size: 342, 51
+  orig: 342, 51
+  offset: 0, 0
+  index: -1
+button-key-binds-over
+  rotate: true
+  xy: 3023, 2887
+  size: 342, 51
+  orig: 342, 51
+  offset: 0, 0
+  index: -1
+button-key-binds-pressed
+  rotate: true
+  xy: 3967, 2613
+  size: 342, 51
+  orig: 342, 51
+  offset: 0, 0
+  index: -1
+button-options-normal
+  rotate: true
+  xy: 2297, 2641
+  size: 278, 68
+  orig: 278, 68
+  offset: 0, 0
+  index: -1
+button-options-over
+  rotate: true
+  xy: 1598, 2413
+  size: 278, 68
+  orig: 278, 68
+  offset: 0, 0
+  index: -1
+button-options-pressed
+  rotate: true
+  xy: 2384, 2901
+  size: 278, 68
+  orig: 278, 68
+  offset: 0, 0
+  index: -1
+button-start-normal
+  rotate: false
+  xy: 394, 3127
+  size: 340, 70
+  orig: 340, 70
+  offset: 0, 0
+  index: -1
+button-start-over
+  rotate: true
+  xy: 1555, 2913
+  size: 340, 70
+  orig: 340, 70
+  offset: 0, 0
+  index: -1
+button-start-pressed
+  rotate: true
+  xy: 4022, 2508
+  size: 340, 70
+  orig: 340, 70
+  offset: 0, 0
+  index: -1
+carrier-0
+  rotate: false
+  xy: 1913, 2979
+  size: 184, 192
+  orig: 184, 192
+  offset: 0, 0
+  index: -1
+carrier-1
+  rotate: false
+  xy: 1913, 2785
+  size: 184, 192
+  orig: 184, 192
+  offset: 0, 0
+  index: -1
+carrier-2
+  rotate: true
+  xy: 1705, 2791
+  size: 184, 192
+  orig: 184, 192
+  offset: 0, 0
+  index: -1
+carrier-3
+  rotate: true
+  xy: 1705, 2605
+  size: 184, 192
+  orig: 184, 192
+  offset: 0, 0
+  index: -1
+carrier-4
+  rotate: true
+  xy: 2101, 2735
+  size: 184, 192
+  orig: 184, 192
+  offset: 0, 0
+  index: -1
+city
+  rotate: true
+  xy: 394, 3199
+  size: 318, 494
+  orig: 318, 494
+  offset: 0, 0
+  index: -1
+city-wreck
+  rotate: false
+  xy: 2459, 3215
+  size: 310, 302
+  orig: 310, 302
+  offset: 0, 0
+  index: -1
+claw-closed
+  rotate: true
+  xy: 978, 2599
+  size: 49, 42
+  orig: 49, 42
+  offset: 0, 0
+  index: -1
+claw-open
+  rotate: true
+  xy: 1168, 2655
+  size: 47, 43
+  orig: 47, 43
+  offset: 0, 0
+  index: -1
+container-back
+  rotate: true
+  xy: 801, 2416
+  size: 123, 52
+  orig: 123, 52
+  offset: 0, 0
+  index: -1
+container-front
+  rotate: true
+  xy: 2066, 2608
+  size: 125, 135
+  orig: 125, 135
+  offset: 0, 0
+  index: -1
+explosion
+  rotate: false
+  xy: 1705, 2977
+  size: 204, 194
+  orig: 204, 194
+  offset: 0, 0
+  index: -1
+flower
+  rotate: false
+  xy: 1522, 3000
+  size: 23, 34
+  orig: 23, 34
+  offset: 0, 0
+  index: -1
+fuel-can
+  rotate: true
+  xy: 1123, 2704
+  size: 84, 88
+  orig: 84, 88
+  offset: 0, 0
+  index: -1
+grass
+  rotate: true
+  xy: 1522, 3036
+  size: 49, 19
+  orig: 49, 19
+  offset: 0, 0
+  index: -1
+landing-pad
+  rotate: false
+  xy: 2, 2956
+  size: 593, 150
+  orig: 593, 150
+  offset: 0, 0
+  index: -1
+libgdx-b
+  rotate: false
+  xy: 981, 2650
+  size: 39, 51
+  orig: 39, 51
+  offset: 0, 0
+  index: -1
+libgdx-background
+  rotate: false
+  xy: 2058, 3519
+  size: 1024, 576
+  orig: 1024, 576
+  offset: 0, 0
+  index: -1
+libgdx-d
+  rotate: false
+  xy: 1024, 2585
+  size: 64, 51
+  orig: 64, 51
+  offset: 0, 0
+  index: -1
+libgdx-eye
+  rotate: false
+  xy: 1522, 2955
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+libgdx-foot
+  rotate: false
+  xy: 3510, 3301
+  size: 512, 794
+  orig: 512, 794
+  offset: 0, 0
+  index: -1
+libgdx-g
+  rotate: false
+  xy: 1096, 2587
+  size: 64, 51
+  orig: 64, 51
+  offset: 0, 0
+  index: -1
+libgdx-gore-1
+  rotate: true
+  xy: 1096, 2640
+  size: 62, 68
+  orig: 62, 68
+  offset: 0, 0
+  index: -1
+libgdx-gore-2
+  rotate: true
+  xy: 817, 2650
+  size: 115, 63
+  orig: 115, 63
+  offset: 0, 0
+  index: -1
+libgdx-gore-3
+  rotate: true
+  xy: 2259, 2439
+  size: 200, 66
+  orig: 200, 66
+  offset: 0, 0
+  index: -1
+libgdx-gore-4
+  rotate: true
+  xy: 1954, 2263
+  size: 319, 51
+  orig: 319, 51
+  offset: 0, 0
+  index: -1
+libgdx-gore-5
+  rotate: false
+  xy: 2, 2930
+  size: 396, 24
+  orig: 396, 24
+  offset: 0, 0
+  index: -1
+libgdx-i
+  rotate: false
+  xy: 583, 2903
+  size: 15, 51
+  orig: 15, 51
+  offset: 0, 0
+  index: -1
+libgdx-l
+  rotate: false
+  xy: 583, 2850
+  size: 15, 51
+  orig: 15, 51
+  offset: 0, 0
+  index: -1
+libgdx-mouth
+  rotate: true
+  xy: 583, 2780
+  size: 29, 17
+  orig: 29, 17
+  offset: 0, 0
+  index: -1
+libgdx-shadow
+  rotate: true
+  xy: 604, 2468
+  size: 657, 115
+  orig: 657, 115
+  offset: 0, 0
+  index: -1
+libgdx-subtitle1
+  rotate: true
+  xy: 4026, 3398
+  size: 697, 54
+  orig: 697, 54
+  offset: 0, 0
+  index: -1
+libgdx-subtitle2
+  rotate: true
+  xy: 4026, 2850
+  size: 546, 54
+  orig: 546, 54
+  offset: 0, 0
+  index: -1
+libgdx-subtitle3
+  rotate: true
+  xy: 2009, 2239
+  size: 200, 52
+  orig: 200, 52
+  offset: 0, 0
+  index: -1
+libgdx-template
+  rotate: true
+  xy: 2205, 2433
+  size: 300, 50
+  orig: 300, 50
+  offset: 0, 0
+  index: -1
+libgdx-x
+  rotate: true
+  xy: 1295, 2625
+  size: 78, 51
+  orig: 78, 51
+  offset: 0, 0
+  index: -1
+logo
+  rotate: true
+  xy: 3086, 2918
+  size: 1177, 420
+  orig: 1177, 420
+  offset: 0, 0
+  index: -1
+logo-3
+  rotate: true
+  xy: 594, 2397
+  size: 69, 88
+  orig: 69, 88
+  offset: 0, 0
+  index: -1
+logo-a
+  rotate: false
+  xy: 723, 2494
+  size: 74, 86
+  orig: 74, 86
+  offset: 0, 0
+  index: -1
+logo-arm
+  rotate: false
+  xy: 1522, 3143
+  size: 22, 71
+  orig: 22, 71
+  offset: 0, 0
+  index: -1
+logo-chair
+  rotate: false
+  xy: 1901, 2584
+  size: 106, 199
+  orig: 106, 199
+  offset: 0, 0
+  index: -1
+logo-chest
+  rotate: true
+  xy: 888, 2758
+  size: 67, 134
+  orig: 67, 134
+  offset: 0, 0
+  index: -1
+logo-cursor
+  rotate: true
+  xy: 1026, 2741
+  size: 84, 93
+  orig: 84, 93
+  offset: 0, 0
+  index: -1
+logo-eye
+  rotate: false
+  xy: 1522, 2977
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+logo-fore-arm
+  rotate: false
+  xy: 1522, 3087
+  size: 21, 54
+  orig: 21, 54
+  offset: 0, 0
+  index: -1
+logo-hand
+  rotate: false
+  xy: 1522, 2935
+  size: 21, 18
+  orig: 21, 18
+  offset: 0, 0
+  index: -1
+logo-head
+  rotate: true
+  xy: 1486, 2513
+  size: 117, 97
+  orig: 117, 97
+  offset: 0, 0
+  index: -1
+logo-head-back
+  rotate: false
+  xy: 583, 2811
+  size: 16, 37
+  orig: 16, 37
+  offset: 0, 0
+  index: -1
+logo-k
+  rotate: true
+  xy: 723, 2680
+  size: 85, 90
+  orig: 85, 90
+  offset: 0, 0
+  index: -1
+logo-leg
+  rotate: false
+  xy: 1356, 2668
+  size: 64, 181
+  orig: 64, 181
+  offset: 0, 0
+  index: -1
+logo-r
+  rotate: true
+  xy: 884, 2675
+  size: 81, 93
+  orig: 81, 93
+  offset: 0, 0
+  index: -1
+logo-scene1
+  rotate: false
+  xy: 2, 3519
+  size: 1024, 576
+  orig: 1024, 576
+  offset: 0, 0
+  index: -1
+logo-scene2
+  rotate: false
+  xy: 1030, 3519
+  size: 1024, 576
+  orig: 1024, 576
+  offset: 0, 0
+  index: -1
+logo-y
+  rotate: true
+  xy: 870, 2525
+  size: 74, 86
+  orig: 74, 86
+  offset: 0, 0
+  index: -1
+logo-z
+  rotate: true
+  xy: 723, 2401
+  size: 91, 70
+  orig: 91, 70
+  offset: 0, 0
+  index: -1
+map-node
+  rotate: false
+  xy: 1168, 2612
+  size: 41, 41
+  orig: 41, 41
+  offset: 0, 0
+  index: -1
+missile
+  rotate: true
+  xy: 1954, 2138
+  size: 123, 49
+  orig: 123, 49
+  offset: 0, 0
+  index: -1
+missile-plume
+  rotate: false
+  xy: 394, 3108
+  size: 77, 17
+  orig: 77, 17
+  offset: 0, 0
+  index: -1
+nuke
+  rotate: true
+  xy: 1670, 2408
+  size: 91, 191
+  orig: 91, 191
+  offset: 0, 0
+  index: -1
+nuke-explosion-0
+  rotate: false
+  xy: 1215, 2712
+  size: 80, 76
+  orig: 80, 76
+  offset: 0, 0
+  index: -1
+nuke-explosion-1
+  rotate: false
+  xy: 2769, 2701
+  size: 208, 199
+  orig: 208, 199
+  offset: 0, 0
+  index: -1
+nuke-explosion-10
+  rotate: false
+  xy: 2, 3108
+  size: 388, 409
+  orig: 388, 409
+  offset: 0, 0
+  index: -1
+nuke-explosion-11
+  rotate: false
+  xy: 1284, 3255
+  size: 422, 262
+  orig: 422, 262
+  offset: 0, 0
+  index: -1
+nuke-explosion-2
+  rotate: false
+  xy: 2456, 2693
+  size: 272, 260
+  orig: 272, 260
+  offset: 0, 0
+  index: -1
+nuke-explosion-3
+  rotate: false
+  xy: 2773, 3231
+  size: 300, 286
+  orig: 300, 286
+  offset: 0, 0
+  index: -1
+nuke-explosion-4
+  rotate: false
+  xy: 2102, 3181
+  size: 353, 336
+  orig: 353, 336
+  offset: 0, 0
+  index: -1
+nuke-explosion-5
+  rotate: false
+  xy: 738, 2827
+  size: 388, 370
+  orig: 388, 370
+  offset: 0, 0
+  index: -1
+nuke-explosion-6
+  rotate: false
+  xy: 892, 3209
+  size: 388, 308
+  orig: 388, 308
+  offset: 0, 0
+  index: -1
+nuke-explosion-7
+  rotate: false
+  xy: 2, 1986
+  size: 388, 366
+  orig: 388, 366
+  offset: 0, 0
+  index: -1
+nuke-explosion-8
+  rotate: false
+  xy: 1130, 2851
+  size: 388, 356
+  orig: 388, 356
+  offset: 0, 0
+  index: -1
+nuke-explosion-9
+  rotate: false
+  xy: 1710, 3173
+  size: 388, 344
+  orig: 388, 344
+  offset: 0, 0
+  index: -1
+person
+  rotate: false
+  xy: 1299, 2705
+  size: 49, 83
+  orig: 49, 83
+  offset: 0, 0
+  index: -1
+propeller-0
+  rotate: true
+  xy: 2981, 2817
+  size: 83, 38
+  orig: 83, 38
+  offset: 0, 0
+  index: -1
+propeller-1
+  rotate: true
+  xy: 1857, 2520
+  size: 83, 38
+  orig: 83, 38
+  offset: 0, 0
+  index: -1
+rock
+  rotate: true
+  xy: 1025, 2638
+  size: 101, 67
+  orig: 101, 67
+  offset: 0, 0
+  index: -1
+rope
+  rotate: false
+  xy: 4084, 3968
+  size: 7, 127
+  orig: 7, 127
+  offset: 0, 0
+  index: -1
+sam-site
+  rotate: false
+  xy: 2459, 2955
+  size: 278, 258
+  orig: 278, 258
+  offset: 0, 0
+  index: -1
+sam-site-wreck
+  rotate: false
+  xy: 2102, 2921
+  size: 278, 258
+  orig: 278, 258
+  offset: 0, 0
+  index: -1
+ship
+  rotate: true
+  xy: 402, 2560
+  size: 394, 177
+  orig: 394, 177
+  offset: 0, 0
+  index: -1
+ship-landing-gear
+  rotate: false
+  xy: 981, 2703
+  size: 40, 53
+  orig: 40, 53
+  offset: 0, 0
+  index: -1
+ship-wreck
+  rotate: true
+  xy: 395, 2173
+  size: 385, 170
+  orig: 385, 170
+  offset: 0, 0
+  index: -1
+sign
+  rotate: false
+  xy: 1215, 2643
+  size: 76, 67
+  orig: 76, 67
+  offset: 0, 0
+  index: -1
+slider
+  rotate: true
+  xy: 569, 2297
+  size: 261, 21
+  orig: 261, 21
+  offset: 0, 0
+  index: -1
+slider-knob
+  rotate: true
+  xy: 550, 3109
+  size: 16, 50
+  orig: 16, 50
+  offset: 0, 0
+  index: -1
+target-platform
+  rotate: false
+  xy: 1284, 3216
+  size: 267, 37
+  orig: 267, 37
+  offset: 0, 0
+  index: -1
+text-button
+  rotate: true
+  xy: 2011, 2441
+  size: 342, 51
+  orig: 342, 51
+  offset: 0, 0
+  index: -1
+text-button-over
+  rotate: true
+  xy: 1899, 2240
+  size: 342, 51
+  orig: 342, 51
+  offset: 0, 0
+  index: -1
+text-button-pressed
+  rotate: true
+  xy: 3967, 2957
+  size: 342, 51
+  orig: 342, 51
+  offset: 0, 0
+  index: -1
+thruster-plume
+  rotate: false
+  xy: 1350, 2588
+  size: 61, 78
+  orig: 61, 78
+  offset: 0, 0
+  index: -1
+tower
+  rotate: false
+  xy: 2, 2354
+  size: 389, 562
+  orig: 389, 562
+  offset: 0, 0
+  index: -1
+tree
+  rotate: true
+  xy: 1670, 2501
+  size: 102, 183
+  orig: 102, 183
+  offset: 0, 0
+  index: -1
+turret
+  rotate: true
+  xy: 2732, 2899
+  size: 54, 33
+  orig: 54, 33
+  offset: 0, 0
+  index: -1
+turret-barrel
+  rotate: true
+  xy: 4084, 3777
+  size: 53, 10
+  orig: 53, 10
+  offset: 0, 0
+  index: -1
+turret-body
+  rotate: true
+  xy: 884, 2601
+  size: 72, 90
+  orig: 72, 90
+  offset: 0, 0
+  index: -1
+vertical-scroll-knob
+  rotate: true
+  xy: 475, 3113
+  size: 12, 71
+  orig: 12, 71
+  offset: 0, 0
+  index: -1
+white
+  rotate: false
+  xy: 4084, 3774
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+window
+  rotate: true
+  xy: 2773, 2902
+  size: 327, 246
+  orig: 327, 246
+  offset: 0, 0
+  index: -1

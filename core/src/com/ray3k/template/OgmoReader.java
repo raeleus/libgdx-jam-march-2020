@@ -112,7 +112,7 @@ public class OgmoReader {
                         for (OgmoListener ogmoListener : layerListeners) {
                             ogmoListener.decal(decal.getInt("x"), levelHeight - decal.getInt("y"),
                                     decal.getFloat("scaleX", 1f), decal.getFloat("scaleY", 1f),
-                                    (360 - decal.getInt("rotation", 0)) % 360, decal.getString("texture"), folder);
+                                    (360 - decal.getInt("rotation", 0)) % 360, Utils.fileName(decal.getString("texture")), folder);
                         }
                     }
                 } else if (child.has("data")) {
@@ -465,12 +465,12 @@ public class OgmoReader {
         }
     }
     
-    public static float[] nodesToVerticies(Array<EntityNode> nodes) {
-        float[] verticies = new float[nodes.size * 2];
+    public static float[] nodesToVertices(Array<EntityNode> nodes) {
+        float[] vertices = new float[nodes.size * 2];
         for (int i = 0; i < nodes.size; i++) {
-            verticies[i * 2] = nodes.get(i).x;
-            verticies[i * 2 + 1] = nodes.get(i).y;
+            vertices[i * 2] = nodes.get(i).x;
+            vertices[i * 2 + 1] = nodes.get(i).y;
         }
-        return verticies;
+        return vertices;
     }
 }

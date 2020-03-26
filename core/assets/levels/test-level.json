@@ -15,8 +15,7 @@
       "gridCellsX": 1000,
       "gridCellsY": 1000,
       "decals": [
-        {"x": 5552, "y": 7784, "texture": "container-front.png"},
-        {"x": 792, "y": 7008, "texture": "carrier-0.png"}
+        {"x": 5552, "y": 7784, "texture": "container-front.png"}
       ],
       "folder": "..\\..\\output\\decals"
     },
@@ -33,7 +32,8 @@
         {"name": "player", "id": 0, "_eid": "03394795", "x": 4952, "y": 7616, "originX": 0, "originY": 0},
         {"name": "nuke", "id": 1, "_eid": "06598220", "x": 5552, "y": 7840, "originX": 45, "originY": 191},
         {"name": "fuel", "id": 2, "_eid": "03402480", "x": 3200, "y": 6448, "originX": 0, "originY": 0},
-        {"name": "fuel", "id": 3, "_eid": "03402480", "x": 1264, "y": 7784, "originX": 0, "originY": 0}
+        {"name": "fuel", "id": 3, "_eid": "03402480", "x": 1264, "y": 7784, "originX": 0, "originY": 0},
+        {"name": "carrier", "id": 4, "_eid": "06596369", "x": 776, "y": 7104, "originX": 92, "originY": 192}
       ]
     },
     {

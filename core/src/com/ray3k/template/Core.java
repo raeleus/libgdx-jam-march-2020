@@ -36,6 +36,12 @@ public class Core extends JamGame {
     public float sfx;
     public Preferences preferences;
     public ShapeDrawer shapeDrawer;
+    public TextureAtlas textureAtlas;
+    public static final int DEPTH_DECAL_FRONT = -10;
+    public static final int DEPTH_PLAYER = 0;
+    public static final int DEPTH_ENTITY = 5;
+    public static final int DEPTH_LANDSCAPE = 20;
+    public static final int DEPTH_DECAL_BACK = 10;
     
     @Override
     public void create() {
@@ -65,7 +71,8 @@ public class Core extends JamGame {
         
         setScreen(new LoadScreen(() -> {
             core.skin = core.assetManager.get("skin/skin.json");
-            shapeDrawer = new ShapeDrawer(batch, skin.getRegion("white"));
+            textureAtlas = core.assetManager.get("spine/libGDX Jam March 2020.atlas");
+            shapeDrawer = new ShapeDrawer(batch, textureAtlas.findRegion("white"));
         }));
         defaultTransition = Transitions.wipe(45);
         defaultTransitionDuration = .5f;
