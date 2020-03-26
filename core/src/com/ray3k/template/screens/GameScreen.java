@@ -20,6 +20,7 @@ import com.crashinvaders.vfx.VfxManager;
 import com.ray3k.template.Core;
 import com.ray3k.template.JamScreen;
 import com.ray3k.template.entities.EntityController;
+import com.ray3k.template.entities.PlayerEntity;
 import com.ray3k.template.screens.DialogPause.PauseListener;
 import com.ray3k.template.transitions.Transitions;
 import space.earlygrey.shapedrawer.ShapeDrawer;
@@ -90,6 +91,7 @@ public class GameScreen extends JamScreen {
         viewport = new FitViewport(1024, 576, camera);
         
         entityController = new EntityController();
+        entityController.add(new PlayerEntity());
     }
     
     @Override
@@ -102,11 +104,12 @@ public class GameScreen extends JamScreen {
     
     @Override
     public void draw(float delta) {
-        Gdx.gl.glClearColor(BG_COLOR.r, BG_COLOR.g, BG_COLOR.b, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        batch.setBlendFunction(GL20.GL_ONE, GL20.GL_ONE_MINUS_SRC_ALPHA);
         
         vfxManager.cleanUpBuffers();
         vfxManager.beginCapture();
+        Gdx.gl.glClearColor(BG_COLOR.r, BG_COLOR.g, BG_COLOR.b, 1);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         viewport.apply();
         batch.setProjectionMatrix(camera.combined);
@@ -115,6 +118,8 @@ public class GameScreen extends JamScreen {
         vfxManager.endCapture();
         vfxManager.applyEffects();
         vfxManager.renderToScreen();
+    
+        batch.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
         stage.draw();
     }
     

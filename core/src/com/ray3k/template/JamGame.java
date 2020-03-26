@@ -33,6 +33,7 @@ public abstract class JamGame extends Game {
     @Override
     public void create() {
         batch = new TwoColorPolygonBatch(MAX_VERTEX_SIZE);
+        batch.setPremultipliedAlpha(true);
         
         previous = TimeUtils.millis();
         lag = 0;

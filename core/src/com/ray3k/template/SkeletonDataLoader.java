@@ -32,9 +32,11 @@ import com.badlogic.gdx.assets.loaders.FileHandleResolver;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.Array;
+import com.esotericsoftware.spine.AnimationStateData;
 import com.esotericsoftware.spine.SkeletonBinary;
 import com.esotericsoftware.spine.SkeletonData;
 import com.esotericsoftware.spine.SkeletonJson;
+import com.ray3k.template.AnimationStateDataLoader.AnimationStateDataParameter;
 
 /**
  * {@link AssetLoader} for {@link SkeletonData} instances. Loads an exported
@@ -51,7 +53,7 @@ import com.esotericsoftware.spine.SkeletonJson;
  * * <pre>
  * {@code
  * assetManager.setLoader(SkeletonData.class, new SkeletonDataLoader(new InternalFileHandleResolver()));
- * SkeletonDataLoaderParameter parameter = new SkeletonDataLoaderParameter("data/spine/character.atlas");
+ * AnimationStateDataParameter parameter = new AnimationStateDataParameter("data/spine/character.atlas");
  * assetManager.load("data/spine/character.skel", SkeletonData.class, parameter);
  * }
  * </pre>
@@ -68,9 +70,14 @@ public class SkeletonDataLoader extends AsynchronousAssetLoader<SkeletonData, Sk
 
     @Override
     public void loadAsync(AssetManager manager, String fileName, FileHandle file, SkeletonDataLoaderParameter parameter) {
+    
+    }
+
+    @Override
+    public SkeletonData loadSync(AssetManager manager, String fileName, FileHandle file, SkeletonDataLoaderParameter parameter) {
         skeletonData = null;
         TextureAtlas atlas = manager.get(parameter.atlasName, TextureAtlas.class);
-
+    
         String extension = file.extension();
         if (extension.toLowerCase().equals("skel")) {
             SkeletonBinary skeletonBinary = new SkeletonBinary(atlas);
@@ -81,10 +88,6 @@ public class SkeletonDataLoader extends AsynchronousAssetLoader<SkeletonData, Sk
             skeletonJson.setScale(parameter.scale);
             skeletonData = skeletonJson.readSkeletonData(file);
         }
-    }
-
-    @Override
-    public SkeletonData loadSync(AssetManager manager, String fileName, FileHandle file, SkeletonDataLoaderParameter parameter) {
         return skeletonData;
     }
 
@@ -96,16 +99,7 @@ public class SkeletonDataLoader extends AsynchronousAssetLoader<SkeletonData, Sk
         return deps;
     }
 
-    /**
-     * Mandatory parameter to be passed to
-     * {@link AssetManager#load(String, Class, AssetLoaderParameters)}. This
-     * will insure the skeleton data is loaded correctly
-     *
-     * @author mzechner
-     */
     static public class SkeletonDataLoaderParameter extends AssetLoaderParameters<SkeletonData> {
-        // A SkeletonJson must be loaded from an atlas.
-
         public String atlasName;
         public float scale;
 

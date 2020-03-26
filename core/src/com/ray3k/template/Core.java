@@ -13,8 +13,10 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.crashinvaders.vfx.VfxManager;
+import com.esotericsoftware.spine.AnimationStateData;
 import com.esotericsoftware.spine.SkeletonData;
 import com.esotericsoftware.spine.SkeletonRenderer;
+import com.ray3k.template.AnimationStateDataLoader.AnimationStateDataParameter;
 import com.ray3k.template.screens.LoadScreen;
 import com.ray3k.template.transitions.Transitions;
 
@@ -59,7 +61,10 @@ public class Core extends JamGame {
             }
         };
         
-        setScreen(new LoadScreen(() -> core.skin = core.assetManager.get("skin/skin.json")));
+        setScreen(new LoadScreen(() -> {
+            core.skin = core.assetManager.get("skin/skin.json");
+            System.out.println(assetManager.getAssetNames());
+        }));
         defaultTransition = Transitions.wipe(45);
         defaultTransitionDuration = .5f;
     }
@@ -76,6 +81,7 @@ public class Core extends JamGame {
     public void loadAssets() {
         assetManager.setLoader(SkeletonData.class, new SkeletonDataLoader(assetManager.getFileHandleResolver()));
         assetManager.setLoader(Skin.class, new SkinFreeTypeLoader(assetManager.getFileHandleResolver()));
+        assetManager.setLoader(AnimationStateData.class, new AnimationStateDataLoader(assetManager.getFileHandleResolver()));
         
         FileHandle fileHandle = Gdx.files.internal("skin.txt");
         if (fileHandle.exists()) for (String path : fileHandle.readString().split("\\n")) {
@@ -94,10 +100,9 @@ public class Core extends JamGame {
     
         fileHandle = Gdx.files.internal("spine-atlas.txt");
         if (fileHandle.exists()) for (String path : fileHandle.readString().split("\\n")) {
-            assetManager.load(path, TextureAtlas.class);
             fileHandle = Gdx.files.internal("spine.txt");
             if (fileHandle.exists()) for (String path2 : fileHandle.readString().split("\\n")) {
-                assetManager.load(path2, SkeletonData.class, new SkeletonDataLoader.SkeletonDataLoaderParameter(path));
+                assetManager.load(path2 + "-animation", AnimationStateData.class, new AnimationStateDataParameter(path2, path));
             }
             break;
         }
