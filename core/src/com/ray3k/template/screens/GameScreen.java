@@ -14,11 +14,14 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 import com.crashinvaders.vfx.VfxManager;
 import com.ray3k.template.Core;
 import com.ray3k.template.JamScreen;
+import com.ray3k.template.entities.CameraEntity;
 import com.ray3k.template.entities.EntityController;
 import com.ray3k.template.entities.PlayerEntity;
 import com.ray3k.template.screens.DialogPause.PauseListener;
@@ -27,7 +30,7 @@ import space.earlygrey.shapedrawer.ShapeDrawer;
 
 public class GameScreen extends JamScreen {
     public static GameScreen gameScreen;
-    public static final Color BG_COLOR = new Color();
+    public Color BG_COLOR = new Color();
     private Core core;
     public AssetManager assetManager;
     private Batch batch;
@@ -37,6 +40,7 @@ public class GameScreen extends JamScreen {
     public EntityController entityController;
     private VfxManager vfxManager;
     public boolean paused;
+    public CameraEntity cameraEntity;
     
     public GameScreen() {
         gameScreen = this;
@@ -54,7 +58,7 @@ public class GameScreen extends JamScreen {
         music.setVolume(core.bgm);
         music.play();
         
-        stage = new Stage(new ScreenViewport(), core.batch);
+        stage = new Stage(new ExtendViewport(1024, 576), core.batch);
         stage.addListener(new InputListener() {
             @Override
             public boolean keyDown(InputEvent event, int keycode) {
@@ -92,6 +96,7 @@ public class GameScreen extends JamScreen {
         
         entityController = new EntityController();
         entityController.add(new PlayerEntity());
+        entityController.add(cameraEntity = new CameraEntity());
     }
     
     @Override
@@ -104,7 +109,6 @@ public class GameScreen extends JamScreen {
     
     @Override
     public void draw(float delta) {
-        System.out.println("game screen draw");
         batch.setBlendFunction(GL20.GL_ONE, GL20.GL_ONE_MINUS_SRC_ALPHA);
         
         vfxManager.cleanUpBuffers();
