@@ -56,6 +56,10 @@ public class Utils {
         return floatArray.items;
     }
     
+    public static ShortArray computeTriangles(float[] verticies) {
+        return earClippingTriangulator.computeTriangles(verticies);
+    }
+    
     public static Color inverseColor(Color color) {
         return new Color(1 - color.r, 1 - color.g, 1 - color.b, color.a);
     }

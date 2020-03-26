@@ -1,12 +1,19 @@
 package com.ray3k.template.entities;
 
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.ray3k.template.Core.Binding;
+import com.ray3k.template.Utils;
 import com.ray3k.template.screens.GameScreen;
 
 public class PlayerEntity extends Entity {
     private GameScreen gameScreen;
     private float rotation;
+    public static final float ZOOM_MINIMUM = 1f;
+    public static final float ZOOM_MAXIMUM = 5f;
+    public static final float PLAYER_ZOOM_SPEED_MINIMUM = 0f;
+    public static final float PLAYER_ZOOM_SPEED_MAXIMUM = 1000f;
+    public static final float ZOOM_ACCELERATION = .25f;
     
     public PlayerEntity() {
         gameScreen = GameScreen.gameScreen;
@@ -57,8 +64,8 @@ public class PlayerEntity extends Entity {
             }
         }
         
-//        gameScreen.cameraEntity.setPosition(x, y);
-        gameScreen.cameraEntity.zoom = 2;
+        gameScreen.cameraEntity.setPosition(x, y);
+        gameScreen.cameraEntity.zoom = Utils.approach(gameScreen.cameraEntity.zoom, ZOOM_MINIMUM + (ZOOM_MAXIMUM - ZOOM_MINIMUM) * Interpolation.fastSlow.apply(MathUtils.clamp(getSpeed() / PLAYER_ZOOM_SPEED_MAXIMUM,0, 1)), ZOOM_ACCELERATION * delta);
         
         if (y < 0) {
             y = 0;
@@ -92,7 +99,7 @@ public class PlayerEntity extends Entity {
     
     @Override
     public void draw(float delta) {
-        
+    
     }
     
     @Override

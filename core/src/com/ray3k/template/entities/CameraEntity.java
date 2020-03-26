@@ -12,6 +12,7 @@ public class CameraEntity extends Entity {
     public void create() {
         gameScreen = GameScreen.gameScreen;
         camera = gameScreen.camera;
+        zoom = 1f;
     }
     
     @Override

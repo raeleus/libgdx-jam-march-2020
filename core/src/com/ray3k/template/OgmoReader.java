@@ -426,12 +426,21 @@ public class OgmoReader {
         }
     }
     
-    public class EntityNode {
+    public static class EntityNode {
         public int x;
         public int y;
+        
+        public EntityNode() {
+        
+        }
+        
+        public EntityNode(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
     }
     
-    public class OgmoValue {
+    public static class OgmoValue {
         public String name;
         private String value;
         
@@ -454,5 +463,14 @@ public class OgmoReader {
         public Color asColor() {
             return Color.valueOf(value);
         }
+    }
+    
+    public static float[] nodesToVerticies(Array<EntityNode> nodes) {
+        float[] verticies = new float[nodes.size * 2];
+        for (int i = 0; i < nodes.size; i++) {
+            verticies[i * 2] = nodes.get(i).x;
+            verticies[i * 2 + 1] = nodes.get(i).y;
+        }
+        return verticies;
     }
 }

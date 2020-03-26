@@ -21,8 +21,10 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.crashinvaders.vfx.VfxManager;
 import com.ray3k.template.Core;
 import com.ray3k.template.JamScreen;
+import com.ray3k.template.OgmoReader;
 import com.ray3k.template.entities.CameraEntity;
 import com.ray3k.template.entities.EntityController;
+import com.ray3k.template.entities.LandscapeEntity;
 import com.ray3k.template.entities.PlayerEntity;
 import com.ray3k.template.screens.DialogPause.PauseListener;
 import com.ray3k.template.transitions.Transitions;
@@ -41,6 +43,8 @@ public class GameScreen extends JamScreen {
     private VfxManager vfxManager;
     public boolean paused;
     public CameraEntity cameraEntity;
+    public LandscapeEntity landscapeEntity;
+    public OgmoReader ogmoReader;
     
     public GameScreen() {
         gameScreen = this;
@@ -48,6 +52,7 @@ public class GameScreen extends JamScreen {
         assetManager = core.assetManager;
         batch = core.batch;
         vfxManager = core.vfxManager;
+        ogmoReader = new OgmoReader();
         
         BG_COLOR.set(Color.PINK);
     
@@ -97,6 +102,7 @@ public class GameScreen extends JamScreen {
         entityController = new EntityController();
         entityController.add(new PlayerEntity());
         entityController.add(cameraEntity = new CameraEntity());
+        entityController.add(landscapeEntity = new LandscapeEntity());
     }
     
     @Override
