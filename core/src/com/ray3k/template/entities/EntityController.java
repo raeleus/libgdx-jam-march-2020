@@ -35,7 +35,8 @@ public class EntityController {
         }
         
         //simulate physics and call act methods
-        for (Entity entity : sortedEntities) {
+        for (int i = 0; i < sortedEntities.size; i++) {
+            Entity entity = sortedEntities.get(i);
             entity.deltaX += entity.gravityX * delta;
             entity.deltaY += entity.gravityY * delta;
             

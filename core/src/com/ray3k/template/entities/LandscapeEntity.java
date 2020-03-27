@@ -1,6 +1,7 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.utils.Array;
@@ -19,8 +20,9 @@ public class LandscapeEntity extends Entity {
     private Core core;
     private ShapeDrawer shapeDrawer;
     private GameScreen gameScreen;
-    private float[] vertices;
-    private ShortArray shortArray;
+    public float[] vertices;
+    public ShortArray shortArray;
+    public float[] sortedTriangles;
     
     @Override
     public void create() {
@@ -54,7 +56,10 @@ public class LandscapeEntity extends Entity {
                         vertices = OgmoReader.nodesToVertices(nodes);
                         break;
                     case "player":
-                        gameScreen.playerEntity.setPosition(x, y);
+                        PlayerEntity playerEntity = gameScreen.playerEntity = new PlayerEntity();
+                        playerEntity.setPosition(x, y);
+                        gameScreen.entityController.add(playerEntity);
+                        gameScreen.entityController.add(gameScreen.cameraEntity = new CameraEntity());
                         break;
                 }
             }
@@ -69,7 +74,9 @@ public class LandscapeEntity extends Entity {
             }
         });
         gameScreen.ogmoReader.readFile(Gdx.files.internal("levels/test-level.json"));
-        shortArray = Utils.computeTriangles(vertices);
+        shortArray = new ShortArray();
+        Utils.computeTriangles(vertices, shortArray);
+        sortedTriangles = Utils.sortTriangles(vertices, shortArray);
         depth = Core.DEPTH_LANDSCAPE;
     }
     

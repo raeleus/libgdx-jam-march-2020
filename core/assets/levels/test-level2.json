@@ -1,0 +1,77 @@
+{
+  "ogmoVersion": "3.3.0",
+  "width": 8000,
+  "height": 8000,
+  "offsetX": 0,
+  "offsetY": 0,
+  "layers": [
+    {
+      "name": "decals-front",
+      "_eid": "03382217",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "decals": [],
+      "folder": "..\\..\\output\\decals"
+    },
+    {
+      "name": "entities",
+      "_eid": "03380408",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "entities": [
+        {"name": "player", "id": 0, "_eid": "03394795", "x": 4064, "y": 7304, "originX": 197, "originY": 177}
+      ]
+    },
+    {
+      "name": "decals-back",
+      "_eid": "03384024",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "decals": [],
+      "folder": "..\\..\\output\\decals"
+    },
+    {
+      "name": "terrain",
+      "_eid": "03388114",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "entities": [
+        {
+          "name": "terrain",
+          "id": 0,
+          "_eid": "03393575",
+          "x": 2624,
+          "y": 8008,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 2704, "y": 7800},
+            {"x": 2872, "y": 7576},
+            {"x": 3056, "y": 7424},
+            {"x": 3296, "y": 7512},
+            {"x": 3448, "y": 7632},
+            {"x": 3576, "y": 7800},
+            {"x": 3656, "y": 7896},
+            {"x": 3624, "y": 8000}
+          ]
+        }
+      ]
+    }
+  ]
+}

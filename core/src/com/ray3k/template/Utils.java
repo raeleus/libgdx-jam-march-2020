@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.*;
+import com.badlogic.gdx.math.Intersector.MinimumTranslationVector;
 import com.badlogic.gdx.math.collision.BoundingBox;
 import com.badlogic.gdx.math.collision.Ray;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -48,16 +49,30 @@ public class Utils {
         floatArray.clear();
         
         for (FloatArray points : skeletonBounds.getPolygons()) {
+
             ShortArray shortArray = earClippingTriangulator.computeTriangles(points);
-            for (int i = 0; i < shortArray.size; i++) {
-                floatArray.add(shortArray.get(i));
+            for (int i = 0; i < shortArray.size; i ++) {
+                floatArray.add(points.get(shortArray.get(i) * 2));
+                floatArray.add(points.get(shortArray.get(i) * 2 + 1));
             }
         }
-        return floatArray.items;
+        return floatArray.toArray();
     }
     
-    public static ShortArray computeTriangles(float[] verticies) {
-        return earClippingTriangulator.computeTriangles(verticies);
+    public static void computeTriangles(float[] verticies, ShortArray shortArray) {
+        shortArray.clear();
+        shortArray.addAll(earClippingTriangulator.computeTriangles(verticies));
+    }
+    
+    public static float[] sortTriangles(float[] vertices, ShortArray shortArray) {
+        floatArray.clear();
+        
+        for (int i = 0; i < shortArray.size; i++) {
+            floatArray.add(vertices[shortArray.get(i) * 2]);
+            floatArray.add(vertices[shortArray.get(i) * 2 + 1]);
+        }
+        
+        return floatArray.toArray();
     }
     
     public static Color inverseColor(Color color) {
@@ -231,6 +246,28 @@ public class Utils {
         rectToBoundingBox(rectangle.x, rectangle.y, rectangle.width, 0, bboxTemp);
         if (Intersector.intersectRayBounds(rayTemp, bboxTemp, intersection)) return true;
         
+        return false;
+    }
+    
+    public static boolean    overlapSortedTriangles(float[] t1, float[] t2, MinimumTranslationVector mtv) {
+        float[] vertices1 = new float[6];
+        float[] vertices2 = new float[6];
+        
+        for (int i = 0; i < t1.length; i += 6) {
+            for (int vert = 0; vert < vertices1.length; vert++) {
+                vertices1[vert] = t1[i + vert];
+            }
+
+            for (int j = 0; j < t2.length; j += 6) {
+                for (int vert = 0; vert < vertices2.length; vert++) {
+                    vertices2[vert] = t2[j + vert];
+                }
+                
+                if (Intersector.overlapConvexPolygons(vertices1, vertices2, mtv)) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
     

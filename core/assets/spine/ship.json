@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "uNcWeAlyKBAYDFiTRB0w8FNbXvg",
+	"hash": "L4u374x50noAdQwhDRAMSWZnN9Y",
 	"spine": "3.8.79",
 	"x": -199.88,
 	"y": -245.69,
@@ -57,7 +57,8 @@
 	{ "name": "ship", "bone": "ship", "attachment": "ship" },
 	{ "name": "rope-path", "bone": "ship", "attachment": "rope-path" },
 	{ "name": "propeller-0", "bone": "root", "attachment": "propeller-0" },
-	{ "name": "propeller-1", "bone": "root", "attachment": "propeller-1" }
+	{ "name": "propeller-1", "bone": "root", "attachment": "propeller-1" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "ik": [
 	{
@@ -82,6 +83,13 @@
 	{
 		"name": "default",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 22,
+					"vertices": [ -168.19, -64.16, -186.15, -56.38, -191.87, -41.27, -195.7, 57.61, -154.96, 71.8, -111.56, 62.76, -64.56, 87.17, -19.36, 92.59, 17.71, 93.5, 57.48, 88.07, 109.92, 60.95, 152.4, 76.32, 194.89, 54.18, 186.46, -39.14, 181.83, -52.97, 171.92, -58.7, 144.27, -64.7, 104.49, -48.43, 23.13, -79.17, -22.07, -79.17, -112.47, -54.76, -140.9, -67.16 ]
+				}
+			},
 			"claw-closed": {
 				"claw-closed": { "x": 10.14, "y": -0.53, "rotation": 90.41, "width": 49, "height": 42 },
 				"claw-open": { "x": 10.14, "y": -0.53, "rotation": 90.41, "width": 47, "height": 43 }
