@@ -28,7 +28,10 @@
         {"x": 776, "y": 7688, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
         {"x": 1760, "y": 7696, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
         {"x": 6544, "y": 7720, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
-        {"x": 4795.424882492814, "y": 3776.1086444776724, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "ring-right.png"}
+        {"x": 4795.424882492814, "y": 3776.1086444776724, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "ring-right.png"},
+        {"x": 6280, "y": 2216, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "cloud1.png"},
+        {"x": 1008, "y": 2328, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "cloud0.png"},
+        {"x": 2800, "y": 2680, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "cloud0.png"}
       ],
       "folder": "..\\..\\output\\decals"
     },
