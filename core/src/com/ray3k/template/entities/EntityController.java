@@ -55,7 +55,8 @@ public class EntityController {
         }
     
         //call destroy methods and remove the entities
-        for (Entity entity : sortedEntities) {
+        for (int i = 0; i < sortedEntities.size; i++) {
+            Entity entity = sortedEntities.get(i);
             if (entity.destroy) {
                 entity.destroy();
                 entities.removeValue(entity, false);

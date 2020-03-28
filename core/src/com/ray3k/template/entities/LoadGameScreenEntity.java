@@ -6,10 +6,10 @@ import com.ray3k.template.screens.GameScreen;
 import com.ray3k.template.screens.MenuScreen;
 import com.ray3k.template.transitions.Transitions;
 
-public class QuitToMenuEntity extends Entity {
+public class LoadGameScreenEntity extends Entity {
     private float timer;
     
-    public QuitToMenuEntity(float timer) {
+    public LoadGameScreenEntity(float timer) {
         this.timer = timer;
     }
     
@@ -28,7 +28,7 @@ public class QuitToMenuEntity extends Entity {
         timer -= delta;
         if (timer < 0) {
             destroy = true;
-            core.transition(new GameScreen(), Transitions.push(270, Color.BLACK, Interpolation.fastSlow), .5f);
+            core.transition(new GameScreen(GameScreen.gameScreen.levelIndex), Transitions.push(270, Color.BLACK, Interpolation.fastSlow), .5f);
         }
     }
     

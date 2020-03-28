@@ -1,6 +1,7 @@
 spine/bullet.json
 spine/carrier.json
 spine/city.json
+spine/confetti.json
 spine/explosion.json
 spine/fuel-can.json
 spine/libgdx.json

@@ -1,6 +1,5 @@
 package com.ray3k.template.entities;
 
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Intersector.MinimumTranslationVector;
@@ -22,6 +21,7 @@ public class PlayerEntity extends Entity {
     public static final float MAX_LANDING_ROTATION = 10f;
     public static final int LAND_DETECTION_DISTANCE = 100;
     private boolean firstFrame;
+    public static final float TARGET_DISTANCE = 200;
     
     public PlayerEntity() {
         gameScreen = GameScreen.gameScreen;
@@ -151,12 +151,24 @@ public class PlayerEntity extends Entity {
                 skeletonBounds.update(skeleton, true);
             }
         }
+        
+        for (AirTargetEntity airTarget : gameScreen.airTargets) {
+            if (Intersector.isPointInPolygon(skeletonBounds.getPolygons().first().items, 0,
+                    skeletonBounds.getPolygons().first().size, airTarget.x, airTarget.y)) {
+                airTarget.destroy = true;
+            }
+        }
+
+        if (!canRotate && MathUtils.isZero(getSpeed())) for (LandTargetEntity landTarget : gameScreen.landTargets) {
+            if (Utils.pointDistance(x, y, landTarget.x, landTarget.y) < TARGET_DISTANCE) {
+                landTarget.destroy = true;
+            }
+        }
     }
     
     @Override
     public void draw(float delta) {
-        core.shapeDrawer.setColor(Color.YELLOW);
-        core.shapeDrawer.filledRectangle(x, y - 100, 10, 10);
+    
     }
     
     @Override
@@ -167,6 +179,6 @@ public class PlayerEntity extends Entity {
         wreckEntity.skeleton.getRootBone().setRotation(rotation);
         wreckEntity.setPosition(x, y);
         gameScreen.entityController.add(wreckEntity);
-        gameScreen.entityController.add(new QuitToMenuEntity(2f));
+        gameScreen.entityController.add(new LoadGameScreenEntity(2f));
     }
 }

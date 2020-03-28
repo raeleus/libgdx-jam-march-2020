@@ -23,6 +23,11 @@ public class LandscapeEntity extends Entity {
     public float[] vertices;
     public ShortArray shortArray;
     public float[] sortedTriangles;
+    private String level;
+    
+    public LandscapeEntity(String level) {
+        this.level = level;
+    }
     
     @Override
     public void create() {
@@ -61,6 +66,18 @@ public class LandscapeEntity extends Entity {
                         gameScreen.entityController.add(playerEntity);
                         gameScreen.entityController.add(gameScreen.cameraEntity = new CameraEntity());
                         break;
+                    case "land-target":
+                        LandTargetEntity landTargetEntity = new LandTargetEntity();
+                        landTargetEntity.setPosition(x, y);
+                        gameScreen.entityController.add(landTargetEntity);
+                        gameScreen.landTargets.add(landTargetEntity);
+                        break;
+                    case "air-target":
+                        AirTargetEntity airTargetEntity = new AirTargetEntity();
+                        airTargetEntity.setPosition(x, y);
+                        gameScreen.entityController.add(airTargetEntity);
+                        gameScreen.airTargets.add(airTargetEntity);
+                        break;
                 }
             }
     
@@ -73,7 +90,7 @@ public class LandscapeEntity extends Entity {
                 gameScreen.entityController.add(decalEntity);
             }
         });
-        gameScreen.ogmoReader.readFile(Gdx.files.internal("levels/test-level.json"));
+        gameScreen.ogmoReader.readFile(Gdx.files.internal(level));
         shortArray = new ShortArray();
         Utils.computeTriangles(vertices, shortArray);
         sortedTriangles = Utils.sortTriangles(vertices, shortArray);

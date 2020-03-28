@@ -14,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
@@ -22,10 +23,7 @@ import com.crashinvaders.vfx.VfxManager;
 import com.ray3k.template.Core;
 import com.ray3k.template.JamScreen;
 import com.ray3k.template.OgmoReader;
-import com.ray3k.template.entities.CameraEntity;
-import com.ray3k.template.entities.EntityController;
-import com.ray3k.template.entities.LandscapeEntity;
-import com.ray3k.template.entities.PlayerEntity;
+import com.ray3k.template.entities.*;
 import com.ray3k.template.screens.DialogPause.PauseListener;
 import com.ray3k.template.transitions.Transitions;
 import space.earlygrey.shapedrawer.ShapeDrawer;
@@ -46,8 +44,13 @@ public class GameScreen extends JamScreen {
     public LandscapeEntity landscapeEntity;
     public PlayerEntity playerEntity;
     public OgmoReader ogmoReader;
+    public Array<LandTargetEntity> landTargets = new Array<>();
+    public Array<AirTargetEntity> airTargets = new Array<>();
+    public static final String[] levels = {"levels/test-level.json", "levels/test-level2.json"};
+    public int levelIndex;
     
-    public GameScreen() {
+    public GameScreen(int levelIndex) {
+        this.levelIndex = levelIndex;
         gameScreen = this;
         core = Core.core;
         assetManager = core.assetManager;
@@ -101,7 +104,7 @@ public class GameScreen extends JamScreen {
         viewport = new FitViewport(1024, 576, camera);
         
         entityController = new EntityController();
-        entityController.add(landscapeEntity = new LandscapeEntity());
+        entityController.add(landscapeEntity = new LandscapeEntity(levels[levelIndex]));
     }
     
     @Override
@@ -150,5 +153,16 @@ public class GameScreen extends JamScreen {
     @Override
     public void hide() {
         super.hide();
+    }
+    
+    public void checkIfLevelComplete() {
+        if (landTargets.size == 0 && airTargets.size == 0) {
+            levelIndex++;
+            if (levelIndex < levels.length) {
+                entityController.add(new LoadGameScreenEntity(2f));
+            } else {
+                core.transition(new CreditsScreen(), Transitions.blinds(270, 5, Interpolation.linear), .5f);
+            }
+        }
     }
 }
