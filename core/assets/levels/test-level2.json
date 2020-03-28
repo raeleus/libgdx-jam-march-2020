@@ -4,6 +4,7 @@
   "height": 8000,
   "offsetX": 0,
   "offsetY": 0,
+  "values": {"background": "level-background"},
   "layers": [
     {
       "name": "decals-front",

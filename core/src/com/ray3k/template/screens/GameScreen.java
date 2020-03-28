@@ -5,11 +5,13 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
@@ -17,8 +19,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
-import com.badlogic.gdx.utils.viewport.ExtendViewport;
-import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.*;
 import com.crashinvaders.vfx.VfxManager;
 import com.ray3k.template.Core;
 import com.ray3k.template.JamScreen;
@@ -53,6 +54,9 @@ public class GameScreen extends JamScreen {
     public int levelIndex;
     public float levelWidth;
     public float levelHeight;
+    private TextureRegion levelBackground;
+    public OrthographicCamera backgroundCamera;
+    public Viewport backgroundViewport;
     
     public GameScreen(int levelIndex) {
         this.levelIndex = levelIndex;
@@ -106,7 +110,11 @@ public class GameScreen extends JamScreen {
         Gdx.input.setInputProcessor(inputMultiplexer);
         
         camera = new OrthographicCamera();
-        viewport = new FitViewport(1024, 576, camera);
+        viewport = new ExtendViewport(1024, 576, camera);
+        
+        backgroundCamera = new OrthographicCamera();
+        backgroundViewport = new StretchViewport(1024, 576, backgroundCamera);
+        backgroundViewport.update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), true);
         
         entityController = new EntityController();
         loadLevel(levels[levelIndex]);
@@ -129,6 +137,10 @@ public class GameScreen extends JamScreen {
         Gdx.gl.glClearColor(BG_COLOR.r, BG_COLOR.g, BG_COLOR.b, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
+        backgroundViewport.apply();
+        batch.setProjectionMatrix(backgroundCamera.combined);
+        batch.setColor(1, 1, 1, 1);
+        batch.draw(levelBackground, 0, 0, backgroundViewport.getWorldWidth(), backgroundViewport.getWorldHeight());
         viewport.apply();
         batch.setProjectionMatrix(camera.combined);
         entityController.draw(paused ? 0 : delta);
@@ -146,6 +158,7 @@ public class GameScreen extends JamScreen {
         super.resize(width, height);
         vfxManager.resize(width, height);
         viewport.update(width, height);
+        backgroundViewport.update(width, height);
         
         stage.getViewport().update(width, height, true);
     }
@@ -180,6 +193,7 @@ public class GameScreen extends JamScreen {
                               ObjectMap<String, OgmoValue> valuesMap) {
                 levelWidth = width;
                 levelHeight = height;
+                levelBackground = core.textureAtlas.findRegion(valuesMap.get("background").asString());
             }
     
             @Override
@@ -235,7 +249,6 @@ public class GameScreen extends JamScreen {
                 decalEntity.depth = decalDepth;
                 decalEntity.setPosition(x - atlasRegion.originalWidth / 2f, y - atlasRegion.originalHeight / 2f);
                 decalEntity.rotation = rotation;
-                System.out.println(rotation);
                 gameScreen.entityController.add(decalEntity);
             }
         });

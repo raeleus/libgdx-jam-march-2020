@@ -21,6 +21,7 @@ public class TerrainEntity extends Entity {
     public float[] vertices;
     public ShortArray shortArray;
     public float[] sortedTriangles;
+    private Color color;
     
     public TerrainEntity(float[] vertices) {
         core = Core.core;
@@ -31,6 +32,8 @@ public class TerrainEntity extends Entity {
         Utils.computeTriangles(vertices, shortArray);
         sortedTriangles = Utils.sortTriangles(vertices, shortArray);
         depth = Core.DEPTH_LANDSCAPE;
+        
+        color = new Color(54 / 255f, 71 / 255f, 0, 1);
     }
     
     @Override
@@ -50,7 +53,7 @@ public class TerrainEntity extends Entity {
     
     @Override
     public void draw(float delta) {
-        shapeDrawer.setColor(Color.GREEN);
+        shapeDrawer.setColor(color);
         shapeDrawer.filledPolygon(vertices, shortArray);
     }
     
