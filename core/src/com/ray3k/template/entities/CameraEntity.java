@@ -1,6 +1,7 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.math.MathUtils;
 import com.ray3k.template.screens.GameScreen;
 
 public class CameraEntity extends Entity {
@@ -26,7 +27,7 @@ public class CameraEntity extends Entity {
     
     @Override
     public void act(float delta) {
-        camera.position.set(x, y, 0);
+        camera.position.set(MathUtils.clamp(x,camera.viewportWidth / 2 * camera.zoom, gameScreen.levelWidth - camera.viewportWidth / 2 * camera.zoom), y, 0);
         camera.zoom = zoom;
         backgroundCamera.zoom = backgroundZoom;
         float bgWorldWidth = gameScreen.backgroundViewport.getWorldWidth();
