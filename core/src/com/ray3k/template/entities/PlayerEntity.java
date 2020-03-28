@@ -99,6 +99,13 @@ public class PlayerEntity extends Entity {
         gameScreen.cameraEntity.setPosition(x, y);
         gameScreen.cameraEntity.zoom = Utils.approach(gameScreen.cameraEntity.zoom, ZOOM_MINIMUM + (ZOOM_MAXIMUM - ZOOM_MINIMUM) * Interpolation.fastSlow.apply(MathUtils.clamp(getSpeed() / PLAYER_ZOOM_SPEED_MAXIMUM,0, 1)), ZOOM_ACCELERATION * delta);
         
+        if (x < 0) {
+            x = 0;
+        } else if (x > gameScreen.levelWidth) {
+            x = gameScreen.levelWidth;
+            deltaX = 0;
+        }
+        
         if (y < 0) {
             y = 0;
             if (deltaY < 0) {

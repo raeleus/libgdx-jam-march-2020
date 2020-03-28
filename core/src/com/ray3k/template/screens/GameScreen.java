@@ -51,6 +51,8 @@ public class GameScreen extends JamScreen {
     public Array<AirTargetEntity> airTargets = new Array<>();
     public static final String[] levels = {"levels/test-level.json", "levels/test-level2.json"};
     public int levelIndex;
+    public float levelWidth;
+    public float levelHeight;
     
     public GameScreen(int levelIndex) {
         this.levelIndex = levelIndex;
@@ -172,7 +174,14 @@ public class GameScreen extends JamScreen {
     public void loadLevel(String level) {
         gameScreen.ogmoReader.addListener(new OgmoAdapter() {
             int decalDepth;
-            
+    
+            @Override
+            public void level(String ogmoVersion, int width, int height, int offsetX, int offsetY,
+                              ObjectMap<String, OgmoValue> valuesMap) {
+                levelWidth = width;
+                levelHeight = height;
+            }
+    
             @Override
             public void layer(String name, int gridCellWidth, int gridCellHeight, int offsetX, int offsetY) {
                 switch (name) {
