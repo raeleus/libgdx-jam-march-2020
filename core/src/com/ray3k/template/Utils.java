@@ -302,4 +302,20 @@ public class Utils {
         polygon.setPosition(x, y);
         return polygon;
     }
+    
+    public static float min(float... values) {
+        float minimum = values[0];
+        for (float value : values) {
+            minimum = Math.min(minimum, value);
+        }
+        return minimum;
+    }
+    
+    public static float max(float... values) {
+        float maximum = values[0];
+        for (float value : values) {
+            maximum = Math.max(maximum, value);
+        }
+        return maximum;
+    }
 }

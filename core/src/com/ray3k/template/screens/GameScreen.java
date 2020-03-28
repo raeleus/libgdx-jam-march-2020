@@ -239,12 +239,14 @@ public class GameScreen extends JamScreen {
                         landTargetEntity.setPosition(x, y);
                         gameScreen.entityController.add(landTargetEntity);
                         gameScreen.landTargets.add(landTargetEntity);
+                        gameScreen.entityController.add(new IndicatorEntity(landTargetEntity));
                         break;
                     case "air-target":
                         AirTargetEntity airTargetEntity = new AirTargetEntity();
                         airTargetEntity.setPosition(x, y);
                         gameScreen.entityController.add(airTargetEntity);
                         gameScreen.airTargets.add(airTargetEntity);
+                        gameScreen.entityController.add(new IndicatorEntity(airTargetEntity));
                         break;
                 }
             }

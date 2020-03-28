@@ -4,6 +4,7 @@ spine/city.json
 spine/confetti.json
 spine/explosion.json
 spine/fuel-can.json
+spine/indicator.json
 spine/libgdx.json
 spine/missile.json
 spine/nuke-explosion.json
