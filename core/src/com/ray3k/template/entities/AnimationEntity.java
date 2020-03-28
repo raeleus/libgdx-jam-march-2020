@@ -2,6 +2,7 @@ package com.ray3k.template.entities;
 
 import com.esotericsoftware.spine.AnimationState.AnimationStateAdapter;
 import com.esotericsoftware.spine.AnimationState.TrackEntry;
+import com.ray3k.template.Core;
 import com.ray3k.template.screens.GameScreen;
 
 public class AnimationEntity extends Entity {
@@ -19,6 +20,7 @@ public class AnimationEntity extends Entity {
         
         this.x = x;
         this.y = y;
+        depth = Core.DEPTH_INDICATOR;
     }
     
     @Override

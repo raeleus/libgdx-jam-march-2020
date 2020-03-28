@@ -19,6 +19,7 @@ public class IndicatorEntity extends Entity {
     public void create() {
         setSkeletonData(Core.core.assetManager.get("spine/indicator.json"), Core.core.assetManager.get("spine/indicator.json-animation"));
         animationState.setAnimation(0, "animation", true);
+        depth = Core.DEPTH_INDICATOR;
     }
     
     @Override
