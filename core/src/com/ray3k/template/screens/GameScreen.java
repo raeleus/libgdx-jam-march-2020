@@ -57,6 +57,7 @@ public class GameScreen extends JamScreen {
     private TextureRegion levelBackground;
     public OrthographicCamera backgroundCamera;
     public Viewport backgroundViewport;
+    public Color groundColor;
     
     public GameScreen(int levelIndex) {
         this.levelIndex = levelIndex;
@@ -115,8 +116,11 @@ public class GameScreen extends JamScreen {
         backgroundCamera = new OrthographicCamera();
         backgroundViewport = new StretchViewport(1024, 576, backgroundCamera);
         backgroundViewport.update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), true);
+    
+        groundColor = new Color(54 / 255f, 71 / 255f, 0, 1);
         
         entityController = new EntityController();
+        entityController.add(new GroundDrawerEntity());
         loadLevel(levels[levelIndex]);
     }
     
