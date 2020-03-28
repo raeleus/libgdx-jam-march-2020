@@ -6,980 +6,980 @@ filter: MipMapLinearLinear,MipMapLinearLinear
 repeat: none
 arrow
   rotate: false
-  xy: 2054, 3061
+  xy: 2060, 3055
   size: 634, 453
   orig: 634, 453
   offset: 0, 0
   index: -1
 bg
   rotate: true
-  xy: 1907, 1136
+  xy: 2682, 2932
   size: 79, 96
   orig: 79, 96
   offset: 0, 0
   index: -1
 bullet
   rotate: true
-  xy: 1836, 2434
+  xy: 3791, 2824
   size: 134, 7
   orig: 134, 7
   offset: 0, 0
   index: -1
 bush
-  rotate: false
-  xy: 545, 757
+  rotate: true
+  xy: 3800, 3033
   size: 107, 60
   orig: 107, 60
   offset: 0, 0
   index: -1
 button-back-normal
-  rotate: false
-  xy: 2362, 1820
+  rotate: true
+  xy: 775, 681
   size: 161, 58
   orig: 161, 58
   offset: 0, 0
   index: -1
 button-back-over
-  rotate: false
-  xy: 1461, 1069
+  rotate: true
+  xy: 472, 237
   size: 161, 58
   orig: 161, 58
   offset: 0, 0
   index: -1
 button-back-pressed
   rotate: true
-  xy: 470, 453
+  xy: 1899, 1943
   size: 161, 58
   orig: 161, 58
   offset: 0, 0
   index: -1
 button-credits-normal
   rotate: true
-  xy: 3901, 3417
+  xy: 3366, 3174
   size: 279, 72
   orig: 279, 72
   offset: 0, 0
   index: -1
 button-credits-over
   rotate: true
-  xy: 1156, 1125
+  xy: 3456, 2660
   size: 279, 72
   orig: 279, 72
   offset: 0, 0
   index: -1
 button-credits-pressed
   rotate: true
-  xy: 2133, 1470
+  xy: 3376, 2612
   size: 279, 72
   orig: 279, 72
   offset: 0, 0
   index: -1
 button-defaults-normal
   rotate: false
-  xy: 1837, 1275
+  xy: 3593, 2966
   size: 222, 59
   orig: 222, 59
   offset: 0, 0
   index: -1
 button-defaults-over
-  rotate: false
-  xy: 1837, 1338
+  rotate: true
+  xy: 1864, 2206
   size: 222, 59
   orig: 222, 59
   offset: 0, 0
   index: -1
 button-defaults-pressed
   rotate: true
-  xy: 1150, 899
+  xy: 1931, 2206
   size: 222, 59
   orig: 222, 59
   offset: 0, 0
   index: -1
 button-key-binds-normal
-  rotate: true
-  xy: 2417, 1882
+  rotate: false
+  xy: 1253, 1304
   size: 342, 51
   orig: 342, 51
   offset: 0, 0
   index: -1
 button-key-binds-over
   rotate: true
-  xy: 2362, 1882
+  xy: 900, 1054
   size: 342, 51
   orig: 342, 51
   offset: 0, 0
   index: -1
 button-key-binds-pressed
-  rotate: true
-  xy: 3066, 3172
+  rotate: false
+  xy: 2028, 2499
   size: 342, 51
   orig: 342, 51
   offset: 0, 0
   index: -1
 button-options-normal
-  rotate: true
-  xy: 2603, 2300
+  rotate: false
+  xy: 2025, 2213
   size: 278, 68
   orig: 278, 68
   offset: 0, 0
   index: -1
 button-options-over
   rotate: false
-  xy: 1841, 1401
+  xy: 2025, 2289
   size: 278, 68
   orig: 278, 68
   offset: 0, 0
   index: -1
 button-options-pressed
   rotate: false
-  xy: 2341, 2228
+  xy: 2025, 2365
   size: 278, 68
   orig: 278, 68
   offset: 0, 0
   index: -1
 button-start-normal
-  rotate: true
-  xy: 2233, 1839
+  rotate: false
+  xy: 3446, 3206
   size: 340, 70
   orig: 340, 70
   offset: 0, 0
   index: -1
 button-start-over
-  rotate: false
-  xy: 3121, 3458
+  rotate: true
+  xy: 959, 1059
   size: 340, 70
   orig: 340, 70
   offset: 0, 0
   index: -1
 button-start-pressed
   rotate: false
-  xy: 2672, 2979
+  xy: 3446, 3284
   size: 340, 70
   orig: 340, 70
   offset: 0, 0
   index: -1
 carrier-0
-  rotate: false
-  xy: 2675, 2375
+  rotate: true
+  xy: 1249, 994
   size: 184, 192
   orig: 184, 192
   offset: 0, 0
   index: -1
 carrier-1
   rotate: false
-  xy: 1273, 1246
+  xy: 1449, 986
   size: 184, 192
   orig: 184, 192
   offset: 0, 0
   index: -1
 carrier-2
   rotate: false
-  xy: 1273, 1050
+  xy: 1641, 996
   size: 184, 192
   orig: 184, 192
   offset: 0, 0
   index: -1
 carrier-3
   rotate: false
-  xy: 1461, 1226
+  xy: 1833, 996
   size: 184, 192
   orig: 184, 192
   offset: 0, 0
   index: -1
 carrier-4
   rotate: false
-  xy: 1649, 1226
+  xy: 3401, 2947
   size: 184, 192
   orig: 184, 192
   offset: 0, 0
   index: -1
 city
   rotate: true
-  xy: 1030, 1822
+  xy: 1036, 1812
   size: 318, 494
   orig: 318, 494
   offset: 0, 0
   index: -1
 city-wreck
-  rotate: false
-  xy: 1537, 1476
+  rotate: true
+  xy: 1617, 1450
   size: 310, 302
   orig: 310, 302
   offset: 0, 0
   index: -1
 claw-closed
   rotate: false
-  xy: 3066, 3126
+  xy: 415, 159
   size: 49, 42
   orig: 49, 42
   offset: 0, 0
   index: -1
 claw-open
   rotate: false
-  xy: 2359, 1773
+  xy: 472, 186
   size: 47, 43
   orig: 47, 43
   offset: 0, 0
   index: -1
 confetti1
-  rotate: true
-  xy: 320, 2
+  rotate: false
+  xy: 2378, 2501
   size: 37, 49
   orig: 37, 49
   offset: 0, 0
   index: -1
 confetti2
-  rotate: true
-  xy: 2167, 2145
+  rotate: false
+  xy: 3447, 3489
   size: 34, 33
   orig: 34, 33
   offset: 0, 0
   index: -1
 confetti3
-  rotate: false
-  xy: 3435, 3391
+  rotate: true
+  xy: 1899, 1771
   size: 22, 63
   orig: 22, 63
   offset: 0, 0
   index: -1
 container-back
-  rotate: true
-  xy: 757, 741
+  rotate: false
+  xy: 555, 743
   size: 123, 52
   orig: 123, 52
   offset: 0, 0
   index: -1
 container-front
   rotate: false
-  xy: 426, 618
+  xy: 3794, 3219
   size: 125, 135
   orig: 125, 135
   offset: 0, 0
   index: -1
 explosion
   rotate: false
-  xy: 3121, 3260
+  xy: 1037, 998
   size: 204, 194
   orig: 204, 194
   offset: 0, 0
   index: -1
 flower
-  rotate: false
-  xy: 2204, 2145
+  rotate: true
+  xy: 4058, 3247
   size: 23, 34
   orig: 23, 34
   offset: 0, 0
   index: -1
 fuel-can
   rotate: false
-  xy: 2234, 1465
+  xy: 1965, 2016
   size: 84, 88
   orig: 84, 88
   offset: 0, 0
   index: -1
 grass
-  rotate: false
-  xy: 2582, 1882
+  rotate: true
+  xy: 686, 746
   size: 49, 19
   orig: 49, 19
   offset: 0, 0
   index: -1
 icon cloud
   rotate: false
-  xy: 1656, 1119
+  xy: 1850, 2436
   size: 159, 103
   orig: 159, 103
   offset: 0, 0
   index: -1
 icon-present
   rotate: false
-  xy: 421, 69
+  xy: 2702, 3019
   size: 78, 93
   orig: 78, 93
   offset: 0, 0
   index: -1
 landing-pad
   rotate: true
-  xy: 545, 821
+  xy: 555, 803
   size: 593, 150
   orig: 593, 150
   offset: 0, 0
   index: -1
 level-background
   rotate: false
-  xy: 2, 2942
+  xy: 4, 2940
   size: 2048, 1152
   orig: 2048, 1152
   offset: 0, 0
   index: -1
 libgdx-b
   rotate: false
-  xy: 656, 766
+  xy: 1968, 937
   size: 39, 51
   orig: 39, 51
   offset: 0, 0
   index: -1
 libgdx-background
   rotate: false
-  xy: 2, 1782
+  xy: 4, 1772
   size: 1024, 576
   orig: 1024, 576
   offset: 0, 0
   index: -1
 libgdx-d
   rotate: true
-  xy: 3016, 2985
+  xy: 975, 946
   size: 64, 51
   orig: 64, 51
   offset: 0, 0
   index: -1
 libgdx-eye
   rotate: false
-  xy: 1496, 1773
+  xy: 3401, 2919
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
   index: -1
 libgdx-foot
   rotate: false
-  xy: 1030, 2144
+  xy: 1036, 2138
   size: 512, 794
   orig: 512, 794
   offset: 0, 0
   index: -1
 libgdx-g
-  rotate: true
-  xy: 2304, 1769
+  rotate: false
+  xy: 1110, 939
   size: 64, 51
   orig: 64, 51
   offset: 0, 0
   index: -1
 libgdx-gore-1
-  rotate: false
-  xy: 2623, 2228
+  rotate: true
+  xy: 1034, 928
   size: 62, 68
   orig: 62, 68
   offset: 0, 0
   index: -1
 libgdx-gore-2
-  rotate: true
-  xy: 555, 638
+  rotate: false
+  xy: 3796, 3148
   size: 115, 63
   orig: 115, 63
   offset: 0, 0
   index: -1
 libgdx-gore-3
-  rotate: false
-  xy: 3121, 3190
+  rotate: true
+  xy: 3292, 2417
   size: 200, 66
   orig: 200, 66
   offset: 0, 0
   index: -1
 libgdx-gore-4
-  rotate: true
-  xy: 2582, 1905
+  rotate: false
+  xy: 1641, 937
   size: 319, 51
   orig: 319, 51
   offset: 0, 0
   index: -1
 libgdx-gore-5
   rotate: true
-  xy: 4048, 3698
+  xy: 3058, 2716
   size: 396, 24
   orig: 396, 24
   offset: 0, 0
   index: -1
 libgdx-i
-  rotate: true
-  xy: 1461, 1050
+  rotate: false
+  xy: 392, 87
   size: 15, 51
   orig: 15, 51
   offset: 0, 0
   index: -1
 libgdx-l
   rotate: false
-  xy: 532, 563
+  xy: 3823, 2974
   size: 15, 51
   orig: 15, 51
   offset: 0, 0
   index: -1
 libgdx-mouth
   rotate: true
-  xy: 2341, 2195
+  xy: 1506, 1775
   size: 29, 17
   orig: 29, 17
   offset: 0, 0
   index: -1
 libgdx-shadow
   rotate: true
-  xy: 426, 757
+  xy: 432, 739
   size: 657, 115
   orig: 657, 115
   offset: 0, 0
   index: -1
 libgdx-subtitle1
   rotate: true
-  xy: 699, 717
+  xy: 713, 699
   size: 697, 54
   orig: 697, 54
   offset: 0, 0
   index: -1
 libgdx-subtitle2
   rotate: true
-  xy: 757, 868
+  xy: 775, 850
   size: 546, 54
   orig: 546, 54
   offset: 0, 0
   index: -1
 libgdx-subtitle3
-  rotate: false
-  xy: 1837, 1219
+  rotate: true
+  xy: 472, 406
   size: 200, 52
   orig: 200, 52
   offset: 0, 0
   index: -1
 libgdx-template
   rotate: false
-  xy: 1537, 1422
+  xy: 2025, 2441
   size: 300, 50
   orig: 300, 50
   offset: 0, 0
   index: -1
 libgdx-x
   rotate: true
-  xy: 2637, 2146
+  xy: 2057, 2026
   size: 78, 51
   orig: 78, 51
   offset: 0, 0
   index: -1
 logo
   rotate: true
-  xy: 2, 601
+  xy: 4, 587
   size: 1177, 420
   orig: 1177, 420
   offset: 0, 0
   index: -1
 logo-3
   rotate: true
-  xy: 2123, 1397
+  xy: 2216, 2136
   size: 69, 88
   orig: 69, 88
   offset: 0, 0
   index: -1
 logo-a
-  rotate: true
-  xy: 489, 172
+  rotate: false
+  xy: 1864, 2112
   size: 74, 86
   orig: 74, 86
   offset: 0, 0
   index: -1
 logo-arm
   rotate: false
-  xy: 2863, 2496
+  xy: 4070, 3752
   size: 22, 71
   orig: 22, 71
   offset: 0, 0
   index: -1
 logo-chair
-  rotate: false
-  xy: 2905, 2776
+  rotate: true
+  xy: 3593, 3033
   size: 106, 199
   orig: 106, 199
   offset: 0, 0
   index: -1
 logo-chest
   rotate: false
-  xy: 470, 315
+  xy: 1899, 1801
   size: 67, 134
   orig: 67, 134
   offset: 0, 0
   index: -1
 logo-cursor
   rotate: false
-  xy: 1819, 1122
+  xy: 3609, 2674
   size: 84, 93
   orig: 84, 93
   offset: 0, 0
   index: -1
 logo-eye
   rotate: false
-  xy: 1496, 1797
+  xy: 1253, 1378
   size: 21, 21
   orig: 21, 21
   offset: 0, 0
   index: -1
 logo-fore-arm
   rotate: false
-  xy: 1626, 1073
+  xy: 359, 7
   size: 21, 54
   orig: 21, 54
   offset: 0, 0
   index: -1
 logo-hand
-  rotate: true
-  xy: 4076, 3992
+  rotate: false
+  xy: 3058, 2690
   size: 21, 18
   orig: 21, 18
   offset: 0, 0
   index: -1
 logo-head
   rotate: true
-  xy: 320, 43
+  xy: 432, 614
   size: 117, 97
   orig: 117, 97
   offset: 0, 0
   index: -1
 logo-head-back
-  rotate: false
-  xy: 373, 2
+  rotate: true
+  xy: 3401, 3150
   size: 16, 37
   orig: 16, 37
   offset: 0, 0
   index: -1
 logo-k
   rotate: false
-  xy: 2116, 1303
+  xy: 3927, 3278
   size: 85, 90
   orig: 85, 90
   offset: 0, 0
   index: -1
 logo-leg
-  rotate: true
-  xy: 2675, 2307
+  rotate: false
+  xy: 3719, 2777
   size: 64, 181
   orig: 64, 181
   offset: 0, 0
   index: -1
 logo-r
   rotate: false
-  xy: 2234, 1557
+  xy: 2028, 2112
   size: 81, 93
   orig: 81, 93
   offset: 0, 0
   index: -1
 logo-scene1
   rotate: false
-  xy: 2, 2362
+  xy: 4, 2356
   size: 1024, 576
   orig: 1024, 576
   offset: 0, 0
   index: -1
 logo-scene2
   rotate: false
-  xy: 2054, 3518
+  xy: 2060, 3516
   size: 1024, 576
   orig: 1024, 576
   offset: 0, 0
   index: -1
 logo-y
   rotate: false
-  xy: 503, 82
+  xy: 1946, 2112
   size: 74, 86
   orig: 74, 86
   offset: 0, 0
   index: -1
 logo-z
   rotate: false
-  xy: 2215, 1391
+  xy: 2117, 2135
   size: 91, 70
   orig: 91, 70
   offset: 0, 0
   index: -1
 map-node
   rotate: false
-  xy: 2410, 1775
+  xy: 1182, 949
   size: 41, 41
   orig: 41, 41
   offset: 0, 0
   index: -1
 missile
-  rotate: true
-  xy: 2063, 1274
+  rotate: false
+  xy: 3927, 3221
   size: 123, 49
   orig: 123, 49
   offset: 0, 0
   index: -1
 missile-plume
   rotate: true
-  xy: 4076, 4017
+  xy: 3465, 2527
   size: 77, 17
   orig: 77, 17
   offset: 0, 0
   index: -1
 nuke
-  rotate: true
-  xy: 1461, 1131
+  rotate: false
+  xy: 3366, 2413
   size: 91, 191
   orig: 91, 191
   offset: 0, 0
   index: -1
 nuke-explosion-0
   rotate: true
-  xy: 409, 166
+  xy: 1974, 1859
   size: 80, 76
   orig: 80, 76
   offset: 0, 0
   index: -1
 nuke-explosion-1
   rotate: false
-  xy: 2685, 2571
+  xy: 1037, 1200
   size: 208, 199
   orig: 208, 199
   offset: 0, 0
   index: -1
 nuke-explosion-10
   rotate: false
-  xy: 3475, 3685
+  xy: 3489, 3683
   size: 388, 409
   orig: 388, 409
   offset: 0, 0
   index: -1
 nuke-explosion-11
-  rotate: false
-  xy: 3475, 3419
+  rotate: true
+  xy: 2788, 2690
   size: 422, 262
   orig: 422, 262
   offset: 0, 0
   index: -1
 nuke-explosion-2
   rotate: false
-  xy: 874, 882
+  xy: 2788, 2422
   size: 272, 260
   orig: 272, 260
   offset: 0, 0
   index: -1
 nuke-explosion-3
   rotate: false
-  xy: 1546, 2122
+  xy: 1556, 2112
   size: 300, 286
   orig: 300, 286
   offset: 0, 0
   index: -1
 nuke-explosion-4
   rotate: false
-  xy: 1528, 1782
+  xy: 1538, 1768
   size: 353, 336
   orig: 353, 336
   offset: 0, 0
   index: -1
 nuke-explosion-5
   rotate: true
-  xy: 2692, 3126
+  xy: 2702, 3120
   size: 388, 370
   orig: 388, 370
   offset: 0, 0
   index: -1
 nuke-explosion-6
-  rotate: false
-  xy: 895, 1461
+  rotate: true
+  xy: 1301, 1363
   size: 388, 308
   orig: 388, 308
   offset: 0, 0
   index: -1
 nuke-explosion-7
   rotate: false
-  xy: 1836, 2572
+  xy: 2028, 2558
   size: 388, 366
   orig: 388, 366
   offset: 0, 0
   index: -1
 nuke-explosion-8
-  rotate: false
-  xy: 2228, 2582
+  rotate: true
+  xy: 2424, 2536
   size: 388, 356
   orig: 388, 356
   offset: 0, 0
   index: -1
 nuke-explosion-9
-  rotate: true
-  xy: 1885, 1753
+  rotate: false
+  xy: 905, 1407
   size: 388, 344
   orig: 388, 344
   offset: 0, 0
   index: -1
 person
   rotate: false
-  xy: 815, 875
+  xy: 837, 853
   size: 49, 83
   orig: 49, 83
   offset: 0, 0
   index: -1
 propeller-0
   rotate: true
-  xy: 2637, 2059
+  xy: 3868, 3057
   size: 83, 38
   orig: 83, 38
   offset: 0, 0
   index: -1
 propeller-1
   rotate: true
-  xy: 2637, 1972
+  xy: 841, 762
   size: 83, 38
   orig: 83, 38
   offset: 0, 0
   index: -1
 ring-left
-  rotate: false
-  xy: 409, 250
+  rotate: true
+  xy: 4, 4
   size: 57, 347
   orig: 57, 347
   offset: 0, 0
   index: -1
 ring-right
-  rotate: false
-  xy: 2620, 2591
+  rotate: true
+  xy: 3092, 3461
   size: 61, 347
   orig: 61, 347
   offset: 0, 0
   index: -1
 rock
   rotate: true
-  xy: 2234, 1654
+  xy: 900, 945
   size: 101, 67
   orig: 101, 67
   offset: 0, 0
   index: -1
 rope
-  rotate: true
-  xy: 2, 4
+  rotate: false
+  xy: 1998, 2301
   size: 7, 127
   orig: 7, 127
   offset: 0, 0
   index: -1
 sam-site
   rotate: false
-  xy: 874, 1146
+  xy: 3090, 2625
   size: 278, 258
   orig: 278, 258
   offset: 0, 0
   index: -1
 sam-site-wreck
   rotate: true
-  xy: 2341, 2300
+  xy: 3090, 2891
   size: 278, 258
   orig: 278, 258
   offset: 0, 0
   index: -1
 ship
   rotate: true
-  xy: 3867, 3700
+  xy: 3885, 3698
   size: 394, 177
   orig: 394, 177
   offset: 0, 0
   index: -1
 ship-landing-gear
-  rotate: false
-  xy: 2527, 1825
+  rotate: true
+  xy: 3456, 2612
   size: 40, 53
   orig: 40, 53
   offset: 0, 0
   index: -1
 ship-wreck
   rotate: true
-  xy: 2167, 2183
+  xy: 1850, 2547
   size: 385, 170
   orig: 385, 170
   offset: 0, 0
   index: -1
 sign
-  rotate: true
-  xy: 2233, 1759
+  rotate: false
+  xy: 1974, 1784
   size: 76, 67
   orig: 76, 67
   offset: 0, 0
   index: -1
 slider
   rotate: true
-  xy: 2209, 1488
+  xy: 4070, 3831
   size: 261, 21
   orig: 261, 21
   offset: 0, 0
   index: -1
 slider-knob
-  rotate: true
-  xy: 1461, 1422
+  rotate: false
+  xy: 2333, 2441
   size: 16, 50
   orig: 16, 50
   offset: 0, 0
   index: -1
 target-platform
   rotate: true
-  xy: 1232, 1137
+  xy: 3356, 2899
   size: 267, 37
   orig: 267, 37
   offset: 0, 0
   index: -1
 text-button
-  rotate: true
-  xy: 2472, 1882
+  rotate: false
+  xy: 1253, 1245
   size: 342, 51
   orig: 342, 51
   offset: 0, 0
   index: -1
 text-button-over
-  rotate: true
-  xy: 2527, 1882
+  rotate: false
+  xy: 1253, 1186
   size: 342, 51
   orig: 342, 51
   offset: 0, 0
   index: -1
 text-button-pressed
-  rotate: true
-  xy: 2307, 1837
+  rotate: false
+  xy: 3446, 3147
   size: 342, 51
   orig: 342, 51
   offset: 0, 0
   index: -1
 thruster-plume
   rotate: true
-  xy: 470, 250
+  xy: 1965, 1947
   size: 61, 78
   orig: 61, 78
   offset: 0, 0
   index: -1
 tip 00
   rotate: false
-  xy: 2685, 2774
+  xy: 3068, 2416
   size: 216, 201
   orig: 216, 201
   offset: 0, 0
   index: -1
 tip 01
   rotate: false
-  xy: 426, 1418
+  xy: 432, 1404
   size: 465, 360
   orig: 465, 360
   offset: 0, 0
   index: -1
 tip 02
-  rotate: false
-  xy: 2, 15
+  rotate: true
+  xy: 3920, 3376
   size: 314, 145
   orig: 314, 145
   offset: 0, 0
   index: -1
 tip 03
   rotate: false
-  xy: 2, 164
+  xy: 4, 146
   size: 403, 433
   orig: 403, 433
   offset: 0, 0
   index: -1
 tip 04
   rotate: true
-  xy: 1546, 2412
+  xy: 1556, 2406
   size: 526, 286
   orig: 526, 286
   offset: 0, 0
   index: -1
 tip 05
-  rotate: false
-  xy: 1850, 2145
+  rotate: true
+  xy: 3489, 3362
   size: 313, 423
   orig: 313, 423
   offset: 0, 0
   index: -1
 tip 06
   rotate: false
-  xy: 1030, 1773
+  xy: 1036, 1759
   size: 462, 45
   orig: 462, 45
   offset: 0, 0
   index: -1
 tip 07
   rotate: false
-  xy: 1851, 1473
+  xy: 3080, 3177
   size: 278, 276
   orig: 278, 276
   offset: 0, 0
   index: -1
 tip 08
   rotate: false
-  xy: 2692, 3053
+  xy: 4, 69
   size: 380, 69
   orig: 380, 69
   offset: 0, 0
   index: -1
 tip 09
   rotate: true
-  xy: 3977, 3415
+  xy: 3536, 2658
   size: 281, 65
   orig: 281, 65
   offset: 0, 0
   index: -1
 tip 10
   rotate: true
-  xy: 815, 962
+  xy: 837, 944
   size: 452, 55
   orig: 452, 55
   offset: 0, 0
   index: -1
 tip 11
-  rotate: false
-  xy: 895, 1408
+  rotate: true
+  xy: 415, 209
   size: 370, 49
   orig: 370, 49
   offset: 0, 0
   index: -1
 tip 12
   rotate: false
-  xy: 2054, 2942
+  xy: 2060, 2932
   size: 614, 115
   orig: 614, 115
   offset: 0, 0
   index: -1
 tower
   rotate: false
-  xy: 3082, 3532
+  xy: 3092, 3530
   size: 389, 562
   orig: 389, 562
   offset: 0, 0
   index: -1
 tree
   rotate: false
-  xy: 3329, 3271
+  xy: 3609, 2775
   size: 102, 183
   orig: 102, 183
   offset: 0, 0
   index: -1
 turret
-  rotate: true
-  xy: 2637, 1914
+  rotate: false
+  xy: 975, 1018
   size: 54, 33
   orig: 54, 33
   offset: 0, 0
   index: -1
 turret-barrel
   rotate: true
-  xy: 3461, 3401
+  xy: 537, 678
   size: 53, 10
   orig: 53, 10
   offset: 0, 0
   index: -1
 turret-body
-  rotate: true
-  xy: 2205, 1315
+  rotate: false
+  xy: 4020, 3278
   size: 72, 90
   orig: 72, 90
   offset: 0, 0
   index: -1
 vertical-scroll-knob
-  rotate: false
-  xy: 1213, 1050
+  rotate: true
+  xy: 2117, 2115
   size: 12, 71
   orig: 12, 71
   offset: 0, 0
   index: -1
 white
   rotate: false
-  xy: 1651, 1126
+  xy: 1538, 2129
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 window
-  rotate: true
-  xy: 1287, 1442
+  rotate: false
+  xy: 1617, 1196
   size: 327, 246
   orig: 327, 246
   offset: 0, 0

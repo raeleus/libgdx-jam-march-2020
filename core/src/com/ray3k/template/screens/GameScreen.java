@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasSprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -54,7 +55,7 @@ public class GameScreen extends JamScreen {
     public int levelIndex;
     public float levelWidth;
     public float levelHeight;
-    private TextureRegion levelBackground;
+    private AtlasSprite levelBackground;
     public OrthographicCamera backgroundCamera;
     public Viewport backgroundViewport;
     public Color groundColor;
@@ -144,7 +145,9 @@ public class GameScreen extends JamScreen {
         backgroundViewport.apply();
         batch.setProjectionMatrix(backgroundCamera.combined);
         batch.setColor(1, 1, 1, 1);
-        batch.draw(levelBackground, 0, 0, backgroundViewport.getWorldWidth(), backgroundViewport.getWorldHeight());
+        levelBackground.setPosition(0, 0);
+        levelBackground.setSize(backgroundViewport.getWorldWidth(), backgroundViewport.getWorldHeight());
+        levelBackground.draw(batch);
         viewport.apply();
         batch.setProjectionMatrix(camera.combined);
         entityController.draw(paused ? 0 : delta);
@@ -197,7 +200,7 @@ public class GameScreen extends JamScreen {
                               ObjectMap<String, OgmoValue> valuesMap) {
                 levelWidth = width;
                 levelHeight = height;
-                levelBackground = core.textureAtlas.findRegion(valuesMap.get("background").asString());
+                levelBackground = new AtlasSprite(core.textureAtlas.findRegion(valuesMap.get("background").asString()));
             }
     
             @Override
