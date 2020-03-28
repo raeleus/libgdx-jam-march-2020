@@ -186,12 +186,9 @@ public class PlayerEntity extends Entity {
                 airTarget.destroy = true;
             }
         }
-
-        System.out.println(canRotate + " " + MathUtils.isZero(getSpeed()));
+        
         if (!canRotate && MathUtils.isZero(getSpeed())) for (LandTargetEntity landTarget : gameScreen.landTargets) {
-            System.out.println("loop");
             if (Utils.pointDistance(x, y, landTarget.x, landTarget.y) < TARGET_DISTANCE) {
-                System.out.println("hit");
                 landTarget.destroy = true;
             }
         }

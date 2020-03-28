@@ -5,6 +5,8 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasSprite;
 
 public class DecalEntity extends Entity {
     private AtlasSprite sprite;
+    public float rotation;
+    
     public DecalEntity(AtlasRegion atlasRegion) {
         sprite = new AtlasSprite(atlasRegion);
     }
@@ -23,6 +25,7 @@ public class DecalEntity extends Entity {
     public void act(float delta) {
         sprite.setX(x);
         sprite.setY(y);
+        sprite.setRotation(rotation);
     }
     
     @Override

@@ -229,11 +229,13 @@ public class GameScreen extends JamScreen {
             }
             
             @Override
-            public void decal(int x, int y, float scaleX, float scaleY, int rotation, String texture, String folder) {
+            public void decal(int x, int y, float scaleX, float scaleY, float rotation, String texture, String folder) {
                 AtlasRegion atlasRegion = core.textureAtlas.findRegion(texture);
                 DecalEntity decalEntity = new DecalEntity(atlasRegion);
                 decalEntity.depth = decalDepth;
                 decalEntity.setPosition(x - atlasRegion.originalWidth / 2f, y - atlasRegion.originalHeight / 2f);
+                decalEntity.rotation = rotation;
+                System.out.println(rotation);
                 gameScreen.entityController.add(decalEntity);
             }
         });

@@ -23,7 +23,6 @@
         {"x": 1912, "y": 7656, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
         {"x": 1992, "y": 7640, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
         {"x": 6496, "y": 7656, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
-        {"x": 7904, "y": 6504, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
         {"x": 7584, "y": 7688, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
         {"x": 776, "y": 7688, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
         {"x": 1760, "y": 7696, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
@@ -75,7 +74,8 @@
         {"x": 4992, "y": 4248, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
         {"x": 4768, "y": 4256, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "sign.png"},
         {"x": 7480, "y": 7656, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
-        {"x": 6792, "y": 4328, "scaleX": 1, "scaleY": 1, "rotation": 1.5707963267948966, "texture": "arrow.png"}
+        {"x": 6792, "y": 4328, "scaleX": 1, "scaleY": 1, "rotation": 1.5707963267948966, "texture": "arrow.png"},
+        {"x": 7064, "y": 6048, "scaleX": 1, "scaleY": 1, "rotation": 1.5707963267948966, "texture": "arrow.png"}
       ],
       "folder": "..\\..\\output\\decals"
     },

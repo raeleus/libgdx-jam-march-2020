@@ -2,6 +2,7 @@ package com.ray3k.template;
 
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
@@ -112,7 +113,7 @@ public class OgmoReader {
                         for (OgmoListener ogmoListener : layerListeners) {
                             ogmoListener.decal(decal.getInt("x"), levelHeight - decal.getInt("y"),
                                     decal.getFloat("scaleX", 1f), decal.getFloat("scaleY", 1f),
-                                    (360 - decal.getInt("rotation", 0)) % 360, Utils.fileName(decal.getString("texture")), folder);
+                                    (360 - MathUtils.radiansToDegrees * decal.getFloat("rotation", 0)) % 360, Utils.fileName(decal.getString("texture")), folder);
                         }
                     }
                 } else if (child.has("data")) {
@@ -273,7 +274,7 @@ public class OgmoReader {
          * @param texture The name of the texture linked by the decal.
          * @param folder The name of the folder that the decal layer is linked to.
          */
-        void decal(int x, int y, float scaleX, float scaleY, int rotation, String texture, String folder);
+        void decal(int x, int y, float scaleX, float scaleY, float rotation, String texture, String folder);
     
         /**
          * Called for every tile placed in a tile layer when the layer uses id's.
@@ -382,7 +383,7 @@ public class OgmoReader {
          * @param folder   The name of the folder that the decal layer is linked to.
          */
         @Override
-        public void decal(int x, int y, float scaleX, float scaleY, int rotation, String texture, String folder) {
+        public void decal(int x, int y, float scaleX, float scaleY, float rotation, String texture, String folder) {
         
         }
     
