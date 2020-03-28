@@ -48,11 +48,12 @@ public class PlayerEntity extends Entity {
     public void actBefore(float delta) {
         if (!firstFrame) {
             if (checkForCollision(mtv)) {
+                destroy = true;
                 for (TerrainEntity terrain : gameScreen.terrainEntities) {
-                    if (Math.abs(deltaY) > MAX_LANDING_SPEED || !Utils.isEqual360(rotation, 0,
-                            MAX_LANDING_ROTATION) || !Intersector.isPointInPolygon(terrain.vertices, 0,
+                    if (Math.abs(deltaY) <= MAX_LANDING_SPEED && Utils.isEqual360(rotation, 0,
+                            MAX_LANDING_ROTATION) && Intersector.isPointInPolygon(terrain.vertices, 0,
                             terrain.vertices.length, x, y - LAND_DETECTION_DISTANCE)) {
-                        destroy = true;
+                        destroy = false;
                         break;
                     }
                 }
