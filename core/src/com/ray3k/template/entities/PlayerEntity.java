@@ -4,6 +4,9 @@ import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Intersector.MinimumTranslationVector;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.utils.FloatArray;
+import com.esotericsoftware.spine.Bone;
+import com.esotericsoftware.spine.attachments.BoundingBoxAttachment;
 import com.ray3k.template.Core.Binding;
 import com.ray3k.template.Utils;
 import com.ray3k.template.screens.GameScreen;
@@ -22,6 +25,8 @@ public class PlayerEntity extends Entity {
     public static final int LAND_DETECTION_DISTANCE = 100;
     private boolean firstFrame;
     public static final float TARGET_DISTANCE = 200;
+    public Bone ropeTarget;
+    public Attachable attached;
     
     public PlayerEntity() {
         gameScreen = GameScreen.gameScreen;
@@ -37,6 +42,7 @@ public class PlayerEntity extends Entity {
         setGravity(GRAVITY, 270);
         mtv = new MinimumTranslationVector();
         firstFrame = true;
+        ropeTarget = skeleton.findBone("rope-target");
     }
     
     @Override
@@ -139,7 +145,6 @@ public class PlayerEntity extends Entity {
                 if (Intersector.isPointInPolygon(terrain.vertices, 0, terrain.vertices.length, x,
                         y - LAND_DETECTION_DISTANCE)) {
                     canRotate = false;
-                    setGravity(0, 270);
                     break;
                 } else {
                     setGravity(GRAVITY, 270);
@@ -177,6 +182,28 @@ public class PlayerEntity extends Entity {
                 skeleton.getRootBone().setRotation(rotation);
                 skeleton.updateWorldTransform();
                 skeletonBounds.update(skeleton, true);
+            }
+    
+            String animationName = animationState.getCurrent(2).getAnimation().getName();
+            if (gameScreen.isBindingJustPressed(Binding.CLAW_SHOOT)) {
+                if (attached == null) {
+                    animationState.setAnimation(2, "claw-release", false);
+                    animationState.addAnimation(2, "claw-hide", false, 1f);
+                } else if (animationName.equals("claw-hide")) {
+                    attached.detach();
+                    attached = null;
+                }
+            }
+            
+            if (animationName.equals("claw-release")) {
+                for (CarrierEntity carrier : gameScreen.carriers) {
+                    FloatArray floatArray = carrier.skeletonBounds.getPolygon((BoundingBoxAttachment) carrier.skeleton.findSlot("contact").getAttachment());
+                    if (carrier.skeletonBounds.containsPoint(floatArray, ropeTarget.getWorldX(), ropeTarget.getWorldY())) {
+                        carrier.attachTo(this);
+                        attached = carrier;
+                        break;
+                    }
+                }
             }
         }
         

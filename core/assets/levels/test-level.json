@@ -36,9 +36,11 @@
         {"name": "nuke", "id": 1, "_eid": "06598220", "x": 5552, "y": 7840, "originX": 45, "originY": 191},
         {"name": "fuel", "id": 2, "_eid": "03402480", "x": 3200, "y": 6448, "originX": 0, "originY": 0},
         {"name": "fuel", "id": 3, "_eid": "03402480", "x": 1264, "y": 7784, "originX": 0, "originY": 0},
-        {"name": "carrier", "id": 4, "_eid": "06596369", "x": 776, "y": 7104, "originX": 92, "originY": 192},
         {"name": "air-target", "id": 5, "_eid": "35058834", "x": 5088, "y": 6752, "originX": 0, "originY": 0},
-        {"name": "land-target", "id": 6, "_eid": "35069039", "x": 6920, "y": 6336, "originX": 0, "originY": 0}
+        {"name": "land-target", "id": 6, "_eid": "35069039", "x": 6920, "y": 6336, "originX": 0, "originY": 0},
+        {"name": "gun", "id": 8, "_eid": "42659816", "x": 5744, "y": 7832, "originX": 36, "originY": 90},
+        {"name": "carrier-target", "id": 9, "_eid": "42696917", "x": 3248, "y": 6440, "originX": 65, "originY": 61},
+        {"name": "carrier", "id": 10, "_eid": "06596369", "x": 4352, "y": 7640, "originX": 92, "originY": 0}
       ]
     },
     {
@@ -130,7 +132,8 @@
         {"x": 5040, "y": 6840, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tip 02.png"},
         {"x": 6304, "y": 5064, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tip 03.png"},
         {"x": 6928, "y": 5248, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tip 04.png"},
-        {"x": 6912, "y": 5936, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tip 05.png"}
+        {"x": 6912, "y": 5936, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tip 05.png"},
+        {"x": 3252.9163164171355, "y": 6506.40869829405, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "carrier-platform.png"}
       ],
       "folder": "..\\..\\output\\decals"
     },

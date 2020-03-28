@@ -51,7 +51,9 @@ public class GameScreen extends JamScreen {
     public OgmoReader ogmoReader;
     public Array<LandTargetEntity> landTargets = new Array<>();
     public Array<AirTargetEntity> airTargets = new Array<>();
-    public static final String[] levels = {"levels/level3.json", "levels/tutorial.json", "levels/level1.json", "levels/level2.json"};
+    public Array<CarrierEntity> carriers = new Array<>();
+    public Array<CarrierLandTargetEntity> carrierLandTargets = new Array<>();
+    public static final String[] levels = {"levels/test-level.json", "levels/tutorial.json", "levels/level1.json", "levels/level2.json", "levels/level3.json"};
     public int levelIndex;
     public float levelWidth;
     public float levelHeight;
@@ -181,7 +183,7 @@ public class GameScreen extends JamScreen {
     }
     
     public void checkIfLevelComplete() {
-        if (landTargets.size == 0 && airTargets.size == 0) {
+        if (landTargets.size == 0 && airTargets.size == 0 && carrierLandTargets.size == 0) {
             levelIndex++;
             if (levelIndex < levels.length) {
                 entityController.add(new LoadGameScreenEntity(2f));
@@ -248,6 +250,24 @@ public class GameScreen extends JamScreen {
                         gameScreen.entityController.add(airTargetEntity);
                         gameScreen.airTargets.add(airTargetEntity);
                         gameScreen.entityController.add(new IndicatorEntity(airTargetEntity));
+                        break;
+                    case "carrier":
+                        CarrierEntity carrierEntity = new CarrierEntity();
+                        carrierEntity.setPosition(x, y);
+                        gameScreen.entityController.add(carrierEntity);
+                        carriers.add(carrierEntity);
+                        gameScreen.entityController.add(new IndicatorEntity(carrierEntity));
+                        break;
+                    case "carrier-target":
+                        CarrierLandTargetEntity target = new CarrierLandTargetEntity();
+                        target.setPosition(x, y);
+                        gameScreen.entityController.add(target);
+                        gameScreen.carrierLandTargets.add(target);
+                        gameScreen.entityController.add(new IndicatorEntity(target));
+                        break;
+                    case "nuke":
+                        break;
+                    case "gun":
                         break;
                 }
             }

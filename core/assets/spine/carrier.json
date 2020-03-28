@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "g1DP8Zx2EoqwEDuUkBi1OCyp4PI",
+	"hash": "D/KrfzjnqF7D2veaTsL+mrp/LDc",
 	"spine": "3.8.79",
 	"x": -87.31,
 	"y": -171.16,
@@ -15,18 +15,34 @@
 ],
 "slots": [
 	{ "name": "carrier-0", "bone": "root", "attachment": "carrier-0" },
-	{ "name": "person", "bone": "person" }
+	{ "name": "person", "bone": "person" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" },
+	{ "name": "contact", "bone": "root", "attachment": "contact" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 6,
+					"vertices": [ -83.93, -169.02, -86.11, -56.71, -43.73, -12.57, 48.04, -11.7, 93.93, -54.96, 92.62, -171.2 ]
+				}
+			},
 			"carrier-0": {
 				"carrier-0": { "x": 4.69, "y": -75.16, "width": 184, "height": 192 },
 				"carrier-1": { "x": 4.69, "y": -75.16, "width": 184, "height": 192 },
 				"carrier-2": { "x": 4.69, "y": -75.16, "width": 184, "height": 192 },
 				"carrier-3": { "x": 4.69, "y": -75.16, "width": 184, "height": 192 },
 				"carrier-4": { "x": 4.69, "y": -75.16, "width": 184, "height": 192 }
+			},
+			"contact": {
+				"contact": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -21.12, -12.59, -20.16, 18.19, 21.2, 18.19, 22.65, -13.07 ]
+				}
 			},
 			"person": {
 				"person": { "x": 3.07, "y": 1.65, "rotation": 1.68, "width": 49, "height": 83 }

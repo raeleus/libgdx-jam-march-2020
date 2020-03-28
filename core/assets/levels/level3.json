@@ -32,7 +32,7 @@
       "gridCellsX": 1000,
       "gridCellsY": 1000,
       "entities": [
-        {"name": "player", "id": 0, "_eid": "03394795", "x": 7712, "y": 920, "originX": 197, "originY": 88},
+        {"name": "player", "id": 0, "_eid": "03394795", "x": 7719, "y": 949, "originX": 197, "originY": 88},
         {"name": "land-target", "id": 1, "_eid": "35069039", "x": 1016, "y": 2048, "originX": 35, "originY": 45},
         {"name": "air-target", "id": 2, "_eid": "35058834", "x": 3856, "y": 3968, "originX": 75, "originY": 50},
         {"name": "land-target", "id": 3, "_eid": "35069039", "x": 4264, "y": 7888, "originX": 35, "originY": 45},

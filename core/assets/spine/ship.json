@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "L4u374x50noAdQwhDRAMSWZnN9Y",
+	"hash": "zjeYwEB1sOhlOLhnjFqPxQzBDW4",
 	"spine": "3.8.79",
 	"x": -199.88,
 	"y": -245.69,
@@ -170,11 +170,26 @@
 		}
 	},
 	"claw-hide": {
+		"slots": {
+			"claw-closed": {
+				"attachment": [
+					{ "name": "claw-closed" },
+					{ "time": 0.3333, "name": null }
+				]
+			},
+			"rope": {
+				"attachment": [
+					{ "time": 0.3333, "name": null }
+				]
+			}
+		},
 		"bones": {
 			"rope-target": {
 				"translate": [
 					{},
-					{ "time": 0.3333, "x": -40.08, "y": 203 }
+					{ "time": 0.2667, "x": -31.26, "y": 140.16 },
+					{ "time": 0.3333, "x": -15.63, "y": 153.56 },
+					{ "time": 0.4667, "x": -1.12, "y": 130.85 }
 				]
 			}
 		}
