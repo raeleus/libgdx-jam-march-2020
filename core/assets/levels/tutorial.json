@@ -1,0 +1,187 @@
+{
+  "ogmoVersion": "3.3.0",
+  "width": 8000,
+  "height": 8000,
+  "offsetX": 0,
+  "offsetY": 0,
+  "layers": [
+    {
+      "name": "decals-front",
+      "_eid": "03382217",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "decals": [
+        {"x": 3027.4204803631906, "y": 6768.329567607785, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "ring-right.png"},
+        {"x": 3056, "y": 7064, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "sign.png"},
+        {"x": 1000, "y": 7496, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tower.png"},
+        {"x": 112, "y": 6680, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 602.0785747859861, "y": 7638.444462898287, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 440, "y": 7640, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 1856, "y": 7648, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 1912, "y": 7656, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 1992, "y": 7640, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 2440, "y": 7320, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 2800, "y": 7072, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 3640, "y": 7368, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 4632, "y": 7640, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 4712, "y": 7640, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 4856, "y": 7648, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 6048, "y": 7632, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 6448, "y": 7624, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 7184, "y": 7656, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 7904, "y": 6504, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tree.png"},
+        {"x": 7584, "y": 7688, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 7016, "y": 7712, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 6856, "y": 7696, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 5704, "y": 7696, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 5032, "y": 7696, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 3416, "y": 7248, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 3240, "y": 7096, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 776, "y": 7688, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 1760, "y": 7696, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 2608, "y": 7256, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 3536, "y": 7360, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 3976, "y": 7704, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 4120, "y": 7704, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 4040, "y": 7696, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 4768, "y": 7704, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 5992, "y": 7704, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 6512, "y": 7704, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 7264, "y": 7720, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 7384, "y": 7720, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 7328, "y": 7728, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"}
+      ],
+      "folder": "..\\..\\output\\decals"
+    },
+    {
+      "name": "entities",
+      "_eid": "03380408",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "entities": [
+        {"name": "player", "id": 0, "_eid": "03394795", "x": 1463, "y": 7550, "originX": 197, "originY": 177},
+        {"name": "air-target", "id": 1, "_eid": "35058834", "x": 3000, "y": 6776, "originX": 75, "originY": 50},
+        {"name": "land-target", "id": 2, "_eid": "35069039", "x": 4328, "y": 7656, "originX": 35, "originY": 45}
+      ]
+    },
+    {
+      "name": "decals-back",
+      "_eid": "03384024",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "decals": [
+        {"x": 1440, "y": 7768, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "landing-pad.png"},
+        {"x": 1464, "y": 7472, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tip 00.png"},
+        {"x": 1608, "y": 6768, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tip 01.png"},
+        {"x": 2280, "y": 6776, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tip 02.png"},
+        {"x": 2968, "y": 6768, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "ring-left.png"},
+        {"x": 3552, "y": 6792, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tip 03.png"},
+        {"x": 4256, "y": 6840, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tip 04.png"},
+        {"x": 4328, "y": 7344, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tip 05.png"},
+        {"x": 4326.542526515355, "y": 7689.702218519268, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "target-platform.png"}
+      ],
+      "folder": "..\\..\\output\\decals"
+    },
+    {
+      "name": "terrain",
+      "_eid": "03388114",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "entities": [
+        {
+          "name": "terrain",
+          "id": 0,
+          "_eid": "03393575",
+          "x": 0,
+          "y": 6624,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 136, "y": 6768},
+            {"x": 248, "y": 7008},
+            {"x": 296, "y": 7304},
+            {"x": 312, "y": 8008},
+            {"x": 0, "y": 8008}
+          ]
+        },
+        {
+          "name": "terrain",
+          "id": 1,
+          "_eid": "03393575",
+          "x": 8008,
+          "y": 8008,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 8008, "y": 6440},
+            {"x": 7824, "y": 6704},
+            {"x": 7744, "y": 7072},
+            {"x": 7720, "y": 7768},
+            {"x": 7720, "y": 8016}
+          ]
+        },
+        {
+          "name": "terrain",
+          "id": 2,
+          "_eid": "03393575",
+          "x": 296,
+          "y": 7704,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 760, "y": 7688},
+            {"x": 1432, "y": 7704},
+            {"x": 2064, "y": 7688},
+            {"x": 3256, "y": 7736},
+            {"x": 4328, "y": 7688},
+            {"x": 5544, "y": 7720},
+            {"x": 6528, "y": 7688},
+            {"x": 7304, "y": 7736},
+            {"x": 7800, "y": 7656},
+            {"x": 7848, "y": 8000},
+            {"x": 232, "y": 7992}
+          ]
+        },
+        {
+          "name": "terrain",
+          "id": 3,
+          "_eid": "03393575",
+          "x": 2184,
+          "y": 7744,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 2312, "y": 7464},
+            {"x": 2544, "y": 7296},
+            {"x": 2744, "y": 7184},
+            {"x": 2864, "y": 7096},
+            {"x": 3112, "y": 7080},
+            {"x": 3256, "y": 7112},
+            {"x": 3360, "y": 7224},
+            {"x": 3472, "y": 7296},
+            {"x": 3560, "y": 7400},
+            {"x": 3696, "y": 7472},
+            {"x": 3752, "y": 7584},
+            {"x": 3872, "y": 7736}
+          ]
+        }
+      ]
+    }
+  ]
+}
