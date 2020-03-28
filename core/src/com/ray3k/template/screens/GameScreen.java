@@ -49,7 +49,7 @@ public class GameScreen extends JamScreen {
     public OgmoReader ogmoReader;
     public Array<LandTargetEntity> landTargets = new Array<>();
     public Array<AirTargetEntity> airTargets = new Array<>();
-    public static final String[] levels = {"levels/tutorial.json", "levels/test-level.json", "levels/test-level2.json"};
+    public static final String[] levels = {"levels/tutorial.json", "levels/level1.json", "levels/test-level.json", "levels/test-level2.json"};
     public int levelIndex;
     public float levelWidth;
     public float levelHeight;
