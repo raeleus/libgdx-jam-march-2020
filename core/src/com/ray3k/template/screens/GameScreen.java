@@ -9,20 +9,23 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
 import com.crashinvaders.vfx.VfxManager;
 import com.ray3k.template.Core;
 import com.ray3k.template.JamScreen;
 import com.ray3k.template.OgmoReader;
+import com.ray3k.template.OgmoReader.EntityNode;
+import com.ray3k.template.OgmoReader.OgmoAdapter;
+import com.ray3k.template.OgmoReader.OgmoValue;
 import com.ray3k.template.entities.*;
 import com.ray3k.template.screens.DialogPause.PauseListener;
 import com.ray3k.template.transitions.Transitions;
@@ -41,7 +44,7 @@ public class GameScreen extends JamScreen {
     private VfxManager vfxManager;
     public boolean paused;
     public CameraEntity cameraEntity;
-    public LandscapeEntity landscapeEntity;
+    public Array<TerrainEntity> terrainEntities = new Array<>();
     public PlayerEntity playerEntity;
     public OgmoReader ogmoReader;
     public Array<LandTargetEntity> landTargets = new Array<>();
@@ -104,7 +107,7 @@ public class GameScreen extends JamScreen {
         viewport = new FitViewport(1024, 576, camera);
         
         entityController = new EntityController();
-        entityController.add(landscapeEntity = new LandscapeEntity(levels[levelIndex]));
+        loadLevel(levels[levelIndex]);
     }
     
     @Override
@@ -164,5 +167,67 @@ public class GameScreen extends JamScreen {
                 core.transition(new CreditsScreen(), Transitions.blinds(270, 5, Interpolation.linear), .5f);
             }
         }
+    }
+    
+    public void loadLevel(String level) {
+        gameScreen.ogmoReader.addListener(new OgmoAdapter() {
+            int decalDepth;
+            
+            @Override
+            public void layer(String name, int gridCellWidth, int gridCellHeight, int offsetX, int offsetY) {
+                switch (name) {
+                    case "decals-front":
+                        decalDepth = Core.DEPTH_DECAL_FRONT;
+                        break;
+                    case "decals-back":
+                        decalDepth = Core.DEPTH_DECAL_BACK;
+                        break;
+                }
+            }
+            
+            @Override
+            public void entity(String name, int id, int x, int y, int width, int height, boolean flippedX,
+                               boolean flippedY, int originX, int originY, int rotation, Array<EntityNode> nodes,
+                               ObjectMap<String, OgmoValue> valuesMap) {
+                
+                switch(name) {
+                    case "terrain":
+                        nodes.insert(0, new EntityNode(x, y));
+                        float[] vertices = OgmoReader.nodesToVertices(nodes);
+                        TerrainEntity terrainEntity = new TerrainEntity(vertices);
+                        gameScreen.entityController.add(terrainEntity);
+                        gameScreen.terrainEntities.add(terrainEntity);
+                        break;
+                    case "player":
+                        PlayerEntity playerEntity = gameScreen.playerEntity = new PlayerEntity();
+                        playerEntity.setPosition(x, y);
+                        gameScreen.entityController.add(playerEntity);
+                        gameScreen.entityController.add(gameScreen.cameraEntity = new CameraEntity());
+                        break;
+                    case "land-target":
+                        LandTargetEntity landTargetEntity = new LandTargetEntity();
+                        landTargetEntity.setPosition(x, y);
+                        gameScreen.entityController.add(landTargetEntity);
+                        gameScreen.landTargets.add(landTargetEntity);
+                        break;
+                    case "air-target":
+                        AirTargetEntity airTargetEntity = new AirTargetEntity();
+                        airTargetEntity.setPosition(x, y);
+                        gameScreen.entityController.add(airTargetEntity);
+                        gameScreen.airTargets.add(airTargetEntity);
+                        break;
+                }
+            }
+            
+            @Override
+            public void decal(int x, int y, float scaleX, float scaleY, int rotation, String texture, String folder) {
+                AtlasRegion atlasRegion = core.textureAtlas.findRegion(texture);
+                DecalEntity decalEntity = new DecalEntity(atlasRegion);
+                decalEntity.depth = decalDepth;
+                decalEntity.setPosition(x - atlasRegion.originalWidth / 2f, y - atlasRegion.originalHeight / 2f);
+                gameScreen.entityController.add(decalEntity);
+            }
+        });
+        gameScreen.ogmoReader.readFile(Gdx.files.internal(level));
     }
 }

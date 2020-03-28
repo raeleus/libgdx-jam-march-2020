@@ -48,11 +48,16 @@ public class PlayerEntity extends Entity {
     public void actBefore(float delta) {
         if (!firstFrame) {
             if (checkForCollision(mtv)) {
-                if (Math.abs(deltaY) > MAX_LANDING_SPEED || !Utils.isEqual360(rotation, 0,
-                        MAX_LANDING_ROTATION) || !Intersector.isPointInPolygon(gameScreen.landscapeEntity.vertices, 0,
-                        gameScreen.landscapeEntity.vertices.length, x, y - LAND_DETECTION_DISTANCE)) {
-                    destroy = true;
-                } else {
+                for (TerrainEntity terrain : gameScreen.terrainEntities) {
+                    if (Math.abs(deltaY) > MAX_LANDING_SPEED || !Utils.isEqual360(rotation, 0,
+                            MAX_LANDING_ROTATION) || !Intersector.isPointInPolygon(terrain.vertices, 0,
+                            terrain.vertices.length, x, y - LAND_DETECTION_DISTANCE)) {
+                        destroy = true;
+                        break;
+                    }
+                }
+                
+                if (!destroy) {
                     mtv.normal.setLength(mtv.depth + .1f);
                     x += mtv.normal.x;
                     y += mtv.normal.y;
@@ -68,7 +73,10 @@ public class PlayerEntity extends Entity {
     
     private boolean checkForCollision(MinimumTranslationVector mtv) {
         float[] f1 = Utils.skeletonBoundsToTriangles(skeletonBounds);
-        return Utils.overlapSortedTriangles(f1, gameScreen.landscapeEntity.sortedTriangles, mtv);
+        for (TerrainEntity terrain : gameScreen.terrainEntities) {
+            if (Utils.overlapSortedTriangles(f1, terrain.sortedTriangles, mtv)) return true;
+        }
+        return false;
     }
     
     @Override
@@ -98,25 +106,37 @@ public class PlayerEntity extends Entity {
             deltaX = 0;
         }
     
-        boolean isLanding;
-        if (Intersector.isPointInPolygon(gameScreen.landscapeEntity.vertices, 0, gameScreen.landscapeEntity.vertices.length, x, y - 150)) {
-            isLanding = true;
+        boolean isLanding = false;
+    
+        for (TerrainEntity terrain : gameScreen.terrainEntities) {
+            if (Intersector.isPointInPolygon(terrain.vertices, 0, terrain.vertices.length, x, y - 150)) {
+                isLanding = true;
+                break;
+            }
+        }
+        
+        if (isLanding) {
             if (!animationState.getCurrent(3).getAnimation().getName().equals("landing-gear")) {
                 animationState.setAnimation(3, "landing-gear", false);
             }
         } else {
-            isLanding = false;
             if (!animationState.getCurrent(3).getAnimation().getName().equals("landing-gear-retract")) {
                 animationState.setAnimation(3, "landing-gear-retract", false);
             }
         }
     
-        boolean canRotate;
-        if (isLanding && Intersector.isPointInPolygon(gameScreen.landscapeEntity.vertices, 0, gameScreen.landscapeEntity.vertices.length, x, y - LAND_DETECTION_DISTANCE)) {
-            canRotate = false;
-        } else {
-            setGravity(GRAVITY, 270);
-            canRotate = true;
+        boolean canRotate = true;
+        if (isLanding) {
+            for (TerrainEntity terrain : gameScreen.terrainEntities) {
+                if (Intersector.isPointInPolygon(terrain.vertices, 0, terrain.vertices.length, x,
+                        y - LAND_DETECTION_DISTANCE)) {
+                    canRotate = false;
+                    setGravity(0, 270);
+                    break;
+                } else {
+                    setGravity(GRAVITY, 270);
+                }
+            }
         }
         
         if (canRotate) {
@@ -159,8 +179,11 @@ public class PlayerEntity extends Entity {
             }
         }
 
+        System.out.println(canRotate + " " + MathUtils.isZero(getSpeed()));
         if (!canRotate && MathUtils.isZero(getSpeed())) for (LandTargetEntity landTarget : gameScreen.landTargets) {
+            System.out.println("loop");
             if (Utils.pointDistance(x, y, landTarget.x, landTarget.y) < TARGET_DISTANCE) {
+                System.out.println("hit");
                 landTarget.destroy = true;
             }
         }
