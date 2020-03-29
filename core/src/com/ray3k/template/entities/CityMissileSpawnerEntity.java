@@ -3,7 +3,7 @@ package com.ray3k.template.entities;
 import static com.ray3k.template.screens.GameScreen.gameScreen;
 
 public class CityMissileSpawnerEntity extends  Entity {
-    public int count;
+    public int count = -1;
     public float speed;
     public float delay;
     private float timer;
@@ -24,12 +24,18 @@ public class CityMissileSpawnerEntity extends  Entity {
             timer -= delta;
             if (timer < 0) {
                 timer = delay;
-                MissileEntity missileEntity = new MissileEntity();
-                missileEntity.setPosition(x, y);
-                missileEntity.setSpeed(speed);
-                missileEntity.target = gameScreen.cities.random();
-                gameScreen.entityController.add(missileEntity);
-                gameScreen.missiles.add(missileEntity);
+                count--;
+                if (count == 0) {
+                    destroy = true;
+                } else {
+                    MissileEntity missileEntity = new MissileEntity();
+                    missileEntity.setPosition(x, y);
+                    missileEntity.setSpeed(speed);
+                    missileEntity.target = gameScreen.cities.random();
+                    gameScreen.objectives.add(missileEntity);
+                    gameScreen.entityController.add(missileEntity);
+                    gameScreen.missiles.add(missileEntity);
+                }
             }
         }
     }
@@ -41,6 +47,7 @@ public class CityMissileSpawnerEntity extends  Entity {
     
     @Override
     public void destroy() {
-    
+        gameScreen.objectives.removeValue(this, true);
+        gameScreen.checkIfLevelComplete();
     }
 }

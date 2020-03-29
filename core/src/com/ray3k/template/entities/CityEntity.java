@@ -8,7 +8,7 @@ public class CityEntity extends Entity {
     public CityEntity() {
         setSkeletonData(gameScreen.assetManager.get("spine/city.json"), gameScreen.assetManager.get("spine/city.json-animation"));
         animationState.setAnimation(0, "animation", true);
-        depth = Core.DEPTH_ENTITY;
+        depth = Core.DEPTH_DECAL_FRONT;
     }
     
     @Override
@@ -40,5 +40,8 @@ public class CityEntity extends Entity {
         gameScreen.entityController.add(wreckEntity);
         gameScreen.entityController.add(new EarthQuakeEntity(5f, .5f));
         gameScreen.cities.removeValue(this, true);
+        if (gameScreen.cities.size == 0) {
+            gameScreen.entityController.add(new LoadGameScreenEntity(2f));
+        }
     }
 }
