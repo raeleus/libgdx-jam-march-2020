@@ -152,7 +152,7 @@ public class GameScreen extends JamScreen {
         viewport = new ExtendViewport(1024, 576, camera);
         
         backgroundCamera = new OrthographicCamera();
-        backgroundViewport = new StretchViewport(1024, 576, backgroundCamera);
+        backgroundViewport = new FillViewport(1024, 576, backgroundCamera);
         backgroundViewport.update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), true);
     
         groundColor = new Color(54 / 255f, 71 / 255f, 0, 1);
@@ -188,6 +188,7 @@ public class GameScreen extends JamScreen {
         levelBackground.setPosition(0, 0);
         levelBackground.setSize(backgroundViewport.getWorldWidth(), backgroundViewport.getWorldHeight());
         levelBackground.draw(batch);
+        batch.flush();
         viewport.apply();
         batch.setProjectionMatrix(camera.combined);
         entityController.draw(paused ? 0 : delta);
@@ -206,6 +207,7 @@ public class GameScreen extends JamScreen {
         vfxManager.resize(width, height);
         viewport.update(width, height);
         backgroundViewport.update(width, height);
+        System.out.println("resize");
         
         stage.getViewport().update(width, height, true);
     }
