@@ -5,6 +5,8 @@ import com.ray3k.template.Core;
 import static com.ray3k.template.screens.GameScreen.gameScreen;
 
 public class CityEntity extends Entity {
+    public boolean evil;
+    
     public CityEntity() {
         setSkeletonData(gameScreen.assetManager.get("spine/city.json"), gameScreen.assetManager.get("spine/city.json-animation"));
         animationState.setAnimation(0, "animation", true);
@@ -40,7 +42,10 @@ public class CityEntity extends Entity {
         gameScreen.entityController.add(wreckEntity);
         gameScreen.entityController.add(new EarthQuakeEntity(5f, .5f));
         gameScreen.cities.removeValue(this, true);
-        if (gameScreen.cities.size == 0) {
+        if (evil) {
+            gameScreen.objectives.removeValue(this, true);
+            gameScreen.checkIfLevelComplete();
+        } else if (gameScreen.cities.size == 0) {
             gameScreen.entityController.add(new LoadGameScreenEntity(2f));
         }
     }

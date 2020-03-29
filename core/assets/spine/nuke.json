@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "Ls3IZUl9spGFj2h4UVj5N7iLgno",
+	"hash": "Zo82L5kDPV0baPGA4oZ1eeBff7c",
 	"spine": "3.8.79",
 	"x": -47.03,
 	"y": -71.01,
@@ -13,12 +13,28 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "nuke", "bone": "root", "attachment": "nuke" }
+	{ "name": "nuke", "bone": "root", "attachment": "nuke" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" },
+	{ "name": "contact", "bone": "root", "attachment": "contact" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 6,
+					"vertices": [ -19.5, 70, -130.5, 69, -131.5, -77, -3.5, -90, 102.5, -79, 103.5, 62 ]
+				}
+			},
+			"contact": {
+				"contact": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -128.5, 70, -123.5, 136, 107.5, 128, 104.5, 61 ]
+				}
+			},
 			"nuke": {
 				"nuke": { "x": -1.53, "y": 24.49, "width": 91, "height": 191 }
 			}

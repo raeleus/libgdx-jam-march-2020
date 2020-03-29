@@ -217,6 +217,15 @@ public class PlayerEntity extends Entity {
                         break;
                     }
                 }
+    
+                if (attached == null) for (NukeEntity nuke : gameScreen.nukes) {
+                    FloatArray floatArray = nuke.skeletonBounds.getPolygon((BoundingBoxAttachment) nuke.skeleton.findSlot("contact").getAttachment());
+                    if (nuke.skeletonBounds.containsPoint(floatArray, ropeTarget.getWorldX(), ropeTarget.getWorldY())) {
+                        nuke.attachTo(this);
+                        attached = nuke;
+                        break;
+                    }
+                }
             }
         }
         

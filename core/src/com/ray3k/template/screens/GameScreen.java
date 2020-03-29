@@ -54,10 +54,11 @@ public class GameScreen extends JamScreen {
     public Array<GunEntity> guns = new Array<>();
     public Array<MissileEntity> missiles = new Array<>();
     public Array<CityEntity> cities = new Array<>();
+    public Array<NukeEntity> nukes = new Array<>();
     public Array<CityMissileSpawnerEntity> cityMissileSpawners = new Array<>();
     public Array<CarrierLandTargetEntity> carrierLandTargets = new Array<>();
     public Array<CarrierAirTargetEntity> carrierAirTargets = new Array<>();
-    public static final String[] levels = {"levels/level9.json", "levels/tutorial.json", "levels/level1.json", "levels/level2.json", "levels/level3.json", "levels/tutorial2.json", "levels/level4.json", "levels/level5.json", "levels/tutorial3.json", "levels/level6.json", "levels/level7.json", "levels/level8.json", "levels/level9.json"};
+    public static final String[] levels = {"levels/level10.json", "levels/tutorial.json", "levels/level1.json", "levels/level2.json", "levels/level3.json", "levels/tutorial2.json", "levels/level4.json", "levels/level5.json", "levels/tutorial3.json", "levels/level6.json", "levels/level7.json", "levels/level8.json", "levels/level9.json", "levels/level10.json"};
     public int levelIndex;
     public float levelWidth;
     public float levelHeight;
@@ -283,6 +284,11 @@ public class GameScreen extends JamScreen {
                         gameScreen.entityController.add(new IndicatorEntity(carrierAirTargetEntity));
                         break;
                     case "nuke":
+                        NukeEntity nuke = new NukeEntity();
+                        nuke.setPosition(x, y);
+                        gameScreen.entityController.add(nuke);
+                        gameScreen.entityController.add(new IndicatorEntity(nuke));
+                        nukes.add(nuke);
                         break;
                     case "gun":
                         GunEntity gunEntity = new GunEntity();
@@ -318,6 +324,8 @@ public class GameScreen extends JamScreen {
                     case "city":
                         CityEntity cityEntity = new CityEntity();
                         cityEntity.setPosition(x, y);
+                        cityEntity.evil = valuesMap.get("evil", new OgmoReader.OgmoValue("evil", false)).asBoolean();
+                        if (cityEntity.evil) objectives.add(cityEntity);
                         gameScreen.entityController.add(cityEntity);
                         cities.add(cityEntity);
                         break;

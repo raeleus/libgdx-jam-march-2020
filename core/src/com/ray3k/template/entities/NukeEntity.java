@@ -1,37 +1,32 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.math.Intersector.MinimumTranslationVector;
-import com.badlogic.gdx.math.MathUtils;
-import com.esotericsoftware.spine.Bone;
 import com.ray3k.template.Core;
 import com.ray3k.template.Utils;
 import com.ray3k.template.screens.GameScreen;
 
-public class GunEntity extends Entity implements Attachable {
+import static com.ray3k.template.screens.GameScreen.gameScreen;
+
+public class NukeEntity extends Entity implements Attachable {
     public static final float GRAVITY = 500;
     private GameScreen gameScreen;
     private boolean firstFrame = true;
     private MinimumTranslationVector mtv;
     public PlayerEntity attachEntity;
     public static final float MINIMUM_TARGET_DISTANCE = 200f;
-    public static final float FIRING_RATE = .01f;
-    private static final float BULLET_SPEED = 10000f;
-    private static final float BULLET_ANGLE_RANGE = 10f;
-    public float firingTimer;
-    private Bone rotator;
+    public static final float TARGET_KILL_RANGE = 200f;
+    public boolean armed = false;
     
-    public GunEntity() {
+    public NukeEntity() {
         gameScreen = GameScreen.gameScreen;
-        setSkeletonData(gameScreen.assetManager.get("spine/turret.json"), gameScreen.assetManager.get("spine/turret.json-animation"));
-        animationState.setAnimation(0, "cease-fire", false);
+        setSkeletonData(gameScreen.assetManager.get("spine/nuke.json"), gameScreen.assetManager.get("spine/nuke.json-animation"));
+        animationState.setAnimation(0, "animation", false);
         
         this.x = x;
         this.y = y;
         depth = Core.DEPTH_ENTITY;
         setGravity(GRAVITY, 270);
         mtv = new MinimumTranslationVector();
-        firingTimer = FIRING_RATE;
-        rotator = skeleton.findBone("rotator");
     }
     
     private boolean checkForCollision(MinimumTranslationVector mtv) {
@@ -51,12 +46,14 @@ public class GunEntity extends Entity implements Attachable {
     public void actBefore(float delta) {
         if (!firstFrame) {
             if (attachEntity == null && checkForCollision(mtv)) {
-                mtv.normal.setLength(mtv.depth + 10f);
+                mtv.normal.setLength(mtv.depth + .1f);
                 x += mtv.normal.x;
                 y += mtv.normal.y;
                 deltaX = 0;
                 deltaY = 0;
                 setGravity(0, 270);
+                
+                if (armed) destroy = true;
             }
         } else {
             firstFrame = false;
@@ -76,19 +73,6 @@ public class GunEntity extends Entity implements Attachable {
         if (attachEntity != null) {
             setPosition(attachEntity.ropeTarget.getWorldX() + attachEntity.deltaX * delta, attachEntity.ropeTarget.getWorldY() + attachEntity.deltaY * delta);
             skeleton.getRootBone().setRotation(attachEntity.skeleton.getRootBone().getRotation());
-            rotator.setRotation(attachEntity.skeleton.getRootBone().getRotation());
-    
-            firingTimer -= delta;
-            if (firingTimer < 0) {
-                firingTimer = FIRING_RATE;
-                BulletEntity bullet = new BulletEntity();
-                bullet.setPosition(rotator.getWorldX(), rotator.getWorldY());
-                bullet.skeleton.getRootBone().setRotation(rotator.getWorldRotationX());
-                bullet.setMotion(BULLET_SPEED, rotator.getWorldRotationX() - BULLET_ANGLE_RANGE / 2f + MathUtils.random(BULLET_ANGLE_RANGE));
-                bullet.deltaX += attachEntity.deltaX;
-                bullet.deltaY += attachEntity.deltaY;
-                gameScreen.entityController.add(bullet);
-            }
         }
     }
     
@@ -99,13 +83,20 @@ public class GunEntity extends Entity implements Attachable {
     
     @Override
     public void destroy() {
+        for (CityEntity city : gameScreen.cities) {
+            if (Utils.pointDistance(x, y, city.x, city.y) < TARGET_KILL_RANGE) {
+                city.destroy = true;
+            }
+        }
     
+        AnimationEntity entity = new AnimationEntity("spine/nuke-explosion.json", "animation", x, y);
+        gameScreen.entityController.add(entity);
     }
     
     @Override
     public void attachTo(PlayerEntity playerEntity) {
         attachEntity = playerEntity;
-        animationState.setAnimation(0, "fire", true);
+        armed = true;
     }
     
     @Override
@@ -113,7 +104,6 @@ public class GunEntity extends Entity implements Attachable {
         setGravity(GRAVITY, 270);
         setMotion(attachEntity.getSpeed(), attachEntity.getDirection());
         attachEntity = null;
-        animationState.setAnimation(0, "cease-fire", false);
     }
     
     @Override
