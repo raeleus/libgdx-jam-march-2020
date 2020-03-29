@@ -24,17 +24,17 @@ public class CityMissileSpawnerEntity extends  Entity {
             timer -= delta;
             if (timer < 0) {
                 timer = delay;
+                MissileEntity missileEntity = new MissileEntity();
+                missileEntity.setPosition(x, y);
+                missileEntity.setSpeed(speed);
+                missileEntity.target = gameScreen.cities.random();
+                gameScreen.objectives.add(missileEntity);
+                gameScreen.entityController.add(missileEntity);
+                gameScreen.missiles.add(missileEntity);
+    
                 count--;
                 if (count == 0) {
                     destroy = true;
-                } else {
-                    MissileEntity missileEntity = new MissileEntity();
-                    missileEntity.setPosition(x, y);
-                    missileEntity.setSpeed(speed);
-                    missileEntity.target = gameScreen.cities.random();
-                    gameScreen.objectives.add(missileEntity);
-                    gameScreen.entityController.add(missileEntity);
-                    gameScreen.missiles.add(missileEntity);
                 }
             }
         }

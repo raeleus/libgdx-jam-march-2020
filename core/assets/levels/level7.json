@@ -136,8 +136,8 @@
           "originY": 38,
           "values": {"speed": 200, "delay": 2.5, "count": 20}
         },
-        {"name": "player", "id": 9, "_eid": "03394795", "x": 4070, "y": 7340, "originX": 197, "originY": 88},
-        {"name": "gun", "id": 10, "_eid": "42659816", "x": 4592, "y": 7376, "originX": 36, "originY": 90},
+        {"name": "player", "id": 9, "_eid": "03394795", "x": 4062, "y": 7388, "originX": 197, "originY": 88},
+        {"name": "gun", "id": 10, "_eid": "42659816", "x": 4392, "y": 7376, "originX": 36, "originY": 90},
         {"name": "city", "id": 11, "_eid": "45609683", "x": 5968, "y": 7624, "originX": 159, "originY": 494},
         {"name": "city", "id": 12, "_eid": "45609683", "x": 1592, "y": 7592, "originX": 159, "originY": 494}
       ]
