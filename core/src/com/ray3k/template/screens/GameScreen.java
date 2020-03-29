@@ -54,7 +54,7 @@ public class GameScreen extends JamScreen {
     public Array<CarrierEntity> carriers = new Array<>();
     public Array<CarrierLandTargetEntity> carrierLandTargets = new Array<>();
     public Array<CarrierAirTargetEntity> carrierAirTargets = new Array<>();
-    public static final String[] levels = {"levels/level4.json", "levels/tutorial.json", "levels/level1.json", "levels/level2.json", "levels/level3.json", "levels/tutorial2.json", "levels/level4.json"};
+    public static final String[] levels = {"levels/level5.json", "levels/tutorial.json", "levels/level1.json", "levels/level2.json", "levels/level3.json", "levels/tutorial2.json", "levels/level4.json", "levels/level5.json"};
     public int levelIndex;
     public float levelWidth;
     public float levelHeight;
