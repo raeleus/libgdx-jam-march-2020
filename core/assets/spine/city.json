@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "1VW+xJ50vBRj9QOGqRvtJyRfA+o",
+	"hash": "oktT8E+P6CVgkBB9NDsGXtF5c1Q",
 	"spine": "3.8.79",
 	"x": -162.09,
 	"y": -7.65,
@@ -10,23 +10,35 @@
 	"audio": ""
 },
 "bones": [
-	{ "name": "root" }
+	{ "name": "root" },
+	{ "name": "city", "parent": "root", "length": 460.42, "rotation": 88.77, "x": -6.55, "y": 2.36 }
 ],
 "slots": [
-	{ "name": "city", "bone": "root", "attachment": "city" }
+	{ "name": "city", "bone": "city", "attachment": "city" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
 			"city": {
-				"city": { "x": -3.09, "y": 239.35, "width": 318, "height": 494 },
-				"city-wreck": { "x": -3.09, "y": 141.26, "width": 310, "height": 302 }
+				"city": { "x": 237.01, "y": 1.63, "rotation": -88.77, "width": 318, "height": 494 },
+				"city-wreck": { "x": 138.95, "y": -0.48, "rotation": -88.77, "width": 310, "height": 302 }
 			}
 		}
 	}
 ],
 "animations": {
+	"animation": {
+		"bones": {
+			"city": {
+				"scale": [
+					{ "curve": 0.529, "c2": 0.06, "c3": 0.388 },
+					{ "time": 1, "x": 0.97, "curve": 0.726, "c3": 0.67, "c4": 0.98 },
+					{ "time": 2 }
+				]
+			}
+		}
+	},
 	"wreck": {
 		"slots": {
 			"city": {

@@ -51,6 +51,9 @@ public class GameScreen extends JamScreen {
     public Array<AirTargetEntity> airTargets = new Array<>();
     public Array<CarrierEntity> carriers = new Array<>();
     public Array<GunEntity> guns = new Array<>();
+    public Array<MissileEntity> missiles = new Array<>();
+    public Array<CityEntity> cities = new Array<>();
+    public Array<CityMissileSpawnerEntity> cityMissileSpawners = new Array<>();
     public Array<CarrierLandTargetEntity> carrierLandTargets = new Array<>();
     public Array<CarrierAirTargetEntity> carrierAirTargets = new Array<>();
     public static final String[] levels = {"levels/test-level.json", "levels/tutorial.json", "levels/level1.json", "levels/level2.json", "levels/level3.json", "levels/tutorial2.json", "levels/level4.json", "levels/level5.json"};
@@ -282,6 +285,26 @@ public class GameScreen extends JamScreen {
                         gameScreen.entityController.add(gunEntity);
                         guns.add(gunEntity);
                         gameScreen.entityController.add(new IndicatorEntity(gunEntity));
+                        break;
+                    case "missile":
+                        MissileEntity missileEntity = new MissileEntity();
+                        missileEntity.setPosition(x, y);
+                        gameScreen.entityController.add(missileEntity);
+                        missiles.add(missileEntity);
+                        break;
+                    case "city-missile-spawner":
+                        CityMissileSpawnerEntity cityMissileSpawnerEntity = new CityMissileSpawnerEntity();
+                        cityMissileSpawnerEntity.setPosition(x, y);
+                        cityMissileSpawnerEntity.speed = valuesMap.get("speed", new OgmoReader.OgmoValue("speed", 200f)).asFloat();
+                        cityMissileSpawnerEntity.delay = valuesMap.get("delay", new OgmoReader.OgmoValue("delay", 5f)).asFloat();
+                        gameScreen.entityController.add(cityMissileSpawnerEntity);
+                        cityMissileSpawners.add(cityMissileSpawnerEntity);
+                        break;
+                    case "city":
+                        CityEntity cityEntity = new CityEntity();
+                        cityEntity.setPosition(x, y);
+                        gameScreen.entityController.add(cityEntity);
+                        cities.add(cityEntity);
                         break;
                 }
             }

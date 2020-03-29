@@ -44,6 +44,7 @@ public class Core extends JamGame {
     public static final int DEPTH_LANDSCAPE = 20;
     public static final int DEPTH_DECAL_BACK = 10;
     public static final int DEPTH_INDICATOR = -20;
+    public static final int DEPTH_MISSILE = -1;
     
     @Override
     public void create() {

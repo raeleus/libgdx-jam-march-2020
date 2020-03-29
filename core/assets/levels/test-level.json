@@ -42,7 +42,18 @@
         {"name": "gun", "id": 8, "_eid": "42659816", "x": 5448, "y": 7536, "originX": 36, "originY": 90},
         {"name": "carrier-target", "id": 9, "_eid": "42696917", "x": 3248, "y": 6440, "originX": 65, "originY": 61},
         {"name": "carrier", "id": 10, "_eid": "06596369", "x": 4352, "y": 7640, "originX": 92, "originY": 0},
-        {"name": "carrier-target-air", "id": 11, "_eid": "43813551", "x": 4600, "y": 6056, "originX": 63, "originY": 49}
+        {"name": "carrier-target-air", "id": 11, "_eid": "43813551", "x": 4600, "y": 6056, "originX": 63, "originY": 49},
+        {"name": "missile", "id": 12, "_eid": "45470122", "x": 5824, "y": 6368, "originX": 61, "originY": 24},
+        {"name": "missile", "id": 13, "_eid": "45470122", "x": 5464, "y": 5888, "originX": 61, "originY": 24},
+        {"name": "missile", "id": 14, "_eid": "45470122", "x": 5952, "y": 5888, "originX": 61, "originY": 24},
+        {"name": "missile", "id": 15, "_eid": "45470122", "x": 6392, "y": 6200, "originX": 61, "originY": 24},
+        {"name": "missile", "id": 16, "_eid": "45470122", "x": 6280, "y": 5696, "originX": 61, "originY": 24},
+        {"name": "missile", "id": 17, "_eid": "45470122", "x": 5120, "y": 5368, "originX": 61, "originY": 24},
+        {"name": "missile", "id": 18, "_eid": "45470122", "x": 5672, "y": 5328, "originX": 61, "originY": 24},
+        {"name": "missile", "id": 19, "_eid": "45470122", "x": 5200, "y": 5080, "originX": 61, "originY": 24},
+        {"name": "missile", "id": 28, "_eid": "45470122", "x": 4240, "y": 7440, "originX": 61, "originY": 24},
+        {"name": "city", "id": 29, "_eid": "45609683", "x": 4736, "y": 7872, "originX": 159, "originY": 494},
+        {"name": "city-missile-spawner", "id": 30, "_eid": "45618722", "x": 3976, "y": 4912, "originX": 78, "originY": 38}
       ]
     },
     {

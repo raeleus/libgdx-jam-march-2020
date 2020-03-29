@@ -444,7 +444,36 @@ public class OgmoReader {
     public static class OgmoValue {
         public String name;
         private String value;
+    
+        public OgmoValue() {
         
+        }
+        
+        public OgmoValue(String name, String value) {
+            this.name = name;
+            this.value = value;
+        }
+    
+        public OgmoValue(String name, int value) {
+            this.name = name;
+            this.value = Integer.toString(value);
+        }
+    
+        public OgmoValue(String name, float value) {
+            this.name = name;
+            this.value = Float.toString(value);
+        }
+    
+        public OgmoValue(String name, boolean value) {
+            this.name = name;
+            this.value = Boolean.toString(value);
+        }
+    
+        public OgmoValue(String name, Color value) {
+            this.name = name;
+            this.value = value.toString();
+        }
+    
         public int asInt() {
             return Integer.parseInt(value);
         }

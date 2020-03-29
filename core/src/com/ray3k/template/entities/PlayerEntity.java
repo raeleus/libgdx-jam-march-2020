@@ -27,6 +27,7 @@ public class PlayerEntity extends Entity {
     public static final float TARGET_DISTANCE = 200;
     public Bone ropeTarget;
     public Attachable attached;
+    public static final float MISSILE_KILL_RANGE = 100f;
     
     public PlayerEntity() {
         gameScreen = GameScreen.gameScreen;
@@ -229,6 +230,13 @@ public class PlayerEntity extends Entity {
         if (!canRotate && MathUtils.isZero(getSpeed())) for (LandTargetEntity landTarget : gameScreen.landTargets) {
             if (Utils.pointDistance(x, y, landTarget.x, landTarget.y) < TARGET_DISTANCE) {
                 landTarget.destroy = true;
+            }
+        }
+        
+        for (MissileEntity missile : gameScreen.missiles) {
+            if (Utils.pointDistance(x, y, missile.x, missile.y) < MISSILE_KILL_RANGE) {
+                destroy = true;
+                missile.destroy = true;
             }
         }
     }
