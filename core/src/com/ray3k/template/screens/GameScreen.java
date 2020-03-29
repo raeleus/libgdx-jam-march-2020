@@ -47,6 +47,7 @@ public class GameScreen extends JamScreen {
     public Array<TerrainEntity> terrainEntities = new Array<>();
     public PlayerEntity playerEntity;
     public OgmoReader ogmoReader;
+    public Array<Entity> objectives = new Array<>();
     public Array<LandTargetEntity> landTargets = new Array<>();
     public Array<AirTargetEntity> airTargets = new Array<>();
     public Array<CarrierEntity> carriers = new Array<>();
@@ -56,7 +57,7 @@ public class GameScreen extends JamScreen {
     public Array<CityMissileSpawnerEntity> cityMissileSpawners = new Array<>();
     public Array<CarrierLandTargetEntity> carrierLandTargets = new Array<>();
     public Array<CarrierAirTargetEntity> carrierAirTargets = new Array<>();
-    public static final String[] levels = {"levels/test-level.json", "levels/tutorial.json", "levels/level1.json", "levels/level2.json", "levels/level3.json", "levels/tutorial2.json", "levels/level4.json", "levels/level5.json"};
+    public static final String[] levels = {"levels/tutorial3.json", "levels/tutorial.json", "levels/level1.json", "levels/level2.json", "levels/level3.json", "levels/tutorial2.json", "levels/level4.json", "levels/level5.json", "levels/tutorial3.json"};
     public int levelIndex;
     public float levelWidth;
     public float levelHeight;
@@ -188,7 +189,7 @@ public class GameScreen extends JamScreen {
     }
     
     public void checkIfLevelComplete() {
-        if (landTargets.size == 0 && airTargets.size == 0 && carrierLandTargets.size == 0) {
+        if (objectives.size == 0) {
             levelIndex++;
             if (levelIndex < levels.length) {
                 entityController.add(new LoadGameScreenEntity(2f));
@@ -247,6 +248,7 @@ public class GameScreen extends JamScreen {
                         landTargetEntity.setPosition(x, y);
                         gameScreen.entityController.add(landTargetEntity);
                         gameScreen.landTargets.add(landTargetEntity);
+                        objectives.add(landTargetEntity);
                         gameScreen.entityController.add(new IndicatorEntity(landTargetEntity));
                         break;
                     case "air-target":
@@ -254,6 +256,7 @@ public class GameScreen extends JamScreen {
                         airTargetEntity.setPosition(x, y);
                         gameScreen.entityController.add(airTargetEntity);
                         gameScreen.airTargets.add(airTargetEntity);
+                        objectives.add(airTargetEntity);
                         gameScreen.entityController.add(new IndicatorEntity(airTargetEntity));
                         break;
                     case "carrier":
@@ -268,6 +271,7 @@ public class GameScreen extends JamScreen {
                         carrierLandTargetEntity.setPosition(x, y);
                         gameScreen.entityController.add(carrierLandTargetEntity);
                         gameScreen.carrierLandTargets.add(carrierLandTargetEntity);
+                        objectives.add(carrierLandTargetEntity);
                         gameScreen.entityController.add(new IndicatorEntity(carrierLandTargetEntity));
                         break;
                     case "carrier-target-air":
@@ -275,6 +279,7 @@ public class GameScreen extends JamScreen {
                         carrierAirTargetEntity.setPosition(x, y);
                         gameScreen.entityController.add(carrierAirTargetEntity);
                         gameScreen.carrierAirTargets.add(carrierAirTargetEntity);
+                        objectives.add(carrierAirTargetEntity);
                         gameScreen.entityController.add(new IndicatorEntity(carrierAirTargetEntity));
                         break;
                     case "nuke":
@@ -291,6 +296,14 @@ public class GameScreen extends JamScreen {
                         missileEntity.setPosition(x, y);
                         gameScreen.entityController.add(missileEntity);
                         missiles.add(missileEntity);
+                        break;
+                    case "target":
+                        missileEntity = new TargetEntity();
+                        missileEntity.setPosition(x, y);
+                        gameScreen.entityController.add(missileEntity);
+                        missiles.add(missileEntity);
+                        objectives.add(missileEntity);
+                        gameScreen.entityController.add(new IndicatorEntity(missileEntity));
                         break;
                     case "city-missile-spawner":
                         CityMissileSpawnerEntity cityMissileSpawnerEntity = new CityMissileSpawnerEntity();

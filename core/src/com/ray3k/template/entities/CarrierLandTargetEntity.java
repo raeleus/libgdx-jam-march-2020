@@ -2,6 +2,8 @@ package com.ray3k.template.entities;
 
 import com.ray3k.template.screens.GameScreen;
 
+import static com.ray3k.template.screens.GameScreen.gameScreen;
+
 public class CarrierLandTargetEntity extends Entity {
     @Override
     public void create() {
@@ -27,6 +29,7 @@ public class CarrierLandTargetEntity extends Entity {
     public void destroy() {
         GameScreen.gameScreen.carrierLandTargets.removeValue(this, true);
         GameScreen.gameScreen.entityController.add(new AnimationEntity("spine/confetti.json", "animation", x, y));
+        gameScreen.objectives.removeValue(this, true);
         GameScreen.gameScreen.checkIfLevelComplete();
     }
 }

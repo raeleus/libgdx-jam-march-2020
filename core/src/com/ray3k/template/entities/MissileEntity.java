@@ -49,5 +49,7 @@ public class MissileEntity extends Entity {
         gameScreen.entityController.add(entity);
         gameScreen.missiles.removeValue(this, true);
         gameScreen.entityController.add(new EarthQuakeEntity(1f, .25f));
+        gameScreen.objectives.removeValue(this, true);
+        gameScreen.checkIfLevelComplete();
     }
 }

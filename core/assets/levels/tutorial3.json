@@ -1,0 +1,237 @@
+{
+  "ogmoVersion": "3.3.0",
+  "width": 8000,
+  "height": 8000,
+  "offsetX": 0,
+  "offsetY": 0,
+  "values": {"background": "cave-background", "groundColor": "#332113ff"},
+  "layers": [
+    {
+      "name": "decals-front",
+      "_eid": "03382217",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "decals": [],
+      "folder": "..\\..\\output\\decals"
+    },
+    {
+      "name": "entities",
+      "_eid": "03380408",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "entities": [
+        {"name": "player", "id": 0, "_eid": "03394795", "x": 2960, "y": 7784, "originX": 197, "originY": 88},
+        {"name": "gun", "id": 1, "_eid": "42659816", "x": 3472, "y": 7824, "originX": 36, "originY": 90},
+        {"name": "target", "id": 2, "_eid": "46108454", "x": 4784, "y": 7232, "originX": 60, "originY": 61},
+        {"name": "target", "id": 5, "_eid": "46108454", "x": 5672, "y": 6328, "originX": 60, "originY": 61},
+        {"name": "target", "id": 6, "_eid": "46108454", "x": 3680, "y": 5680, "originX": 60, "originY": 61},
+        {"name": "target", "id": 7, "_eid": "46108454", "x": 1640, "y": 5840, "originX": 60, "originY": 61},
+        {"name": "target", "id": 8, "_eid": "46108454", "x": 2664, "y": 5480, "originX": 60, "originY": 61},
+        {"name": "target", "id": 9, "_eid": "46108454", "x": 6720, "y": 5256, "originX": 60, "originY": 61},
+        {"name": "target", "id": 10, "_eid": "46108454", "x": 4880, "y": 5304, "originX": 60, "originY": 61},
+        {"name": "target", "id": 11, "_eid": "46108454", "x": 3048, "y": 4136, "originX": 60, "originY": 61},
+        {"name": "target", "id": 12, "_eid": "46108454", "x": 864, "y": 3912, "originX": 60, "originY": 61},
+        {"name": "target", "id": 13, "_eid": "46108454", "x": 1088, "y": 2984, "originX": 60, "originY": 61},
+        {"name": "target", "id": 14, "_eid": "46108454", "x": 2056, "y": 3592, "originX": 60, "originY": 61},
+        {"name": "target", "id": 15, "_eid": "46108454", "x": 4496, "y": 4440, "originX": 60, "originY": 61},
+        {"name": "target", "id": 16, "_eid": "46108454", "x": 6152, "y": 4440, "originX": 60, "originY": 61},
+        {"name": "target", "id": 17, "_eid": "46108454", "x": 7224, "y": 3512, "originX": 60, "originY": 61},
+        {"name": "target", "id": 18, "_eid": "46108454", "x": 5416, "y": 3400, "originX": 60, "originY": 61},
+        {"name": "target", "id": 19, "_eid": "46108454", "x": 3720, "y": 3344, "originX": 60, "originY": 61},
+        {"name": "target", "id": 20, "_eid": "46108454", "x": 2400, "y": 2712, "originX": 60, "originY": 61},
+        {"name": "target", "id": 21, "_eid": "46108454", "x": 5720, "y": 2376, "originX": 60, "originY": 61},
+        {"name": "target", "id": 22, "_eid": "46108454", "x": 7128, "y": 2200, "originX": 60, "originY": 61},
+        {"name": "target", "id": 23, "_eid": "46108454", "x": 4424, "y": 2128, "originX": 60, "originY": 61},
+        {"name": "target", "id": 24, "_eid": "46108454", "x": 3344, "y": 2176, "originX": 60, "originY": 61},
+        {"name": "target", "id": 25, "_eid": "46108454", "x": 1400, "y": 1816, "originX": 60, "originY": 61},
+        {"name": "target", "id": 26, "_eid": "46108454", "x": 3000, "y": 1096, "originX": 60, "originY": 61},
+        {"name": "target", "id": 27, "_eid": "46108454", "x": 6496, "y": 1488, "originX": 60, "originY": 61},
+        {"name": "target", "id": 28, "_eid": "46108454", "x": 5360, "y": 800, "originX": 60, "originY": 61},
+        {"name": "target", "id": 29, "_eid": "46108454", "x": 4416, "y": 1384, "originX": 60, "originY": 61},
+        {"name": "target", "id": 30, "_eid": "46108454", "x": 3936, "y": 416, "originX": 60, "originY": 61},
+        {"name": "target", "id": 31, "_eid": "46108454", "x": 1968, "y": 1024, "originX": 60, "originY": 61},
+        {"name": "target", "id": 32, "_eid": "46108454", "x": 480, "y": 2736, "originX": 60, "originY": 61},
+        {"name": "target", "id": 33, "_eid": "46108454", "x": 7272, "y": 4584, "originX": 60, "originY": 61},
+        {"name": "target", "id": 34, "_eid": "46108454", "x": 1152, "y": 5120, "originX": 60, "originY": 61},
+        {"name": "target", "id": 35, "_eid": "46108454", "x": 3864, "y": 7664, "originX": 60, "originY": 61},
+        {"name": "target", "id": 36, "_eid": "46108454", "x": 2336, "y": 7496, "originX": 60, "originY": 61},
+        {"name": "target", "id": 37, "_eid": "46108454", "x": 2776, "y": 7016, "originX": 60, "originY": 61}
+      ]
+    },
+    {
+      "name": "decals-back",
+      "_eid": "03384024",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "decals": [
+        {"x": 3440, "y": 7616, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "tip 08.png"}
+      ],
+      "folder": "..\\..\\output\\decals"
+    },
+    {
+      "name": "terrain",
+      "_eid": "03388114",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "entities": [
+        {
+          "name": "terrain",
+          "id": 0,
+          "_eid": "03393575",
+          "x": 4880,
+          "y": 8064,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 5424, "y": 7800},
+            {"x": 6088, "y": 7368},
+            {"x": 6480, "y": 6960},
+            {"x": 6912, "y": 6488},
+            {"x": 7272, "y": 5912},
+            {"x": 7520, "y": 5440},
+            {"x": 7720, "y": 4984},
+            {"x": 7864, "y": 4504},
+            {"x": 8064, "y": 4016},
+            {"x": 8360, "y": 8432},
+            {"x": 4848, "y": 8280}
+          ]
+        },
+        {
+          "name": "terrain",
+          "id": 1,
+          "_eid": "03393575",
+          "x": 2736,
+          "y": 8128,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 2144, "y": 7824},
+            {"x": 1848, "y": 7648},
+            {"x": 1496, "y": 7256},
+            {"x": 1112, "y": 6784},
+            {"x": 800, "y": 6128},
+            {"x": 528, "y": 5512},
+            {"x": 392, "y": 4984},
+            {"x": 120, "y": 4464},
+            {"x": -176, "y": 3936},
+            {"x": -408, "y": 7512},
+            {"x": -80, "y": 9024}
+          ]
+        },
+        {
+          "name": "terrain",
+          "id": 2,
+          "_eid": "03393575",
+          "x": 8232,
+          "y": 2800,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 7832, "y": 1928},
+            {"x": 7480, "y": 1472},
+            {"x": 7104, "y": 1096},
+            {"x": 6696, "y": 832},
+            {"x": 6096, "y": 536},
+            {"x": 5456, "y": 224},
+            {"x": 4584, "y": -128},
+            {"x": 8496, "y": -280}
+          ]
+        },
+        {
+          "name": "terrain",
+          "id": 3,
+          "_eid": "03393575",
+          "x": -288,
+          "y": 2856,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 88, "y": 2168},
+            {"x": 392, "y": 1672},
+            {"x": 728, "y": 1336},
+            {"x": 1120, "y": 1032},
+            {"x": 1520, "y": 768},
+            {"x": 1872, "y": 552},
+            {"x": 2304, "y": 328},
+            {"x": 2712, "y": 80},
+            {"x": 3160, "y": -120},
+            {"x": -288, "y": -456}
+          ]
+        },
+        {
+          "name": "terrain",
+          "id": 4,
+          "_eid": "03393575",
+          "x": 7928,
+          "y": 4560,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 7904, "y": 1880},
+            {"x": 8744, "y": 2472},
+            {"x": 8544, "y": 4608}
+          ]
+        },
+        {
+          "name": "terrain",
+          "id": 5,
+          "_eid": "03393575",
+          "x": 2528,
+          "y": 56,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 5184, "y": 56},
+            {"x": 5312, "y": -464},
+            {"x": 2840, "y": -464}
+          ]
+        },
+        {
+          "name": "terrain",
+          "id": 6,
+          "_eid": "03393575",
+          "x": 56,
+          "y": 4528,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 48, "y": 1968},
+            {"x": -608, "y": 2336},
+            {"x": -696, "y": 3552},
+            {"x": -568, "y": 4488}
+          ]
+        },
+        {
+          "name": "terrain",
+          "id": 7,
+          "_eid": "03393575",
+          "x": 2144,
+          "y": 7936,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 5296, "y": 7944},
+            {"x": 5368, "y": 8480},
+            {"x": 2592, "y": 8592}
+          ]
+        }
+      ]
+    }
+  ]
+}

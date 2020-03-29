@@ -11,4 +11,5 @@ spine/nuke-explosion.json
 spine/nuke.json
 spine/ray3k.json
 spine/ship.json
+spine/target.json
 spine/turret.json
