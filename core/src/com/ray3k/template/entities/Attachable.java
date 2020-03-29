@@ -4,4 +4,5 @@ public interface Attachable {
     public void attachTo(PlayerEntity playerEntity);
     public void detach();
     public boolean checkForCollision();
+    public boolean isAttached();
 }

@@ -40,6 +40,7 @@ public class Core extends JamGame {
     public static final int DEPTH_DECAL_FRONT = -10;
     public static final int DEPTH_PLAYER = 0;
     public static final int DEPTH_ENTITY = 5;
+    public static final int DEPTH_BULLETS = 6;
     public static final int DEPTH_LANDSCAPE = 20;
     public static final int DEPTH_DECAL_BACK = 10;
     public static final int DEPTH_INDICATOR = -20;

@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "D/KrfzjnqF7D2veaTsL+mrp/LDc",
+	"hash": "qVPruau4R89pwS+DyjCth/IGm/w",
 	"spine": "3.8.79",
 	"x": -87.31,
 	"y": -171.16,
@@ -41,7 +41,7 @@
 				"contact": {
 					"type": "boundingbox",
 					"vertexCount": 4,
-					"vertices": [ -21.12, -12.59, -20.16, 18.19, 21.2, 18.19, 22.65, -13.07 ]
+					"vertices": [ -34.59, -12.59, -32.44, 32.85, 38.23, 33.24, 39.28, -12.67 ]
 				}
 			},
 			"person": {

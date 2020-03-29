@@ -32,6 +32,10 @@ public class IndicatorEntity extends Entity {
         if (target.destroy) {
             destroy = true;
         } else {
+            if (target instanceof Attachable) {
+                visible = !((Attachable) target).isAttached();
+            }
+            
             OrthographicCamera camera = GameScreen.gameScreen.camera;
             float rotation = Utils.pointDirection(camera.position.x, camera.position.y, target.x, target.y);
             float distance = Utils.pointDistance(camera.position.x, camera.position.y, target.x, target.y);

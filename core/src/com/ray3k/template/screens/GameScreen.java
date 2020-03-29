@@ -5,14 +5,12 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasSprite;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
@@ -52,6 +50,7 @@ public class GameScreen extends JamScreen {
     public Array<LandTargetEntity> landTargets = new Array<>();
     public Array<AirTargetEntity> airTargets = new Array<>();
     public Array<CarrierEntity> carriers = new Array<>();
+    public Array<GunEntity> guns = new Array<>();
     public Array<CarrierLandTargetEntity> carrierLandTargets = new Array<>();
     public Array<CarrierAirTargetEntity> carrierAirTargets = new Array<>();
     public static final String[] levels = {"levels/test-level.json", "levels/tutorial.json", "levels/level1.json", "levels/level2.json", "levels/level3.json", "levels/tutorial2.json", "levels/level4.json", "levels/level5.json"};
@@ -278,6 +277,11 @@ public class GameScreen extends JamScreen {
                     case "nuke":
                         break;
                     case "gun":
+                        GunEntity gunEntity = new GunEntity();
+                        gunEntity.setPosition(x, y);
+                        gameScreen.entityController.add(gunEntity);
+                        guns.add(gunEntity);
+                        gameScreen.entityController.add(new IndicatorEntity(gunEntity));
                         break;
                 }
             }

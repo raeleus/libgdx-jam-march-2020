@@ -199,11 +199,20 @@ public class PlayerEntity extends Entity {
             }
             
             if (animationName.equals("claw-release")) {
-                for (CarrierEntity carrier : gameScreen.carriers) {
+                if (attached == null) for (CarrierEntity carrier : gameScreen.carriers) {
                     FloatArray floatArray = carrier.skeletonBounds.getPolygon((BoundingBoxAttachment) carrier.skeleton.findSlot("contact").getAttachment());
                     if (carrier.skeletonBounds.containsPoint(floatArray, ropeTarget.getWorldX(), ropeTarget.getWorldY())) {
                         carrier.attachTo(this);
                         attached = carrier;
+                        break;
+                    }
+                }
+    
+                if (attached == null) for (GunEntity gun : gameScreen.guns) {
+                    FloatArray floatArray = gun.skeletonBounds.getPolygon((BoundingBoxAttachment) gun.skeleton.findSlot("contact").getAttachment());
+                    if (gun.skeletonBounds.containsPoint(floatArray, ropeTarget.getWorldX(), ropeTarget.getWorldY())) {
+                        gun.attachTo(this);
+                        attached = gun;
                         break;
                     }
                 }
