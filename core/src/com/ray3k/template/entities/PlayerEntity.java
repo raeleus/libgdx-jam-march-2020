@@ -97,9 +97,9 @@ public class PlayerEntity extends Entity {
             if (!animationState.getCurrent(0).getAnimation().getName().equals("thruster-both")) {
                 animationState.setAnimation(0, "thruster-both", true);
                 musicThrust.play();
-                setGravity(GRAVITY, 270);
             }
             
+            setGravity(GRAVITY, 270);
             addMotion(8, rotation + 90);
         }
         

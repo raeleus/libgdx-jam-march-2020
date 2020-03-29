@@ -18,7 +18,7 @@ import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.ray3k.template.Core;
 import com.ray3k.template.JamScreen;
-import com.ray3k.template.transitions.TransitionFlyThrough;
+import com.ray3k.template.screens.DialogContinue.ContinueListener;
 import com.ray3k.template.transitions.Transitions;
 
 public class MenuScreen extends JamScreen {
@@ -142,9 +142,31 @@ public class MenuScreen extends JamScreen {
         button.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                Gdx.input.setInputProcessor(null);
-                core.transition(new GameScreen(0), Transitions.flyThrough(2, Interpolation.exp10), 1f);
-                bgm.stop();
+                core.assetManager.get("bgm/game.mp3", Music.class).setPosition(0);
+                final int levelIndex = Core.core.preferences.getInteger("levelIndex", -1);
+                if (levelIndex <= 0) {
+                    Gdx.input.setInputProcessor(null);
+                    core.transition(new GameScreen(0), Transitions.flyThrough(2, Interpolation.exp10), 1f);
+                    bgm.stop();
+                } else {
+                    DialogContinue dialog = new DialogContinue();
+                    dialog.show(stage);
+                    dialog.addListener(new ContinueListener() {
+                        @Override
+                        public void continueGame() {
+                            Gdx.input.setInputProcessor(null);
+                            core.transition(new GameScreen(levelIndex), Transitions.flyThrough(2, Interpolation.exp10), 1f);
+                            bgm.stop();
+                        }
+    
+                        @Override
+                        public void newGame() {
+                            Gdx.input.setInputProcessor(null);
+                            core.transition(new GameScreen(0), Transitions.flyThrough(2, Interpolation.exp10), 1f);
+                            bgm.stop();
+                        }
+                    });
+                }
             }
         });
         

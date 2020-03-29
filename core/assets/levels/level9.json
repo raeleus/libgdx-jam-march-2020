@@ -79,7 +79,16 @@
       "gridCellsY": 1000,
       "entities": [
         {"name": "player", "id": 0, "_eid": "03394795", "x": 440, "y": 5872, "originX": 197, "originY": 88},
-        {"name": "city", "id": 1, "_eid": "45609683", "x": 6320, "y": 7680, "originX": 159, "originY": 494},
+        {
+          "name": "city",
+          "id": 1,
+          "_eid": "45609683",
+          "x": 6320,
+          "y": 7680,
+          "originX": 159,
+          "originY": 494,
+          "values": {"evil": false}
+        },
         {
           "name": "city-missile-spawner",
           "id": 2,
@@ -113,9 +122,8 @@
         {"name": "carrier", "id": 7, "_eid": "06596369", "x": 5920, "y": 7352, "originX": 92, "originY": 0},
         {"name": "carrier", "id": 8, "_eid": "06596369", "x": 5666, "y": 7348, "originX": 92, "originY": 0},
         {"name": "gun", "id": 10, "_eid": "42659816", "x": 6728, "y": 7424, "originX": 36, "originY": 90},
-        {"name": "carrier-target", "id": 11, "_eid": "42696917", "x": 1232, "y": 5968, "originX": 65, "originY": 61},
-        {"name": "carrier-target", "id": 12, "_eid": "42696917", "x": 1152, "y": 5968, "originX": 65, "originY": 61},
-        {"name": "carrier-target", "id": 13, "_eid": "42696917", "x": 1064, "y": 5968, "originX": 65, "originY": 61}
+        {"name": "carrier-target", "id": 11, "_eid": "42696917", "x": 1216, "y": 5968, "originX": 65, "originY": 61},
+        {"name": "carrier-target", "id": 12, "_eid": "42696917", "x": 1112, "y": 5968, "originX": 65, "originY": 61}
       ]
     },
     {
