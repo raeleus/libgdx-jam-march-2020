@@ -1,0 +1,163 @@
+{
+  "ogmoVersion": "3.3.0",
+  "width": 8000,
+  "height": 8000,
+  "offsetX": 0,
+  "offsetY": 0,
+  "values": {"background": "end-background", "groundColor": "#343434ff"},
+  "layers": [
+    {
+      "name": "decals-front",
+      "_eid": "03382217",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "decals": [
+        {"x": 7872, "y": 7600, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-front.png"},
+        {"x": 7577.893071204463, "y": 7599.197610088945, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-front.png"},
+        {"x": 7248.658044560809, "y": 7599.197610088945, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-front.png"},
+        {"x": 6925.8533895312885, "y": 7596.625461443292, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-front.png"},
+        {"x": 6582.471545336541, "y": 7599.197610088945, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-front.png"},
+        {"x": 6304.679491605957, "y": 7599.197610088945, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-front.png"},
+        {"x": 6016.598843292761, "y": 7599.197610088945, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-front.png"},
+        {"x": 5615.343654570807, "y": 7601.769758734598, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-front.png"},
+        {"x": 5278.3921819901925, "y": 7599.197610088945, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-front.png"}
+      ],
+      "folder": "..\\..\\output\\decals"
+    },
+    {
+      "name": "entities",
+      "_eid": "03380408",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "entities": [
+        {"name": "player", "id": 0, "_eid": "03394795", "x": 4769, "y": 7536, "originX": 197, "originY": 88},
+        {"name": "nuke", "id": 1, "_eid": "06598220", "x": 5280, "y": 7624, "originX": 45, "originY": 191},
+        {"name": "nuke", "id": 2, "_eid": "06598220", "x": 5616, "y": 7624, "originX": 45, "originY": 191},
+        {"name": "nuke", "id": 3, "_eid": "06598220", "x": 6016, "y": 7624, "originX": 45, "originY": 191},
+        {"name": "nuke", "id": 4, "_eid": "06598220", "x": 6304, "y": 7632, "originX": 45, "originY": 191},
+        {"name": "nuke", "id": 5, "_eid": "06598220", "x": 6584, "y": 7632, "originX": 45, "originY": 191},
+        {"name": "nuke", "id": 6, "_eid": "06598220", "x": 6928, "y": 7616, "originX": 45, "originY": 191},
+        {"name": "nuke", "id": 7, "_eid": "06598220", "x": 7248, "y": 7616, "originX": 45, "originY": 191},
+        {"name": "nuke", "id": 8, "_eid": "06598220", "x": 7576.6069968816355, "y": 7633.921616805267, "originX": 45, "originY": 191},
+        {"name": "nuke", "id": 9, "_eid": "06598220", "x": 7873.69016545462, "y": 7631.349468159613, "originX": 45, "originY": 191},
+        {
+          "name": "city",
+          "id": 10,
+          "_eid": "45609683",
+          "x": 322.93380957715794,
+          "y": 7714.821258514095,
+          "originX": 159,
+          "originY": 494,
+          "values": {"evil": true}
+        },
+        {
+          "name": "city",
+          "id": 11,
+          "_eid": "45609683",
+          "x": 855.7063292135913,
+          "y": 7723.928481071982,
+          "originX": 159,
+          "originY": 494,
+          "values": {"evil": true}
+        },
+        {
+          "name": "city",
+          "id": 12,
+          "_eid": "45609683",
+          "x": 1415.8005165236882,
+          "y": 7710.26764723515,
+          "originX": 159,
+          "originY": 494,
+          "values": {"evil": true}
+        },
+        {
+          "name": "city",
+          "id": 13,
+          "_eid": "45609683",
+          "x": 1980.4483151127288,
+          "y": 7714.821258514095,
+          "originX": 159,
+          "originY": 494,
+          "values": {"evil": true}
+        },
+        {
+          "name": "city",
+          "id": 14,
+          "_eid": "45609683",
+          "x": 2576.9713926543764,
+          "y": 7705.714035956206,
+          "originX": 159,
+          "originY": 494,
+          "values": {"evil": true}
+        },
+        {
+          "name": "city",
+          "id": 15,
+          "_eid": "45609683",
+          "x": 3228.1378055433506,
+          "y": 7714.821258514095,
+          "originX": 159,
+          "originY": 494,
+          "values": {"evil": true}
+        }
+      ]
+    },
+    {
+      "name": "decals-back",
+      "_eid": "03384024",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "decals": [
+        {"x": 4016, "y": 7112, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "end-text.png"},
+        {"x": 7872, "y": 7536, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-back.png"},
+        {"x": 7576, "y": 7536, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-back.png"},
+        {"x": 7248, "y": 7536, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-back.png"},
+        {"x": 6928, "y": 7536, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-back.png"},
+        {"x": 6584, "y": 7536, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-back.png"},
+        {"x": 6304, "y": 7536, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-back.png"},
+        {"x": 6016, "y": 7536, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-back.png"},
+        {"x": 5616, "y": 7536, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-back.png"},
+        {"x": 5280, "y": 7536, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "container-back.png"}
+      ],
+      "folder": "..\\..\\output\\decals"
+    },
+    {
+      "name": "terrain",
+      "_eid": "03388114",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "entities": [
+        {
+          "name": "terrain",
+          "id": 0,
+          "_eid": "03393575",
+          "x": 8080,
+          "y": 7680,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": -80, "y": 7680},
+            {"x": -128, "y": 8272},
+            {"x": 8128, "y": 8296}
+          ]
+        }
+      ]
+    }
+  ]
+}

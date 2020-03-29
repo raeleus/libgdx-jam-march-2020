@@ -14,7 +14,7 @@ public class NukeEntity extends Entity implements Attachable {
     private MinimumTranslationVector mtv;
     public PlayerEntity attachEntity;
     public static final float MINIMUM_TARGET_DISTANCE = 200f;
-    public static final float TARGET_KILL_RANGE = 200f;
+    public static final float TARGET_KILL_RANGE = 400f;
     public boolean armed = false;
     
     public NukeEntity() {
@@ -83,6 +83,10 @@ public class NukeEntity extends Entity implements Attachable {
     
     @Override
     public void destroy() {
+        if (Utils.pointDistance(x, y, gameScreen.playerEntity.x, gameScreen.playerEntity.y) < TARGET_KILL_RANGE) {
+            gameScreen.playerEntity.destroy = true;
+        }
+        
         for (CityEntity city : gameScreen.cities) {
             if (Utils.pointDistance(x, y, city.x, city.y) < TARGET_KILL_RANGE) {
                 city.destroy = true;
@@ -91,6 +95,8 @@ public class NukeEntity extends Entity implements Attachable {
     
         AnimationEntity entity = new AnimationEntity("spine/nuke-explosion.json", "animation", x, y);
         gameScreen.entityController.add(entity);
+    
+        gameScreen.entityController.add(new EarthQuakeEntity(1f, .25f));
     }
     
     @Override
