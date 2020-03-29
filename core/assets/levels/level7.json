@@ -1,0 +1,230 @@
+{
+  "ogmoVersion": "3.3.0",
+  "width": 8000,
+  "height": 8000,
+  "offsetX": 0,
+  "offsetY": 0,
+  "values": {"background": "level-background", "groundColor": "#a39434ff"},
+  "layers": [
+    {
+      "name": "decals-front",
+      "_eid": "03382217",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "decals": [
+        {"x": 7496, "y": 5256, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "cloud2.png"},
+        {"x": 4480, "y": 4392, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "cloud2.png"},
+        {"x": 888, "y": 5216, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "cloud2.png"},
+        {"x": 1144, "y": 2928, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "cloud0.png"},
+        {"x": 4176, "y": 1840, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "cloud0.png"},
+        {"x": 3384, "y": 1896, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "cloud0.png"},
+        {"x": 4536, "y": 1520, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "cloud0.png"},
+        {"x": 6832, "y": 2312, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "cloud1.png"},
+        {"x": 2296, "y": 3320, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "cloud1.png"},
+        {"x": 904, "y": 1040, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "cloud1.png"},
+        {"x": 6696, "y": 1064, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "cloud1.png"},
+        {"x": 664, "y": 7544, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 2096, "y": 7520, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 2936, "y": 7560, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 4904, "y": 7536, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 7312, "y": 7672, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "bush.png"},
+        {"x": 6872, "y": 7616, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 6400, "y": 7560, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 7128, "y": 7664, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 5040, "y": 7552, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 4224, "y": 7536, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 2448, "y": 7544, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 952, "y": 7544, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 7576, "y": 7464, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 7800, "y": 7368, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"},
+        {"x": 112, "y": 7296, "scaleX": 1, "scaleY": 1, "rotation": 0, "texture": "rock.png"}
+      ],
+      "folder": "..\\..\\output\\decals"
+    },
+    {
+      "name": "entities",
+      "_eid": "03380408",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "entities": [
+        {"name": "city", "id": 0, "_eid": "45609683", "x": 3528, "y": 7568, "originX": 159, "originY": 494},
+        {
+          "name": "city-missile-spawner",
+          "id": 1,
+          "_eid": "45618722",
+          "x": 8360,
+          "y": 3000,
+          "originX": 78,
+          "originY": 38,
+          "values": {"speed": 300, "delay": 2.5, "count": 20}
+        },
+        {
+          "name": "city-missile-spawner",
+          "id": 2,
+          "_eid": "45618722",
+          "x": 8144,
+          "y": 736,
+          "originX": 78,
+          "originY": 38,
+          "values": {"speed": 300, "delay": 2.5, "count": 20}
+        },
+        {
+          "name": "city-missile-spawner",
+          "id": 3,
+          "_eid": "45618722",
+          "x": -392,
+          "y": 4576,
+          "originX": 78,
+          "originY": 38,
+          "values": {"speed": 200, "delay": 2.5, "count": 20}
+        },
+        {
+          "name": "city-missile-spawner",
+          "id": 4,
+          "_eid": "45618722",
+          "x": -488,
+          "y": 2800,
+          "originX": 78,
+          "originY": 38,
+          "values": {"speed": 300, "delay": 2.5, "count": 20}
+        },
+        {
+          "name": "city-missile-spawner",
+          "id": 5,
+          "_eid": "45618722",
+          "x": 8416,
+          "y": 4920,
+          "originX": 78,
+          "originY": 38,
+          "values": {"speed": 300, "delay": 2.5, "count": 20}
+        },
+        {
+          "name": "city-missile-spawner",
+          "id": 6,
+          "_eid": "45618722",
+          "x": -368,
+          "y": 928,
+          "originX": 78,
+          "originY": 38,
+          "values": {"speed": 200, "delay": 2.5, "count": 20}
+        },
+        {
+          "name": "city-missile-spawner",
+          "id": 7,
+          "_eid": "45618722",
+          "x": 1736,
+          "y": -216,
+          "originX": 78,
+          "originY": 38,
+          "values": {"speed": 300, "delay": 2.5, "count": 20}
+        },
+        {
+          "name": "city-missile-spawner",
+          "id": 8,
+          "_eid": "45618722",
+          "x": 5688,
+          "y": -176,
+          "originX": 78,
+          "originY": 38,
+          "values": {"speed": 200, "delay": 2.5, "count": 20}
+        },
+        {"name": "player", "id": 9, "_eid": "03394795", "x": 4070, "y": 7340, "originX": 197, "originY": 88},
+        {"name": "gun", "id": 10, "_eid": "42659816", "x": 4592, "y": 7376, "originX": 36, "originY": 90},
+        {"name": "city", "id": 11, "_eid": "45609683", "x": 5968, "y": 7624, "originX": 159, "originY": 494},
+        {"name": "city", "id": 12, "_eid": "45609683", "x": 1592, "y": 7592, "originX": 159, "originY": 494}
+      ]
+    },
+    {
+      "name": "decals-back",
+      "_eid": "03384024",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "decals": [],
+      "folder": "..\\..\\output\\decals"
+    },
+    {
+      "name": "terrain",
+      "_eid": "03388114",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 1000,
+      "gridCellsY": 1000,
+      "entities": [
+        {
+          "name": "terrain",
+          "id": 1,
+          "_eid": "03393575",
+          "x": -40,
+          "y": 7264,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 200, "y": 7336},
+            {"x": 264, "y": 7440},
+            {"x": 368, "y": 7576},
+            {"x": 408, "y": 7688},
+            {"x": 440, "y": 7848},
+            {"x": 440, "y": 8024},
+            {"x": -40, "y": 8024}
+          ]
+        },
+        {
+          "name": "terrain",
+          "id": 2,
+          "_eid": "03393575",
+          "x": 8136,
+          "y": 7304,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 7704, "y": 7392},
+            {"x": 7480, "y": 7552},
+            {"x": 7440, "y": 7664},
+            {"x": 7368, "y": 7888},
+            {"x": 7392, "y": 8152},
+            {"x": 8200, "y": 8224}
+          ]
+        },
+        {
+          "name": "terrain",
+          "id": 3,
+          "_eid": "03393575",
+          "x": 8120,
+          "y": 7904,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 7496, "y": 7712},
+            {"x": 7008, "y": 7640},
+            {"x": 6224, "y": 7544},
+            {"x": 5440, "y": 7568},
+            {"x": 4504, "y": 7536},
+            {"x": 3608, "y": 7560},
+            {"x": 3120, "y": 7568},
+            {"x": 2376, "y": 7544},
+            {"x": 1480, "y": 7496},
+            {"x": 864, "y": 7536},
+            {"x": 472, "y": 7600},
+            {"x": 152, "y": 7736},
+            {"x": 320, "y": 8464},
+            {"x": 7760, "y": 8304}
+          ]
+        }
+      ]
+    }
+  ]
+}
