@@ -107,6 +107,7 @@ public class PlayerEntity extends Entity {
         
         if (x < 0) {
             x = 0;
+            deltaX = 0;
         } else if (x > gameScreen.levelWidth) {
             x = gameScreen.levelWidth;
             deltaX = 0;
@@ -190,8 +191,10 @@ public class PlayerEntity extends Entity {
                     animationState.setAnimation(2, "claw-release", false);
                     animationState.addAnimation(2, "claw-hide", false, 1f);
                 } else if (animationName.equals("claw-hide")) {
-                    attached.detach();
-                    attached = null;
+                    if (!attached.checkForCollision()) {
+                        attached.detach();
+                        attached = null;
+                    }
                 }
             }
             

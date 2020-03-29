@@ -65,9 +65,25 @@ public class CarrierEntity extends Entity implements Attachable {
     
     @Override
     public void act(float delta) {
+        if (x < 0) {
+            x = 0;
+            deltaX = 0;
+        } else if (x > gameScreen.levelWidth) {
+            x = gameScreen.levelWidth;
+            deltaX = 0;
+        }
+        
         if (attachEntity != null) {
             setPosition(attachEntity.ropeTarget.getWorldX(), attachEntity.ropeTarget.getWorldY());
             skeleton.getRootBone().setRotation(attachEntity.skeleton.getRootBone().getRotation());
+        } else {
+            for (CarrierAirTargetEntity target : gameScreen.carrierAirTargets) {
+                if (Utils.pointDistance(x, y, target.x, target.y) <  MINIMUM_TARGET_DISTANCE) {
+                    destroy = true;
+                    target.destroy = true;
+                    break;
+                }
+            }
         }
     }
     
@@ -81,6 +97,7 @@ public class CarrierEntity extends Entity implements Attachable {
     
     }
     
+    @Override
     public void attachTo(PlayerEntity playerEntity) {
         attachEntity = playerEntity;
     }
@@ -90,5 +107,10 @@ public class CarrierEntity extends Entity implements Attachable {
         setGravity(GRAVITY, 270);
         setMotion(attachEntity.getSpeed(), attachEntity.getDirection());
         attachEntity = null;
+    }
+    
+    @Override
+    public boolean checkForCollision() {
+        return checkForCollision(mtv);
     }
 }
