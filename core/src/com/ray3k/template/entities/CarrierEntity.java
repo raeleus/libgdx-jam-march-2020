@@ -6,6 +6,8 @@ import com.ray3k.template.Core;
 import com.ray3k.template.Utils;
 import com.ray3k.template.screens.GameScreen;
 
+import static com.ray3k.template.screens.GameScreen.soundContainer;
+
 public class CarrierEntity extends Entity implements Attachable {
     public static final float GRAVITY = 500;
     private GameScreen gameScreen;
@@ -43,12 +45,13 @@ public class CarrierEntity extends Entity implements Attachable {
     public void actBefore(float delta) {
         if (!firstFrame) {
             if (attachEntity == null && checkForCollision(mtv)) {
-                mtv.normal.setLength(mtv.depth + .1f);
+                mtv.normal.setLength(mtv.depth + 5f);
                 x += mtv.normal.x;
                 y += mtv.normal.y;
                 deltaX = 0;
                 deltaY = 0;
                 setGravity(0, 270);
+                soundContainer.play(Core.core.sfx);
                 
                 for (CarrierLandTargetEntity target : gameScreen.carrierLandTargets) {
                     if (Utils.pointDistance(x, y, target.x, target.y) < MINIMUM_TARGET_DISTANCE) {

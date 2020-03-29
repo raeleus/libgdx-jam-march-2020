@@ -36,6 +36,7 @@ public class CityEntity extends Entity {
     @Override
     public void destroy() {
         WreckEntity wreckEntity = new WreckEntity();
+        wreckEntity.playSounds = false;
         wreckEntity.setSkeletonData(core.assetManager.get("spine/city.json"), core.assetManager.get("spine/city.json-animation"));
         wreckEntity.animationState.setAnimation(0, "wreck", false);
         wreckEntity.setPosition(x, y);

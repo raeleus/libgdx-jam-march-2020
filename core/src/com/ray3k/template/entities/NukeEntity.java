@@ -6,6 +6,7 @@ import com.ray3k.template.Utils;
 import com.ray3k.template.screens.GameScreen;
 
 import static com.ray3k.template.screens.GameScreen.gameScreen;
+import static com.ray3k.template.screens.GameScreen.soundNuke;
 
 public class NukeEntity extends Entity implements Attachable {
     public static final float GRAVITY = 500;
@@ -97,6 +98,7 @@ public class NukeEntity extends Entity implements Attachable {
         gameScreen.entityController.add(entity);
     
         gameScreen.entityController.add(new EarthQuakeEntity(1f, .25f));
+        soundNuke.play(Core.core.sfx);
     }
     
     @Override

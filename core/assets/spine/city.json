@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "oktT8E+P6CVgkBB9NDsGXtF5c1Q",
+	"hash": "9fnXY2AJx3twO3Kx6+KTQwH8Q70",
 	"spine": "3.8.79",
-	"x": -162.1,
-	"y": -7.64,
-	"width": 318.01,
-	"height": 493.39,
+	"x": -162.09,
+	"y": -7.65,
+	"width": 318,
+	"height": 494,
 	"images": "../output/",
 	"audio": ""
 },
@@ -14,12 +14,20 @@
 	{ "name": "city", "parent": "root", "length": 460.42, "rotation": 88.77, "x": -6.55, "y": 2.36 }
 ],
 "slots": [
-	{ "name": "city", "bone": "city", "attachment": "city" }
+	{ "name": "city", "bone": "city", "attachment": "city" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -159.5, 0.36, -154.5, 206.36, 147.5, 201.36, 150.5, 2.36 ]
+				}
+			},
 			"city": {
 				"city": { "x": 237.01, "y": 1.63, "rotation": -88.77, "width": 318, "height": 494 },
 				"city-wreck": { "x": 138.95, "y": -0.48, "rotation": -88.77, "width": 310, "height": 302 }

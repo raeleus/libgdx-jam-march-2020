@@ -5,6 +5,7 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -58,7 +59,7 @@ public class GameScreen extends JamScreen {
     public Array<CityMissileSpawnerEntity> cityMissileSpawners = new Array<>();
     public Array<CarrierLandTargetEntity> carrierLandTargets = new Array<>();
     public Array<CarrierAirTargetEntity> carrierAirTargets = new Array<>();
-    public static final String[] levels = {"levels/end.json", "levels/tutorial.json", "levels/level1.json", "levels/level2.json", "levels/level3.json", "levels/tutorial2.json", "levels/level4.json", "levels/level5.json", "levels/tutorial3.json", "levels/level6.json", "levels/level7.json", "levels/level8.json", "levels/level9.json", "levels/level10.json", "levels/end.json"};
+    public static final String[] levels = {"levels/tutorial2.json", "levels/tutorial.json", "levels/level1.json", "levels/level2.json", "levels/level3.json", "levels/tutorial2.json", "levels/level4.json", "levels/level5.json", "levels/tutorial3.json", "levels/level6.json", "levels/level7.json", "levels/level8.json", "levels/level9.json", "levels/level10.json", "levels/end.json"};
     public int levelIndex;
     public float levelWidth;
     public float levelHeight;
@@ -66,6 +67,20 @@ public class GameScreen extends JamScreen {
     public OrthographicCamera backgroundCamera;
     public Viewport backgroundViewport;
     public Color groundColor;
+    public static Music musicGame;
+    public static Sound soundExplosion;
+    public static Sound soundNuke;
+    public static Sound soundWreck;
+    public static Sound soundSmallExplosion;
+    public static Music musicMinigun;
+    public static Music musicThrust;
+    public static Sound soundChime;
+    public static Sound soundContainer;
+    public static Sound soundLand;
+    public static Sound soundClaw;
+    public static Sound soundRelease;
+    public static Sound soundError;
+    public static Sound soundWinch;
     
     public GameScreen(int levelIndex) {
         this.levelIndex = levelIndex;
@@ -75,15 +90,30 @@ public class GameScreen extends JamScreen {
         batch = core.batch;
         vfxManager = core.vfxManager;
         ogmoReader = new OgmoReader();
+        soundExplosion = assetManager.get("sfx/explosion.mp3");
+        soundNuke = assetManager.get("sfx/nuke.mp3");
+        soundWreck = assetManager.get("sfx/wreck.mp3");
+        soundSmallExplosion = assetManager.get("sfx/small-explosion.mp3");
+        musicMinigun = assetManager.get("bgm/minigun.mp3");
+        musicThrust = assetManager.get("bgm/thrust.mp3");
+        musicThrust.setLooping(true);
+        musicThrust.setVolume(Core.core.sfx);
+        soundChime = assetManager.get("sfx/chime.mp3");
+        soundContainer = assetManager.get("sfx/container.mp3");
+        soundLand = assetManager.get("sfx/land.mp3");
+        soundClaw = assetManager.get("sfx/claw.mp3");
+        soundRelease = assetManager.get("sfx/release.mp3");
+        soundError = assetManager.get("sfx/error.mp3");
+        soundWinch = assetManager.get("sfx/winch.mp3");
         
         BG_COLOR.set(Color.PINK);
     
         paused = false;
     
-        final Music music = core.assetManager.get("bgm/game.mp3");
-        music.setPosition(0);
-        music.setVolume(core.bgm);
-        music.play();
+        musicGame = core.assetManager.get("bgm/game.mp3");
+        musicGame.setVolume(core.bgm * .25f);
+        musicGame.setLooping(true);
+        musicGame.play();
         
         stage = new Stage(new ExtendViewport(1024, 576), core.batch);
         stage.addListener(new InputListener() {
@@ -103,7 +133,7 @@ public class GameScreen extends JamScreen {
                         @Override
                         public void quit() {
                             core.transition(new MenuScreen(), Transitions.slide(270, Interpolation.bounceOut), 1f);
-                            music.pause();
+                            musicGame.pause();
                         }
                     });
                 }
@@ -187,6 +217,8 @@ public class GameScreen extends JamScreen {
     public void hide() {
         super.hide();
         vfxManager.removeAllEffects();
+        musicMinigun.stop();
+        musicThrust.stop();
     }
     
     public void checkIfLevelComplete() {
@@ -196,6 +228,7 @@ public class GameScreen extends JamScreen {
                 entityController.add(new LoadGameScreenEntity(2f));
             } else {
                 core.transition(new CreditsScreen(), Transitions.blinds(270, 5, Interpolation.linear), .5f);
+                musicGame.stop();
             }
         }
     }

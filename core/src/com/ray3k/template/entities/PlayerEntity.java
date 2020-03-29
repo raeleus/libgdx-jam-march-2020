@@ -7,9 +7,12 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.FloatArray;
 import com.esotericsoftware.spine.Bone;
 import com.esotericsoftware.spine.attachments.BoundingBoxAttachment;
+import com.ray3k.template.Core;
 import com.ray3k.template.Core.Binding;
 import com.ray3k.template.Utils;
 import com.ray3k.template.screens.GameScreen;
+
+import static com.ray3k.template.screens.GameScreen.*;
 
 public class PlayerEntity extends Entity {
     private GameScreen gameScreen;
@@ -66,12 +69,13 @@ public class PlayerEntity extends Entity {
                 }
                 
                 if (!destroy) {
-                    mtv.normal.setLength(mtv.depth + .1f);
+                    mtv.normal.setLength(mtv.depth + 1f);
                     x += mtv.normal.x;
                     y += mtv.normal.y;
                     deltaX = 0;
                     deltaY = 0;
                     setGravity(0, 270);
+                    soundLand.play(Core.core.sfx);
                 }
             }
         } else {
@@ -92,6 +96,8 @@ public class PlayerEntity extends Entity {
         if (gameScreen.isBindingPressed(Binding.THRUST)) {
             if (!animationState.getCurrent(0).getAnimation().getName().equals("thruster-both")) {
                 animationState.setAnimation(0, "thruster-both", true);
+                musicThrust.play();
+                setGravity(GRAVITY, 270);
             }
             
             addMotion(8, rotation + 90);
@@ -100,6 +106,7 @@ public class PlayerEntity extends Entity {
         if (!gameScreen.isAnyBindingPressed(Binding.ROTATE_LEFT, Binding.ROTATE_RIGHT, Binding.THRUST)) {
             if (!animationState.getCurrent(0).getAnimation().getName().equals("thruster-none")) {
                 animationState.setAnimation(0, "thruster-none", true);
+                musicThrust.pause();
             }
         }
         
@@ -149,7 +156,7 @@ public class PlayerEntity extends Entity {
                     canRotate = false;
                     break;
                 } else {
-                    setGravity(GRAVITY, 270);
+//                    setGravity(GRAVITY, 270);
                 }
             }
         }
@@ -161,6 +168,7 @@ public class PlayerEntity extends Entity {
                 if (!MathUtils.isZero(y)) {
                     if (!animationState.getCurrent(0).getAnimation().getName().equals("thruster-left")) {
                         animationState.setAnimation(0, "thruster-right", true);
+                        musicThrust.play();
                     }
     
                     rotation += 100 * delta;
@@ -169,6 +177,7 @@ public class PlayerEntity extends Entity {
                 if (!MathUtils.isZero(y)) {
                     if (!animationState.getCurrent(0).getAnimation().getName().equals("thruster-right")) {
                         animationState.setAnimation(0, "thruster-left", true);
+                        musicThrust.play();
                     }
     
                     rotation -= 100 * delta;
@@ -191,10 +200,14 @@ public class PlayerEntity extends Entity {
                 if (attached == null) {
                     animationState.setAnimation(2, "claw-release", false);
                     animationState.addAnimation(2, "claw-hide", false, 1f);
+                    soundWinch.play(Core.core.sfx);
                 } else if (animationName.equals("claw-hide")) {
                     if (!attached.checkForCollision()) {
                         attached.detach();
                         attached = null;
+                        soundRelease.play(Core.core.sfx);
+                    } else {
+                        soundError.play(Core.core.sfx);
                     }
                 }
             }
@@ -205,6 +218,7 @@ public class PlayerEntity extends Entity {
                     if (carrier.skeletonBounds.containsPoint(floatArray, ropeTarget.getWorldX(), ropeTarget.getWorldY())) {
                         carrier.attachTo(this);
                         attached = carrier;
+                        soundClaw.play(Core.core.sfx);
                         break;
                     }
                 }
@@ -214,6 +228,7 @@ public class PlayerEntity extends Entity {
                     if (gun.skeletonBounds.containsPoint(floatArray, ropeTarget.getWorldX(), ropeTarget.getWorldY())) {
                         gun.attachTo(this);
                         attached = gun;
+                        soundClaw.play(Core.core.sfx);
                         break;
                     }
                 }
@@ -223,6 +238,7 @@ public class PlayerEntity extends Entity {
                     if (nuke.skeletonBounds.containsPoint(floatArray, ropeTarget.getWorldX(), ropeTarget.getWorldY())) {
                         nuke.attachTo(this);
                         attached = nuke;
+                        soundClaw.play(Core.core.sfx);
                         break;
                     }
                 }
@@ -265,5 +281,6 @@ public class PlayerEntity extends Entity {
         gameScreen.entityController.add(wreckEntity);
         gameScreen.entityController.add(new EarthQuakeEntity(5f, .5f));
         gameScreen.entityController.add(new LoadGameScreenEntity(2f));
+        soundWreck.play(core.sfx);
     }
 }

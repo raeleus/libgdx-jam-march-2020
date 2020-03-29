@@ -7,6 +7,8 @@ import com.ray3k.template.Core;
 import com.ray3k.template.Utils;
 import com.ray3k.template.screens.GameScreen;
 
+import static com.ray3k.template.screens.GameScreen.musicMinigun;
+
 public class GunEntity extends Entity implements Attachable {
     public static final float GRAVITY = 500;
     private GameScreen gameScreen;
@@ -106,6 +108,9 @@ public class GunEntity extends Entity implements Attachable {
     public void attachTo(PlayerEntity playerEntity) {
         attachEntity = playerEntity;
         animationState.setAnimation(0, "fire", true);
+        musicMinigun.setLooping(true);
+        musicMinigun.setVolume(Core.core.sfx);
+        musicMinigun.play();
     }
     
     @Override
@@ -114,6 +119,7 @@ public class GunEntity extends Entity implements Attachable {
         setMotion(attachEntity.getSpeed(), attachEntity.getDirection());
         attachEntity = null;
         animationState.setAnimation(0, "cease-fire", false);
+        musicMinigun.stop();
     }
     
     @Override

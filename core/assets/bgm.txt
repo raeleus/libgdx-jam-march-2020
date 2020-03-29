@@ -1,3 +1,5 @@
 bgm/audio-test.mp3
 bgm/game.mp3
 bgm/menu.mp3
+bgm/minigun.mp3
+bgm/thrust.mp3

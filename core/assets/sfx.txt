@@ -1,5 +1,10 @@
+sfx/chime.mp3
+sfx/claw.mp3
 sfx/click.mp3
+sfx/container.mp3
+sfx/error.mp3
 sfx/explosion.mp3
+sfx/land.mp3
 sfx/libgdx-scream.mp3
 sfx/libgdx-squish.mp3
 sfx/libgdx-stomp.mp3
@@ -9,6 +14,10 @@ sfx/logo-huh.mp3
 sfx/logo-jamtime.mp3
 sfx/logo-keyboard.mp3
 sfx/logo-snore.mp3
-sfx/minigun.mp3
 sfx/nuke.mp3
+sfx/release.mp3
 sfx/sam-site.mp3
+sfx/small-explosion.mp3
+sfx/thrust.mp3
+sfx/winch.mp3
+sfx/wreck.mp3

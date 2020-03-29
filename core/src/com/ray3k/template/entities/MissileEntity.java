@@ -4,6 +4,7 @@ import com.ray3k.template.Core;
 import com.ray3k.template.Utils;
 
 import static com.ray3k.template.screens.GameScreen.gameScreen;
+import static com.ray3k.template.screens.GameScreen.soundExplosion;
 
 public class MissileEntity extends Entity {
     public Entity target;
@@ -51,5 +52,6 @@ public class MissileEntity extends Entity {
         gameScreen.entityController.add(new EarthQuakeEntity(1f, .25f));
         gameScreen.objectives.removeValue(this, true);
         gameScreen.checkIfLevelComplete();
+        soundExplosion.play(Core.core.sfx);
     }
 }
