@@ -6,133 +6,133 @@ filter: Linear,Linear
 repeat: none
 bg
   rotate: false
-  xy: 1, 271
+  xy: 345, 1269
   size: 79, 96
   orig: 79, 96
   offset: 0, 0
   index: -1
 button-back-normal
   rotate: false
-  xy: 1, 489
+  xy: 1, 414
   size: 161, 58
   orig: 161, 58
   offset: 0, 0
   index: -1
 button-back-over
   rotate: false
-  xy: 1, 429
+  xy: 1, 354
   size: 161, 58
   orig: 161, 58
   offset: 0, 0
   index: -1
 button-back-pressed
   rotate: false
-  xy: 1, 369
+  xy: 1, 294
   size: 161, 58
   orig: 161, 58
   offset: 0, 0
   index: -1
 button-credits-normal
   rotate: false
-  xy: 1, 872
+  xy: 1, 867
   size: 279, 72
   orig: 279, 72
   offset: 0, 0
   index: -1
 button-credits-over
   rotate: false
-  xy: 1180, 1540
+  xy: 1180, 1468
   size: 279, 72
   orig: 279, 72
   offset: 0, 0
   index: -1
 button-credits-pressed
   rotate: false
-  xy: 1180, 1614
+  xy: 1180, 1542
   size: 279, 72
   orig: 279, 72
   offset: 0, 0
   index: -1
 button-defaults-normal
   rotate: false
-  xy: 1, 671
+  xy: 1, 596
   size: 222, 59
   orig: 222, 59
   offset: 0, 0
   index: -1
 button-defaults-over
   rotate: false
-  xy: 1, 610
+  xy: 1, 535
   size: 222, 59
   orig: 222, 59
   offset: 0, 0
   index: -1
 button-defaults-pressed
   rotate: false
-  xy: 1, 549
+  xy: 1, 474
   size: 222, 59
   orig: 222, 59
   offset: 0, 0
   index: -1
 button-key-binds-normal
   rotate: false
-  xy: 1, 1391
+  xy: 1180, 1813
   size: 342, 51
   orig: 342, 51
   offset: 0, 0
   index: -1
 button-key-binds-over
   rotate: false
-  xy: 1180, 1813
+  xy: 1, 1314
   size: 342, 51
   orig: 342, 51
   offset: 0, 0
   index: -1
 button-key-binds-pressed
   rotate: false
-  xy: 1, 1338
+  xy: 505, 1391
   size: 342, 51
   orig: 342, 51
   offset: 0, 0
   index: -1
 button-options-normal
   rotate: false
-  xy: 1, 802
+  xy: 1, 797
   size: 278, 68
   orig: 278, 68
   offset: 0, 0
   index: -1
 button-options-over
   rotate: false
-  xy: 1180, 1470
+  xy: 1, 727
   size: 278, 68
   orig: 278, 68
   offset: 0, 0
   index: -1
 button-options-pressed
   rotate: false
-  xy: 1, 732
+  xy: 1, 657
   size: 278, 68
   orig: 278, 68
   offset: 0, 0
   index: -1
 button-start-normal
   rotate: false
-  xy: 1, 1266
+  xy: 1180, 1688
   size: 340, 70
   orig: 340, 70
   offset: 0, 0
   index: -1
 button-start-over
   rotate: false
-  xy: 1180, 1688
+  xy: 1, 1189
   size: 340, 70
   orig: 340, 70
   offset: 0, 0
   index: -1
 button-start-pressed
   rotate: false
-  xy: 1, 1194
+  xy: 1180, 1616
   size: 340, 70
   orig: 340, 70
   offset: 0, 0
@@ -146,42 +146,42 @@ logo
   index: -1
 slider
   rotate: false
-  xy: 345, 1368
+  xy: 505, 1368
   size: 261, 21
   orig: 261, 21
   offset: 0, 0
   index: -1
 slider-knob
   rotate: false
-  xy: 689, 1392
+  xy: 849, 1392
   size: 16, 50
   orig: 16, 50
   offset: 0, 0
   index: -1
 text-button
   rotate: false
-  xy: 345, 1391
+  xy: 1180, 1760
   size: 342, 51
   orig: 342, 51
   offset: 0, 0
   index: -1
 text-button-over
   rotate: false
-  xy: 1180, 1760
+  xy: 1524, 1813
   size: 342, 51
   orig: 342, 51
   offset: 0, 0
   index: -1
 text-button-pressed
   rotate: false
-  xy: 1524, 1813
+  xy: 1, 1261
   size: 342, 51
   orig: 342, 51
   offset: 0, 0
   index: -1
 vertical-scroll-knob
   rotate: false
-  xy: 1461, 1615
+  xy: 1461, 1543
   size: 12, 71
   orig: 12, 71
   offset: 0, 0
@@ -195,8 +195,15 @@ white
   index: -1
 window
   rotate: false
-  xy: 1, 946
+  xy: 1, 941
   size: 327, 246
   orig: 327, 246
+  offset: 0, 0
+  index: -1
+RaeleusScriptius-Regular
+  rotate: false
+  xy: 1, 1367
+  size: 502, 75
+  orig: 502, 75
   offset: 0, 0
   index: -1

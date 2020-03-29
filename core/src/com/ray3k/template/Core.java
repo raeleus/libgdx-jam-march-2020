@@ -92,7 +92,6 @@ public class Core extends JamGame {
     @Override
     public void loadAssets() {
         assetManager.setLoader(SkeletonData.class, new SkeletonDataLoader(assetManager.getFileHandleResolver()));
-        assetManager.setLoader(Skin.class, new SkinFreeTypeLoader(assetManager.getFileHandleResolver()));
         assetManager.setLoader(AnimationStateData.class, new AnimationStateDataLoader(assetManager.getFileHandleResolver()));
         
         FileHandle fileHandle = Gdx.files.internal("skin.txt");
