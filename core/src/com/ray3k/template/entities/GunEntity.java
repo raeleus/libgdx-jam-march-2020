@@ -57,14 +57,6 @@ public class GunEntity extends Entity implements Attachable {
                 deltaX = 0;
                 deltaY = 0;
                 setGravity(0, 270);
-                
-                for (CarrierLandTargetEntity target : gameScreen.carrierLandTargets) {
-                    if (Utils.pointDistance(x, y, target.x, target.y) < MINIMUM_TARGET_DISTANCE) {
-                        destroy = true;
-                        target.destroy = true;
-                        break;
-                    }
-                }
             }
         } else {
             firstFrame = false;

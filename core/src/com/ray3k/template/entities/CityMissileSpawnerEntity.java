@@ -3,7 +3,7 @@ package com.ray3k.template.entities;
 import static com.ray3k.template.screens.GameScreen.gameScreen;
 
 public class CityMissileSpawnerEntity extends  Entity {
-    public int count = -1;
+    public int count;
     public float speed;
     public float delay;
     private float timer;
@@ -32,9 +32,11 @@ public class CityMissileSpawnerEntity extends  Entity {
                 gameScreen.entityController.add(missileEntity);
                 gameScreen.missiles.add(missileEntity);
     
-                count--;
-                if (count == 0) {
-                    destroy = true;
+                if (count != -1) {
+                    count--;
+                    if (count == 0) {
+                        destroy = true;
+                    }
                 }
             }
         }
