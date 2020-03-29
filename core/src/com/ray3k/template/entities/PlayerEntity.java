@@ -237,6 +237,7 @@ public class PlayerEntity extends Entity {
         wreckEntity.skeleton.getRootBone().setRotation(rotation);
         wreckEntity.setPosition(x, y);
         gameScreen.entityController.add(wreckEntity);
+        gameScreen.entityController.add(new EarthQuakeEntity(5f, .5f));
         gameScreen.entityController.add(new LoadGameScreenEntity(2f));
     }
 }
