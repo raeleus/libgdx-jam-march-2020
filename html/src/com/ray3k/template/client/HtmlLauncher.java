@@ -6,7 +6,7 @@ import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
 import com.badlogic.gdx.backends.gwt.GwtGraphics;
 import com.badlogic.gdx.backends.gwt.preloader.Preloader;
-import com.crashinvaders.vfx.gwt.GwtVfxGlExtension;
+import com.badlogic.gdx.graphics.g2d.freetype.gwt.FreetypeInjector;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.event.logical.shared.ResizeEvent;
@@ -86,5 +86,10 @@ public class HtmlLauncher extends GwtApplication implements CrossPlatformWorker 
     @Override
     public void create() {
     
+    }
+    
+    @Override
+    public void onModuleLoad() {
+        FreetypeInjector.inject(() -> HtmlLauncher.super.onModuleLoad());
     }
 }
