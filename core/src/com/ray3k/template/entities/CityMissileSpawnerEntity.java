@@ -28,7 +28,7 @@ public class CityMissileSpawnerEntity extends  Entity {
                 missileEntity.setPosition(x, y);
                 missileEntity.setSpeed(speed);
                 missileEntity.target = gameScreen.cities.random();
-                gameScreen.objectives.add(missileEntity);
+                if (gameScreen.objectives.contains(this, true)) gameScreen.objectives.add(missileEntity);
                 gameScreen.entityController.add(missileEntity);
                 gameScreen.missiles.add(missileEntity);
     
